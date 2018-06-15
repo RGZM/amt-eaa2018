@@ -1,0 +1,101 @@
+@prefix amt: <http://academic-meta-tool.xyz/vocab#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix eaa: <http://github.com/RGZM/amt-eaa2018#> .
+
+# AMT Ontology - Leonard Edition
+# http://academic-meta-tool.xyz/ontology
+
+amt:Concept rdfs:subClassOf rdfs:Class .
+amt:Role rdfs:subClassOf rdf:Property .
+amt:Axiom rdfs:subclassOf rdfs:Class .
+amt:InferenceAxiom rdfs:subClassOf amt:Axiom .
+amt:IntegrityAxiom rdfs:subClassOf amt:Axiom .
+amt:RoleChainAxiom rdfs:subClassOf amt:InferenceAxiom .
+amt:InverseAxiom rdfs:subClassOf amt:InferenceAxiom .
+amt:DisjointAxiom rdfs:subClassOf amt:IntegrityAxiom .
+amt:SelfDisjointAxiom rdfs:subClassOf amt:IntegrityAxiom .
+amt:Logic rdfs:subClassOf rdfs:Class .
+amt:LukasiewiczLogic rdf:type amt:Logic .
+amt:ProductLogic rdf:type amt:Logic .
+amt:GoedelLogic rdf:type amt:Logic .
+
+# CAA2018 ontology
+
+# concepts
+
+eaa:Potter rdf:type amt:Concept .
+eaa:Potter rdfs:label "Potter" .
+eaa:Potter amt:placeholder "Roman Potter Name" .
+
+eaa:Site rdf:type amt:Concept .
+eaa:Site rdfs:label "Site" .
+eaa:Site amt:placeholder "Roman Site Name" .
+
+eaa:LimesPart rdf:type amt:Concept .
+eaa:LimesPart rdfs:label "Limes Part" .
+eaa:LimesPart amt:placeholder "Name of a part of the Limes" .
+
+# roles
+
+eaa:connectedWith rdf:type amt:Role .
+eaa:connectedWith rdfs:label "is connected with" .
+eaa:connectedWith rdfs:domain eaa:Potter .
+eaa:connectedWith rdfs:range eaa:Site .
+
+eaa:partOf rdf:type amt:Role .
+eaa:partOf rdfs:label "is a part of" .
+eaa:partOf rdfs:domain eaa:Site .
+eaa:partOf rdfs:range eaa:LimesPart .
+
+eaa:after rdf:type amt:Role .
+eaa:after rdfs:label "after" .
+eaa:after rdfs:domain eaa:LimesPart .
+eaa:after rdfs:range eaa:LimesPart .
+
+eaa:before rdf:type amt:Role .
+eaa:before rdfs:label "before" .
+eaa:before rdfs:domain eaa:LimesPart .
+eaa:before rdfs:range eaa:LimesPart .
+
+# axioms
+
+# RoleChainAxiom
+
+eaa:RCA01 rdf:type amt:RoleChainAxiom .
+eaa:RCA01 amt:antecedent1 eaa:connectedWith .
+eaa:RCA01 amt:antecedent2 eaa:partOf .
+eaa:RCA01 amt:consequent eaa:connectedWith .
+eaa:RCA01 amt:logic amt:ProductLogic .
+
+eaa:RCA02 rdf:type amt:RoleChainAxiom .
+eaa:RCA02 amt:antecedent1 eaa:partOf .
+eaa:RCA02 amt:antecedent2 eaa:after .
+eaa:RCA02 amt:consequent eaa:partOf .
+eaa:RCA02 amt:logic amt:ProductLogic .
+
+eaa:RCA03 rdf:type amt:RoleChainAxiom .
+eaa:RCA03 amt:antecedent1 eaa:partOf .
+eaa:RCA03 amt:antecedent2 eaa:before .
+eaa:RCA03 amt:consequent eaa:partOf .
+eaa:RCA03 amt:logic amt:ProductLogic .
+
+# InverseAxiom
+
+eaa:IA01 rdf:type amt:InverseAxiom .
+eaa:IA01 amt:antecedent eaa:connectedWith .
+eaa:IA01 amt:inverse eaa:connectedWith .
+
+eaa:IA02 rdf:type amt:InverseAxiom .
+eaa:IA02 amt:antecedent eaa:partOf .
+eaa:IA02 amt:inverse eaa:partOf .
+
+eaa:IA03 rdf:type amt:InverseAxiom .
+eaa:IA03 amt:antecedent eaa:after .
+eaa:IA03 amt:inverse eaa:before .
+
+eaa:IA04 rdf:type amt:InverseAxiom .
+eaa:IA04 amt:antecedent eaa:before .
+eaa:IA04 amt:inverse eaa:after .
+
+# SelfDisjointAxiom
