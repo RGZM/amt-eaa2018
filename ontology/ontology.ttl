@@ -36,17 +36,26 @@ eaa:LimesPart rdf:type amt:Concept .
 eaa:LimesPart rdfs:label "Limes Part" .
 eaa:LimesPart amt:placeholder "Name of a part of the Limes" .
 
+eaa:SpatialThing rdf:type amt:Concept .
+eaa:SpatialThing rdfs:label "Geometry (Point)" .
+eaa:SpatialThing amt:placeholder "WKT of a Point" .
+
 # roles
 
-eaa:connectedWith rdf:type amt:Role .
-eaa:connectedWith rdfs:label "is connected with" .
-eaa:connectedWith rdfs:domain eaa:Potter .
-eaa:connectedWith rdfs:range eaa:Site .
+eaa:connected rdf:type amt:Role .
+eaa:connected rdfs:label "is connected with" .
+eaa:connected rdfs:domain eaa:Potter .
+eaa:connected rdfs:range eaa:Site .
 
-eaa:partOf rdf:type amt:Role .
-eaa:partOf rdfs:label "is a part of" .
-eaa:partOf rdfs:domain eaa:Site .
-eaa:partOf rdfs:range eaa:LimesPart .
+eaa:part rdf:type amt:Role .
+eaa:part rdfs:label "is a part of" .
+eaa:part rdfs:domain eaa:Site .
+eaa:part rdfs:range eaa:LimesPart .
+
+eaa:geom rdf:type amt:Role .
+eaa:geom rdfs:label "is geometry of" .
+eaa:geom rdfs:domain eaa:SpatialThing .
+eaa:geom rdfs:range eaa:Site .
 
 eaa:after rdf:type amt:Role .
 eaa:after rdfs:label "after" .
@@ -83,19 +92,23 @@ eaa:RCA03 amt:logic amt:ProductLogic .
 # InverseAxiom
 
 eaa:IA01 rdf:type amt:InverseAxiom .
-eaa:IA01 amt:antecedent eaa:connectedWith .
-eaa:IA01 amt:inverse eaa:connectedWith .
+eaa:IA01 amt:antecedent eaa:connected .
+eaa:IA01 amt:inverse eaa:connected .
 
 eaa:IA02 rdf:type amt:InverseAxiom .
-eaa:IA02 amt:antecedent eaa:partOf .
-eaa:IA02 amt:inverse eaa:partOf .
+eaa:IA02 amt:antecedent eaa:part .
+eaa:IA02 amt:inverse eaa:part .
 
 eaa:IA03 rdf:type amt:InverseAxiom .
-eaa:IA03 amt:antecedent eaa:after .
-eaa:IA03 amt:inverse eaa:before .
+eaa:IA03 amt:antecedent eaa:geom .
+eaa:IA03 amt:inverse eaa:geom .
 
-eaa:IA04 rdf:type amt:InverseAxiom .
-eaa:IA04 amt:antecedent eaa:before .
-eaa:IA04 amt:inverse eaa:after .
+eaa:IA11 rdf:type amt:InverseAxiom .
+eaa:IA11 amt:antecedent eaa:after .
+eaa:IA11 amt:inverse eaa:before .
+
+eaa:IA12 rdf:type amt:InverseAxiom .
+eaa:IA12 amt:antecedent eaa:before .
+eaa:IA12 amt:inverse eaa:after .
 
 # SelfDisjointAxiom
