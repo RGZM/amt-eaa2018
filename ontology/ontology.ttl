@@ -56,6 +56,7 @@ eaa:geom rdf:type amt:Role .
 eaa:geom rdfs:label "is geometry of" .
 eaa:geom rdfs:domain eaa:SpatialThing .
 eaa:geom rdfs:range eaa:Site .
+eaa:geom rdfs:range eaa:LimesPart .
 
 eaa:after rdf:type amt:Role .
 eaa:after rdfs:label "after" .
@@ -73,21 +74,27 @@ eaa:before rdfs:range eaa:LimesPart .
 
 eaa:RCA01 rdf:type amt:RoleChainAxiom .
 eaa:RCA01 amt:antecedent1 eaa:connectedWith .
-eaa:RCA01 amt:antecedent2 eaa:partOf .
-eaa:RCA01 amt:consequent eaa:connectedWith .
+eaa:RCA01 amt:antecedent2 eaa:part .
+eaa:RCA01 amt:consequent eaa:connected .
 eaa:RCA01 amt:logic amt:ProductLogic .
 
 eaa:RCA02 rdf:type amt:RoleChainAxiom .
-eaa:RCA02 amt:antecedent1 eaa:partOf .
+eaa:RCA02 amt:antecedent1 eaa:part .
 eaa:RCA02 amt:antecedent2 eaa:after .
-eaa:RCA02 amt:consequent eaa:partOf .
+eaa:RCA02 amt:consequent eaa:part .
 eaa:RCA02 amt:logic amt:ProductLogic .
 
 eaa:RCA03 rdf:type amt:RoleChainAxiom .
-eaa:RCA03 amt:antecedent1 eaa:partOf .
+eaa:RCA03 amt:antecedent1 eaa:part .
 eaa:RCA03 amt:antecedent2 eaa:before .
-eaa:RCA03 amt:consequent eaa:partOf .
+eaa:RCA03 amt:consequent eaa:part .
 eaa:RCA03 amt:logic amt:ProductLogic .
+
+eaa:RCA04 rdf:type amt:RoleChainAxiom .
+eaa:RCA04 amt:antecedent1 eaa:geom .
+eaa:RCA04 amt:antecedent2 eaa:part .
+eaa:RCA04 amt:consequent eaa:geom .
+eaa:RCA04 amt:logic amt:ProductLogic .
 
 # InverseAxiom
 
