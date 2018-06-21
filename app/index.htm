@@ -122,7 +122,7 @@
                         updated.edges[i].hidden = true;
                     }
                     var roleWithPrefix = EAA.prefix;
-                    if (updated.edges[i].role === roleWithPrefix + "connectedWith") {
+                    if (updated.edges[i].role === roleWithPrefix + "connected") {
                         updated.edges[i].color = {
                             color: "Crimson",
                             highlight: "black"
@@ -130,9 +130,17 @@
                         updated.edges[i].dashes = true;
                         updated.edges[i].length = 200;
                         updated.edges[i].smooth = false;
-                    } else if (updated.edges[i].role === roleWithPrefix + "partOf") {
+                    } else if (updated.edges[i].role === roleWithPrefix + "part") {
                         updated.edges[i].color = {
                             color: "CornflowerBlue",
+                            highlight: "black"
+                        };
+                        updated.edges[i].dashes = true;
+                        updated.edges[i].length = 200;
+                        updated.edges[i].smooth = false;
+                    } else if (updated.edges[i].role === roleWithPrefix + "geom") {
+                        updated.edges[i].color = {
+                            color: "Red",
                             highlight: "black"
                         };
                         updated.edges[i].dashes = true;
@@ -310,7 +318,7 @@
                         openModal(params.nodes[0]);
                 });
                 switchOntology();
-                info();
+                //info();
             });
             $("#modal").modal({
                 complete: cancelEdit
@@ -465,6 +473,70 @@
                 }
                 // COPY TO CLIPBOARD
                 $("#hiddenclipboard").text(nodesAndEdges);
+                copyToClipboard('#hiddenclipboard');
+                // CLOSE MODAL
+                $("#exportModal").modal("close");
+            } else if (type === "geojson") {
+                // load json
+                var nodesAndEdges = {};
+                nodesAndEdges.nodes = EAA.thisNodes;
+                nodesAndEdges.edges = EAA.thisEdges;
+                nodesAndEdges = JSON.stringify(nodesAndEdges);
+                if (nodesAndEdges.includes("Infinity")) {
+                    nodesAndEdges = nodesAndEdges.replace("Infinity", 1.0);
+                }
+                nodesAndEdges = JSON.parse(nodesAndEdges);
+                console.log("geojson", nodesAndEdges.edges, nodesAndEdges.nodes);
+                let geojson = {};
+                geojson.type = "FeatureCollection";
+                let features = [];
+                for (var edge in nodesAndEdges.edges) {
+                    let width = null;
+                    let wkt = null;
+                    let place = null;
+                    let placeType = null;
+                    if (nodesAndEdges.edges[edge].role.indexOf("#geom") != -1) {
+                        for (var node in nodesAndEdges.nodes) {
+                            if (nodesAndEdges.nodes[node].id===nodesAndEdges.edges[edge].from && nodesAndEdges.nodes[node].concept.indexOf("#SpatialThing") != -1) {
+                                width = nodesAndEdges.edges[edge].label;
+                                wkt = nodesAndEdges.nodes[node].label;
+                                if (wkt!==null) {
+                                    for (var node in nodesAndEdges.nodes) {
+                                        if (nodesAndEdges.nodes[node].id===nodesAndEdges.edges[edge].to) {
+                                            place = nodesAndEdges.nodes[node].label;
+                                            placeType = nodesAndEdges.nodes[node].concept.replace(EAA.prefix,"");
+                                            //console.log("node","label",nodesAndEdges.nodes[node],place);
+                                        }
+                                    }
+                                }
+                                if (width>0) {
+                                    console.log("width","wkt","place",width,wkt,place);
+                                    let feature = {};
+                                    feature.type = "Feature";
+                                    let geometry = {};
+                                    geometry.type = "Point";
+                                    wkt = wkt.replace("POINT (","");
+                                    wkt = wkt.replace(")","");
+                                    coords = wkt.split(" ");
+                                    coords[0] = parseFloat(coords[0]);
+                                    coords[1] = parseFloat(coords[1]);
+                                    geometry.coordinates = coords;
+                                    feature.geometry = geometry;
+                                    let properties = {};
+                                    properties.name = place;
+                                    properties.type = placeType;
+                                    properties.width = parseFloat(width);
+                                    feature.properties = properties;
+                                    features.push(feature);
+                                }
+                            }
+                        }
+                    }
+                }
+                geojson.features = features;
+                console.log(JSON.stringify(geojson));
+                // COPY TO CLIPBOARD
+                $("#hiddenclipboard").text(JSON.stringify(geojson));
                 copyToClipboard('#hiddenclipboard');
                 // CLOSE MODAL
                 $("#exportModal").modal("close");
@@ -806,15 +878,17 @@
             <table class="centered stripped">
                 <thead>
                     <tr>
-                        <th width="25%">JSON array</th>
-                        <th width="25%">CSV as edges,nodes</th>
-                        <th width="25%">CYPHER statements</th>
-                        <th width="25%">RDF</th>
+                        <th width="20%">JSON array</th>
+                        <th width="20%">GeoJSON</th>
+                        <th width="20%">CSV as edges,nodes</th>
+                        <th width="20%">CYPHER statements</th>
+                        <th width="20%">RDF</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td><a class="btn-floating btn-large green" onclick="exportData('json')" title="Copy Edges and Nodes as JSON"><i class="material-icons">code</i></a></td>
+                        <td><a class="btn-floating btn-large green" onclick="exportData('geojson')" title="Copy Edges and Nodes as GeoJSON"><i class="material-icons">place</i></a></td>
                         <td><a class="btn-floating btn-large green" onclick="exportData('csv','nodes')" title="Copy Nodes as CSV"><i class="material-icons">fiber_manual_record</i></a> &nbsp;&nbsp;
                             <a class="btn-floating btn-large green" onclick="exportData('csv','edges')" title="Copy Edges as CSV"><i class="material-icons">arrow_forward</i></a></td>
                         <td><a class="btn-floating btn-large green" onclick="exportData('cypher')" title="Copy Edges and Nodes as CYPHER"><i class="material-icons">input</i></a></td>
