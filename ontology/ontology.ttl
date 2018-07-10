@@ -37,8 +37,12 @@ eaa:LimesPart rdfs:label "Limes Part" .
 eaa:LimesPart amt:placeholder "Name of a part of the Limes" .
 
 eaa:SpatialThing rdf:type amt:Concept .
-eaa:SpatialThing rdfs:label "Geometry (Point)" .
-eaa:SpatialThing amt:placeholder "WKT of a Point" .
+eaa:SpatialThing rdfs:label "Geometry" .
+eaa:SpatialThing amt:placeholder "well-known-text of a Geometry" .
+
+eaa:Province rdf:type amt:Concept .
+eaa:Province rdfs:label "Roman Province" .
+eaa:Province amt:placeholder "Roman Province" .
 
 # roles
 
@@ -51,12 +55,14 @@ eaa:part rdf:type amt:Role .
 eaa:part rdfs:label "is a part of" .
 eaa:part rdfs:domain eaa:Site .
 eaa:part rdfs:range eaa:LimesPart .
+eaa:part rdfs:range eaa:Province .
 
 eaa:geom rdf:type amt:Role .
 eaa:geom rdfs:label "is geometry of" .
 eaa:geom rdfs:domain eaa:SpatialThing .
 eaa:geom rdfs:range eaa:Site .
 eaa:geom rdfs:range eaa:LimesPart .
+eaa:geom rdfs:range eaa:Province .
 
 eaa:after rdf:type amt:Role .
 eaa:after rdfs:label "after" .
