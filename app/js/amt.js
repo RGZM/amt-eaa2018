@@ -41,7 +41,7 @@ var AMT = function() {
 
     var STORE = "http://ls-dev.i3mainz.hs-mainz.de/rdf4j-server/repositories/amteaa2018";
     var PREFIX = "http://academic-meta-tool.xyz/vocab#";
-    var PREFIX_INSTANCES = "http://github.com/RGZM/amt-eaa2018#";
+    var PREFIX_INSTANCES = "http://rgzm.de/datingmechanism#";
 
     var queryStore = function(query, callback) {
         $.ajax({
