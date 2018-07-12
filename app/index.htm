@@ -49,7 +49,7 @@
     </style>
     <script>
         var EAA = {};
-        EAA.prefix = "http://github.com/RGZM/amt-eaa2018#";
+        EAA.prefix = "http://rgzm.de/datingmechanism#";
         EAA.ontology = "military";
         EAA.graph = {};
         EAA.edit = false;
@@ -99,6 +99,28 @@
                             }
                         };
                         updated.nodes[i].shape = "box";
+                    } else if (updated.nodes[i].concept.includes("Province")) {
+                        updated.nodes[i].color = {
+                            background: 'orange',
+                            border: 'orange',
+                            highlight: {
+                                background: 'white',
+                                border: 'orange'
+                            }
+                        };
+                        updated.nodes[i].shape = "box";
+                    } else if (updated.nodes[i].concept.includes("SpatialThing")) {
+                        updated.nodes[i].color = {
+                            background: '#grey',
+                            border: '#grey',
+                            highlight: {
+                                background: 'white',
+                                border: '#grey'
+                            }
+                        };
+                        updated.nodes[i].shape = "circle";
+                        updated.nodes[i].label = "";
+                        updated.nodes[i].hidden = true;
                     } else {
                         updated.nodes[i].color = {
                             background: 'grey',
@@ -115,7 +137,7 @@
                 	Hier wird spezifiziert wie die Kanten aussehen sollen, welche angezeigt werden sollen, etc
                 */
                 console.info("load edges");
-                for (var i in updated.edges) {
+                /*for (var i in updated.edges) {
                     updated.edges[i].arrowStrikethrough = false;
                     updated.edges[i].chosen = false;
                     if (updated.edges[i].width < 0.01) {
@@ -130,14 +152,21 @@
                         updated.edges[i].dashes = true;
                         updated.edges[i].length = 200;
                         updated.edges[i].smooth = false;
+                        if (updated.edges[i].from.localeCompare(updated.edges[i].to) >= 0) {
+                            updated.edges[i].hidden = true;
+                        }
                     } else if (updated.edges[i].role === roleWithPrefix + "part") {
+                        console.log("part");
                         updated.edges[i].color = {
-                            color: "CornflowerBlue",
+                            color: "red",
                             highlight: "black"
                         };
                         updated.edges[i].dashes = true;
                         updated.edges[i].length = 200;
                         updated.edges[i].smooth = false;
+                        if (updated.edges[i].from.localeCompare(updated.edges[i].to) >= 0) {
+                            updated.edges[i].hidden = true;
+                        }
                     } else if (updated.edges[i].role === roleWithPrefix + "geom") {
                         updated.edges[i].color = {
                             color: "Red",
@@ -146,16 +175,9 @@
                         updated.edges[i].dashes = true;
                         updated.edges[i].length = 200;
                         updated.edges[i].smooth = false;
-                    } else if (updated.edges[i].role === roleWithPrefix + "after") {
-                        updated.edges[i].color = {
-                            color: "DarkGreen",
-                            highlight: "black"
-                        };
-                        updated.edges[i].dashes = true;
-                        updated.edges[i].length = 200;
-                        updated.edges[i].smooth = false;
-                    } else if (updated.edges[i].role === roleWithPrefix + "before") {
-                        updated.edges[i].hidden = true;
+                        if (updated.edges[i].from.localeCompare(updated.edges[i].to) >= 0) {
+                            updated.edges[i].hidden = true;
+                        }
                     } else {
                         updated.edges[i].color = {
                             color: "black",
@@ -166,7 +188,7 @@
                     if (!updated.edges[i].hidden) {
                         console.log(updated.edges[i].role, updated.edges[i].width);
                     }
-                }
+                }*/
                 EAA.graph.nodes.update(updated.nodes);
                 EAA.graph.edges.update(updated.edges);
                 EAA.thisNodes = updated.nodes;
@@ -497,26 +519,26 @@
                     let placeType = null;
                     if (nodesAndEdges.edges[edge].role.indexOf("#geom") != -1) {
                         for (var node in nodesAndEdges.nodes) {
-                            if (nodesAndEdges.nodes[node].id===nodesAndEdges.edges[edge].from && nodesAndEdges.nodes[node].concept.indexOf("#SpatialThing") != -1) {
+                            if (nodesAndEdges.nodes[node].id === nodesAndEdges.edges[edge].from && nodesAndEdges.nodes[node].concept.indexOf("#SpatialThing") != -1) {
                                 width = nodesAndEdges.edges[edge].label;
                                 wkt = nodesAndEdges.nodes[node].label;
-                                if (wkt!==null) {
+                                if (wkt !== null) {
                                     for (var node in nodesAndEdges.nodes) {
-                                        if (nodesAndEdges.nodes[node].id===nodesAndEdges.edges[edge].to) {
+                                        if (nodesAndEdges.nodes[node].id === nodesAndEdges.edges[edge].to) {
                                             place = nodesAndEdges.nodes[node].label;
-                                            placeType = nodesAndEdges.nodes[node].concept.replace(EAA.prefix,"");
+                                            placeType = nodesAndEdges.nodes[node].concept.replace(EAA.prefix, "");
                                             //console.log("node","label",nodesAndEdges.nodes[node],place);
                                         }
                                     }
                                 }
-                                if (width>0) {
+                                if (width > 0) {
                                     //console.log("width","wkt","place",width,wkt,place);
                                     let feature = {};
                                     feature.type = "Feature";
                                     let geometry = {};
                                     geometry.type = "Point";
-                                    wkt = wkt.replace("POINT (","");
-                                    wkt = wkt.replace(")","");
+                                    wkt = wkt.replace("POINT (", "");
+                                    wkt = wkt.replace(")", "");
                                     coords = wkt.split(" ");
                                     coords[0] = parseFloat(coords[0]);
                                     coords[1] = parseFloat(coords[1]);
@@ -588,176 +610,7 @@
                 copyToClipboard('#hiddenclipboard');
                 // CLOSE MODAL
                 $("#exportModal").modal("close");
-            } else if (type === "cypher") {
-                var nodesAndEdges = "";
-                var map = [];
-                var nodeIDs = [];
-                // CREATE NODE -> CREATE (shortID:Concept{label: 'text'})
-                for (var node in EAA.thisNodes) {
-                    if (EAA.thisNodes[node].concept.includes("Object")) {
-                        var nodeItem = {};
-                        nodeItem.id = EAA.thisNodes[node].id;
-                        nodeItem.node = cypherNode;
-                        nodeItem.shortID = EAA.thisNodes[node].id.replace(EAA.prefix, "");
-                        nodeIDs.push(nodeItem.shortID);
-                        map.push(nodeItem);
-                        var cypherNode = "(" + nodeItem.shortID + ":Object{label: '" + EAA.thisNodes[node].label + "'})";
-                        nodesAndEdges += "CREATE " + cypherNode + "\r\n";
-                    } else if (EAA.thisNodes[node].concept.includes("Keyword")) {
-                        var nodeItem = {};
-                        nodeItem.id = EAA.thisNodes[node].id;
-                        nodeItem.node = cypherNode;
-                        nodeItem.shortID = EAA.thisNodes[node].id.replace(EAA.prefix, "");
-                        nodeIDs.push(nodeItem.shortID);
-                        map.push(nodeItem);
-                        var cypherNode = "(" + nodeItem.shortID + ":Keyword{label: '" + EAA.thisNodes[node].label + "'})";
-                        nodesAndEdges += "CREATE " + cypherNode + "\r\n";
-                    } else if (EAA.thisNodes[node].concept.includes("Concept")) {
-                        var nodeItem = {};
-                        nodeItem.id = EAA.thisNodes[node].id;
-                        nodeItem.node = cypherNode;
-                        nodeItem.shortID = EAA.thisNodes[node].id.replace(EAA.prefix, "");
-                        nodeIDs.push(nodeItem.shortID);
-                        map.push(nodeItem);
-                        var cypherNode = "(" + nodeItem.shortID + ":Concept{label: '" + EAA.thisNodes[node].label + "'})";
-                        nodesAndEdges += "CREATE " + cypherNode + "\r\n";
-                    }
-                }
-                // MERGE NODES AS EDGE -> MERGE (shortID)-[:ROLE{width:width}]->(shortID)
-                for (var edge in EAA.thisEdges) {
-                    if (EAA.thisEdges[edge].role.includes("hasDepiction") && !EAA.thisEdges[edge].hidden) {
-                        var cypherEdge = "(*)-[:HAS_DEPICTION{width:%}]->(**)";
-                        for (var item in map) {
-                            if (map[item].id === EAA.thisEdges[edge].from) {
-                                cypherEdge = cypherEdge.replace("*", map[item].shortID);
-                                cypherEdge = cypherEdge.replace("%", EAA.thisEdges[edge].width);
-                                if (cypherEdge.includes("Infinity")) {
-                                    cypherEdge = cypherEdge.replace("Infinity", 1.0);
-                                }
-                            }
-                            if (map[item].id === EAA.thisEdges[edge].to) {
-                                cypherEdge = cypherEdge.replace("**", map[item].shortID);
-                                cypherEdge = cypherEdge.replace("%", EAA.thisEdges[edge].width);
-                                if (cypherEdge.includes("Infinity")) {
-                                    cypherEdge = cypherEdge.replace("Infinity", 1.0);
-                                }
-                            }
-                        }
-                        nodesAndEdges += "MERGE " + cypherEdge + "\r\n";
-                    }
-                    if (EAA.thisEdges[edge].role.includes("isDepictionOf") && !EAA.thisEdges[edge].hidden) {
-                        var cypherEdge = "(*)-[:IS_DEPICTION_OF{width:%}]->(**)";
-                        for (var item in map) {
-                            if (map[item].id === EAA.thisEdges[edge].from) {
-                                cypherEdge = cypherEdge.replace("*", map[item].shortID);
-                                cypherEdge = cypherEdge.replace("%", EAA.thisEdges[edge].width);
-                                if (cypherEdge.includes("Infinity")) {
-                                    cypherEdge = cypherEdge.replace("Infinity", 1.0);
-                                }
-                            }
-                            if (map[item].id === EAA.thisEdges[edge].to) {
-                                cypherEdge = cypherEdge.replace("**", map[item].shortID);
-                                cypherEdge = cypherEdge.replace("%", EAA.thisEdges[edge].width);
-                                if (cypherEdge.includes("Infinity")) {
-                                    cypherEdge = cypherEdge.replace("Infinity", 1.0);
-                                }
-                            }
-                        }
-                        nodesAndEdges += "MERGE " + cypherEdge + "\r\n";
-                    }
-                    if (EAA.thisEdges[edge].role.includes("matchesWith") && !EAA.thisEdges[edge].hidden) {
-                        var cypherEdge = "(*)-[:MATCHES_WITH{width:%}]->(**)";
-                        for (var item in map) {
-                            if (map[item].id === EAA.thisEdges[edge].from) {
-                                cypherEdge = cypherEdge.replace("*", map[item].shortID);
-                                cypherEdge = cypherEdge.replace("%", EAA.thisEdges[edge].width);
-                                if (cypherEdge.includes("Infinity")) {
-                                    cypherEdge = cypherEdge.replace("Infinity", 1.0);
-                                }
-                            }
-                            if (map[item].id === EAA.thisEdges[edge].to) {
-                                cypherEdge = cypherEdge.replace("**", map[item].shortID);
-                                cypherEdge = cypherEdge.replace("%", EAA.thisEdges[edge].width);
-                                if (cypherEdge.includes("Infinity")) {
-                                    cypherEdge = cypherEdge.replace("Infinity", 1.0);
-                                }
-                            }
-                        }
-                        nodesAndEdges += "MERGE " + cypherEdge + "\r\n";
-                    }
-                    if (EAA.thisEdges[edge].role.includes("matchedBy") && !EAA.thisEdges[edge].hidden) {
-                        var cypherEdge = "(*)-[:MATCHED_BY{width:%}]->(**)";
-                        for (var item in map) {
-                            if (map[item].id === EAA.thisEdges[edge].from) {
-                                cypherEdge = cypherEdge.replace("*", map[item].shortID);
-                                cypherEdge = cypherEdge.replace("%", EAA.thisEdges[edge].width);
-                                if (cypherEdge.includes("Infinity")) {
-                                    cypherEdge = cypherEdge.replace("Infinity", 1.0);
-                                }
-                            }
-                            if (map[item].id === EAA.thisEdges[edge].to) {
-                                cypherEdge = cypherEdge.replace("**", map[item].shortID);
-                                cypherEdge = cypherEdge.replace("%", EAA.thisEdges[edge].width);
-                                if (cypherEdge.includes("Infinity")) {
-                                    cypherEdge = cypherEdge.replace("Infinity", 1.0);
-                                }
-                            }
-                        }
-                        nodesAndEdges += "MERGE " + cypherEdge + "\r\n";
-                    }
-                    if (EAA.thisEdges[edge].role.includes("broaderThan") && !EAA.thisEdges[edge].hidden) {
-                        var cypherEdge = "(*)-[:BROADER_THAN{width:%}]->(**)";
-                        for (var item in map) {
-                            if (map[item].id === EAA.thisEdges[edge].from) {
-                                cypherEdge = cypherEdge.replace("*", map[item].shortID);
-                                cypherEdge = cypherEdge.replace("%", EAA.thisEdges[edge].width);
-                                if (cypherEdge.includes("Infinity")) {
-                                    cypherEdge = cypherEdge.replace("Infinity", 1.0);
-                                }
-                            }
-                            if (map[item].id === EAA.thisEdges[edge].to) {
-                                cypherEdge = cypherEdge.replace("**", map[item].shortID);
-                                cypherEdge = cypherEdge.replace("%", EAA.thisEdges[edge].width);
-                                if (cypherEdge.includes("Infinity")) {
-                                    cypherEdge = cypherEdge.replace("Infinity", 1.0);
-                                }
-                            }
-                        }
-                        nodesAndEdges += "MERGE " + cypherEdge + "\r\n";
-                    }
-                    if (EAA.thisEdges[edge].role.includes("narrowerThan") && !EAA.thisEdges[edge].hidden) {
-                        var cypherEdge = "(*)-[:NARROWER_THAN{width:%}]->(**)";
-                        for (var item in map) {
-                            if (map[item].id === EAA.thisEdges[edge].from) {
-                                cypherEdge = cypherEdge.replace("*", map[item].shortID);
-                                cypherEdge = cypherEdge.replace("%", EAA.thisEdges[edge].width);
-                                if (cypherEdge.includes("Infinity")) {
-                                    cypherEdge = cypherEdge.replace("Infinity", 1.0);
-                                }
-                            }
-                            if (map[item].id === EAA.thisEdges[edge].to) {
-                                cypherEdge = cypherEdge.replace("**", map[item].shortID);
-                                cypherEdge = cypherEdge.replace("%", EAA.thisEdges[edge].width);
-                                if (cypherEdge.includes("Infinity")) {
-                                    cypherEdge = cypherEdge.replace("Infinity", 1.0);
-                                }
-                            }
-                        }
-                        nodesAndEdges += "MERGE " + cypherEdge + "\r\n";
-                    }
-                }
-                // ADD RETURN ALL NODES
-                var returnCall = "RETURN ";
-                for (var nodeID in nodeIDs) {
-                    returnCall += nodeIDs[nodeID] + ",";
-                }
-                nodesAndEdges += returnCall.slice(0, -1);
-                // COPY TO CLIPBOARD
-                $("#hiddenclipboard").text(nodesAndEdges);
-                copyToClipboard('#hiddenclipboard');
-                // CLOSE MODAL
-                $("#exportModal").modal("close");
-            }
+            } else if (type === "cypher") {}
         }
         var loadJSONGraphInApp = function() {
             var json = JSON.parse($("#json").val());
@@ -863,7 +716,7 @@
             <br>
             <p><b>Info</b></p>
             <br>
-            <p><a href="https://rgzm.github.io/amt-caa2018/"><img src="https://img.shields.io/badge/amt--caa2018-git repo-orange.svg?style=flat"></a>&nbsp;<a href="https://doi.org/10.5281/zenodo.1200112"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.1200112.svg" alt="DOI"></a></p>
+            <!--<p><a href="https://rgzm.github.io/amt-caa2018/"><img src="https://img.shields.io/badge/amt--caa2018-git repo-orange.svg?style=flat"></a>&nbsp;<a href="https://doi.org/10.5281/zenodo.1200112"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.1200112.svg" alt="DOI"></a></p>-->
             <br>
             <p><b>About the Creators and the Data</b></p>
             <br>
