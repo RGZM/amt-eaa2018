@@ -503,3 +503,50 @@ rgzm:jn2zJOWn amt:instanceOf rgzm:Potter.	rgzm:jn2zJOWn rdfs:label 'Vitalis i'.
 rgzm:p4yyed54 amt:instanceOf rgzm:Potter.	rgzm:p4yyed54 rdfs:label 'Vitalis ii'.
 rgzm:Nodb01eR amt:instanceOf rgzm:Potter.	rgzm:Nodb01eR rdfs:label 'Vitalis ii-P-'.
 rgzm:Vaw4kN57 amt:instanceOf rgzm:Potter.	rgzm:Vaw4kN57 rdfs:label 'Volus'.
+
+_:node1000 rdf:subject rgzm:nlOB1vb5 .	_:node1000 rdf:predicate rgzm:geom .	_:node1000 rdf:object rgzm:NgmkP1LB .	_:node1000 amt:weight "0.98" .
+_:node1001 rdf:subject rgzm:OBKwJbeB .	_:node1001 rdf:predicate rgzm:geom .	_:node1001 rdf:object rgzm:kJyYmqOJ .	_:node1001 amt:weight "0.98" .
+_:node1002 rdf:subject rgzm:V9o8aJXw .	_:node1002 rdf:predicate rgzm:geom .	_:node1002 rdf:object rgzm:VjPdv06j .	_:node1002 amt:weight "0.98" .
+_:node1003 rdf:subject rgzm:AlBx8ZK0 .	_:node1003 rdf:predicate rgzm:geom .	_:node1003 rdf:object rgzm:GJBde87j .	_:node1003 amt:weight "0.98" .
+_:node1004 rdf:subject rgzm:ANneaJZk .	_:node1004 rdf:predicate rgzm:geom .	_:node1004 rdf:object rgzm:v3PR4bDX .	_:node1004 amt:weight "0.98" .
+_:node1005 rdf:subject rgzm:kO2bdKzO .	_:node1005 rdf:predicate rgzm:geom .	_:node1005 rdf:object rgzm:q61drZOP .	_:node1005 amt:weight "0.98" .
+_:node1006 rdf:subject rgzm:Kw8keAmW .	_:node1006 rdf:predicate rgzm:geom .	_:node1006 rdf:object rgzm:J3rLAPa1 .	_:node1006 amt:weight "0.98" .
+_:node1007 rdf:subject rgzm:GwLlo3Bw .	_:node1007 rdf:predicate rgzm:geom .	_:node1007 rdf:object rgzm:NP2aZBre .	_:node1007 amt:weight "0.98" .
+_:node1008 rdf:subject rgzm:RP08ywgP .	_:node1008 rdf:predicate rgzm:geom .	_:node1008 rdf:object rgzm:jr5QjEWr .	_:node1008 amt:weight "0.98" .
+_:node1009 rdf:subject rgzm:XLRAKV7Z .	_:node1009 rdf:predicate rgzm:geom .	_:node1009 rdf:object rgzm:nNBLpB7k .	_:node1009 amt:weight "0.98" .
+_:node1010 rdf:subject rgzm:J2KYXx0e .	_:node1010 rdf:predicate rgzm:geom .	_:node1010 rdf:object rgzm:B6v20QR6 .	_:node1010 amt:weight "0.98" .
+_:node1011 rdf:subject rgzm:PNnKEarp .	_:node1011 rdf:predicate rgzm:geom .	_:node1011 rdf:object rgzm:LGKXROAp .	_:node1011 amt:weight "0.98" .
+_:node1012 rdf:subject rgzm:BnYy1kln .	_:node1012 rdf:predicate rgzm:geom .	_:node1012 rdf:object rgzm:PA33kzvA .	_:node1012 amt:weight "0.98" .
+_:node1013 rdf:subject rgzm:NnP0jrpn .	_:node1013 rdf:predicate rgzm:geom .	_:node1013 rdf:object rgzm:qYOjLB64 .	_:node1013 amt:weight "0.98" .
+_:node1014 rdf:subject rgzm:PzaYVjBz .	_:node1014 rdf:predicate rgzm:geom .	_:node1014 rdf:object rgzm:kDJn13JD .	_:node1014 amt:weight "0.98" .
+_:node1015 rdf:subject rgzm:Kdzp2aRl .	_:node1015 rdf:predicate rgzm:geom .	_:node1015 rdf:object rgzm:ylw01d9P .	_:node1015 amt:weight "0.98" .
+_:node1016 rdf:subject rgzm:QdZgxVRp .	_:node1016 rdf:predicate rgzm:geom .	_:node1016 rdf:object rgzm:VLvwdgbp .	_:node1016 amt:weight "0.98" .
+_:node1017 rdf:subject rgzm:nA0gQD8j .	_:node1017 rdf:predicate rgzm:geom .	_:node1017 rdf:object rgzm:G51z7Mpe .	_:node1017 amt:weight "0.98" .
+_:node1018 rdf:subject rgzm:d7Xq3X8y .	_:node1018 rdf:predicate rgzm:geom .	_:node1018 rdf:object rgzm:VK2JAQOK .	_:node1018 amt:weight "0.98" .
+_:node1019 rdf:subject rgzm:pQ7Y5pAr .	_:node1019 rdf:predicate rgzm:geom .	_:node1019 rdf:object rgzm:en2BeMGn .	_:node1019 amt:weight "0.98" .
+_:node1020 rdf:subject rgzm:vo8neD3W .	_:node1020 rdf:predicate rgzm:geom .	_:node1020 rdf:object rgzm:r57B67Rd .	_:node1020 amt:weight "0.98" .
+_:node1021 rdf:subject rgzm:AGbRMo1G .	_:node1021 rdf:predicate rgzm:geom .	_:node1021 rdf:object rgzm:b0qEJLK0 .	_:node1021 amt:weight "0.98" .
+_:node1022 rdf:subject rgzm:m4lPqZM4 .	_:node1022 rdf:predicate rgzm:geom .	_:node1022 rdf:object rgzm:EQbNPJpQ .	_:node1022 amt:weight "0.98" .
+_:node1023 rdf:subject rgzm:oWGzyXm2 .	_:node1023 rdf:predicate rgzm:geom .	_:node1023 rdf:object rgzm:R6pAx1rm .	_:node1023 amt:weight "0.98" .
+_:node1024 rdf:subject rgzm:GRyMB67R .	_:node1024 rdf:predicate rgzm:geom .	_:node1024 rdf:object rgzm:lr4MGwXB .	_:node1024 amt:weight "0.98" .
+_:node1025 rdf:subject rgzm:No7DRp5K .	_:node1025 rdf:predicate rgzm:geom .	_:node1025 rdf:object rgzm:n96ylEeB .	_:node1025 amt:weight "0.98" .
+_:node1026 rdf:subject rgzm:Je2AokmQ .	_:node1026 rdf:predicate rgzm:geom .	_:node1026 rdf:object rgzm:NKAgW7XZ .	_:node1026 amt:weight "0.98" .
+_:node1027 rdf:subject rgzm:y6ZdwmNV .	_:node1027 rdf:predicate rgzm:geom .	_:node1027 rdf:object rgzm:jWrx8Ag6 .	_:node1027 amt:weight "0.98" .
+_:node1028 rdf:subject rgzm:nRv9yOVz .	_:node1028 rdf:predicate rgzm:geom .	_:node1028 rdf:object rgzm:qQxYde27 .	_:node1028 amt:weight "0.98" .
+_:node1029 rdf:subject rgzm:a9YPqD8O .	_:node1029 rdf:predicate rgzm:geom .	_:node1029 rdf:object rgzm:GpNbdqxp .	_:node1029 amt:weight "0.98" .
+_:node1030 rdf:subject rgzm:ANVgw0d9 .	_:node1030 rdf:predicate rgzm:geom .	_:node1030 rdf:object rgzm:Gd6gnARB .	_:node1030 amt:weight "0.98" .
+_:node1031 rdf:subject rgzm:KpokJgwp .	_:node1031 rdf:predicate rgzm:geom .	_:node1031 rdf:object rgzm:b59QDWj5 .	_:node1031 amt:weight "0.98" .
+_:node1032 rdf:subject rgzm:bdeeq6Wd .	_:node1032 rdf:predicate rgzm:geom .	_:node1032 rdf:object rgzm:OrbnKAEr .	_:node1032 amt:weight "0.98" .
+_:node1033 rdf:subject rgzm:MRY61paP .	_:node1033 rdf:predicate rgzm:geom .	_:node1033 rdf:object rgzm:eEqegpqE .	_:node1033 amt:weight "0.98" .
+_:node1034 rdf:subject rgzm:mN9wMJL4 .	_:node1034 rdf:predicate rgzm:geom .	_:node1034 rdf:object rgzm:QNjmoqj5 .	_:node1034 amt:weight "0.98" .
+_:node1035 rdf:subject rgzm:l6NOYGq3 .	_:node1035 rdf:predicate rgzm:geom .	_:node1035 rdf:object rgzm:XoJ3z0Y5 .	_:node1035 amt:weight "0.98" .
+_:node1036 rdf:subject rgzm:mY6x8pG7 .	_:node1036 rdf:predicate rgzm:geom .	_:node1036 rdf:object rgzm:La3lLx20 .	_:node1036 amt:weight "0.98" .
+_:node1037 rdf:subject rgzm:D7X29ge4 .	_:node1037 rdf:predicate rgzm:geom .	_:node1037 rdf:object rgzm:vMeWnK03 .	_:node1037 amt:weight "0.98" .
+_:node1038 rdf:subject rgzm:BewBx60r .	_:node1038 rdf:predicate rgzm:geom .	_:node1038 rdf:object rgzm:OV9NkB8z .	_:node1038 amt:weight "0.98" .
+_:node1039 rdf:subject rgzm:LbyRy610 .	_:node1039 rdf:predicate rgzm:geom .	_:node1039 rdf:object rgzm:obEMvdqb .	_:node1039 amt:weight "0.98" .
+_:node1040 rdf:subject rgzm:L1apv39q .	_:node1040 rdf:predicate rgzm:geom .	_:node1040 rdf:object rgzm:rj70nGwm .	_:node1040 amt:weight "0.98" .
+_:node1041 rdf:subject rgzm:krDg0LAw .	_:node1041 rdf:predicate rgzm:geom .	_:node1041 rdf:object rgzm:V02DOjrd .	_:node1041 amt:weight "0.98" .
+_:node1042 rdf:subject rgzm:E7mRGxoe .	_:node1042 rdf:predicate rgzm:geom .	_:node1042 rdf:object rgzm:RVbvQenV .	_:node1042 amt:weight "0.98" .
+_:node1500 rdf:subject rgzm:E8rpnlAa .	_:node1500 rdf:predicate rgzm:geom .	_:node1500 rdf:object rgzm:Pdrp7rvA .	_:node1500 amt:weight "0.60" .
+_:node1501 rdf:subject rgzm:y3ravz9j .	_:node1501 rdf:predicate rgzm:geom .	_:node1501 rdf:object rgzm:pyoJLNr2 .	_:node1501 amt:weight "0.60" .
+_:node1502 rdf:subject rgzm:DOjyr0kK .	_:node1502 rdf:predicate rgzm:geom .	_:node1502 rdf:object rgzm:OQzKonxN .	_:node1502 amt:weight "0.60" .
