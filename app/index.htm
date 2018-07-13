@@ -58,7 +58,8 @@
         EAA.inverse = false;
         var update = function() {
             if (EAA.amt) {
-                var updated = EAA.amt.getGraph(!EAA.edit, true);
+                //var updated = EAA.amt.getGraph(!EAA.edit, true);
+                var updated = EAA.amt.getGraph(false, false);
                 EAA.graph.edges.clear();
                 EAA.graph.nodes.clear();
                 /*
@@ -78,49 +79,83 @@
                                 border: 'red'
                             }
                         };
-                        updated.nodes[i].shape = "box";
+                        updated.nodes[i].shape = "square";
+                        updated.nodes[i].font = {
+                            size: 16,
+                            face: 'monospace'
+                        };
+                        updated.nodes[i].size = 10;
                     } else if (updated.nodes[i].concept.includes("Site")) {
                         updated.nodes[i].color = {
-                            background: 'CornflowerBlue',
-                            border: 'CornflowerBlue',
+                            background: 'green',
+                            border: 'green',
+                            highlight: {
+                                background: 'white',
+                                border: 'green'
+                            }
+                        };
+                        updated.nodes[i].shape = "star";
+                        updated.nodes[i].font = {
+                            size: 16,
+                            face: 'monospace'
+                        };
+                        updated.nodes[i].size = 20;
+                    } else if (updated.nodes[i].concept.includes("LimesPart")) {
+                        updated.nodes[i].color = {
+                            background: 'coral',
+                            border: 'coral',
+                            highlight: {
+                                background: 'white',
+                                border: 'coral'
+                            }
+                        };
+                        updated.nodes[i].shape = "diamond";
+                        updated.nodes[i].font = {
+                            size: 16,
+                            face: 'monospace'
+                        };
+                        updated.nodes[i].size = 20;
+                    } else if (updated.nodes[i].concept.includes("Province")) {
+                        updated.nodes[i].color = {
+                            background: 'GoldenRod',
+                            border: 'GoldenRod',
+                            highlight: {
+                                background: 'white',
+                                border: 'GoldenRod'
+                            }
+                        };
+                        updated.nodes[i].shape = "dot";
+                        updated.nodes[i].font = {
+                            size: 16,
+                            face: 'monospace'
+                        };
+                        updated.nodes[i].size = 10;
+                    } else if (updated.nodes[i].concept.includes("SpatialThing")) {
+                        updated.nodes[i].color = {
+                            background: 'blue',
+                            border: 'blue',
                             highlight: {
                                 background: 'white',
                                 border: 'blue'
                             }
                         };
-                        updated.nodes[i].shape = "box";
-                    } else if (updated.nodes[i].concept.includes("LimesPart")) {
-                        updated.nodes[i].color = {
-                            background: '#99d6ff',
-                            border: '#99d6ff',
-                            highlight: {
-                                background: 'white',
-                                border: '#99d6ff'
-                            }
+                        updated.nodes[i].font = {
+                            size: 16,
+                            face: 'monospace'
                         };
-                        updated.nodes[i].shape = "box";
-                    } else if (updated.nodes[i].concept.includes("Province")) {
-                        updated.nodes[i].color = {
-                            background: 'orange',
-                            border: 'orange',
-                            highlight: {
-                                background: 'white',
-                                border: 'orange'
-                            }
-                        };
-                        updated.nodes[i].shape = "box";
-                    } else if (updated.nodes[i].concept.includes("SpatialThing")) {
-                        updated.nodes[i].color = {
-                            background: '#grey',
-                            border: '#grey',
-                            highlight: {
-                                background: 'white',
-                                border: '#grey'
-                            }
-                        };
-                        updated.nodes[i].shape = "circle";
-                        updated.nodes[i].label = "";
-                        updated.nodes[i].hidden = true;
+                        updated.nodes[i].size = 10;
+                        var geojson = JSON.parse(updated.nodes[i].label);
+                        var thislabel = "";
+                        if (geojson.type === "Point") {
+                            thislabel = JSON.stringify(geojson.coordinates);
+                            updated.nodes[i].shape = "dot";
+                            updated.nodes[i].size = 20;
+                        } else {
+                            var thislabel = "Feature of " + geojson.properties.name;
+                            updated.nodes[i].shape = "square";
+                            updated.nodes[i].size = 20;
+                        }
+                        updated.nodes[i].label = thislabel;
                     } else {
                         updated.nodes[i].color = {
                             background: 'grey',
@@ -137,7 +172,7 @@
                 	Hier wird spezifiziert wie die Kanten aussehen sollen, welche angezeigt werden sollen, etc
                 */
                 console.info("load edges");
-                /*for (var i in updated.edges) {
+                for (var i in updated.edges) {
                     updated.edges[i].arrowStrikethrough = false;
                     updated.edges[i].chosen = false;
                     if (updated.edges[i].width < 0.01) {
@@ -156,27 +191,52 @@
                             updated.edges[i].hidden = true;
                         }
                     } else if (updated.edges[i].role === roleWithPrefix + "part") {
-                        console.log("part");
                         updated.edges[i].color = {
                             color: "red",
                             highlight: "black"
                         };
                         updated.edges[i].dashes = true;
-                        updated.edges[i].length = 200;
+                        updated.edges[i].length = 500;
                         updated.edges[i].smooth = false;
                         if (updated.edges[i].from.localeCompare(updated.edges[i].to) >= 0) {
-                            updated.edges[i].hidden = true;
+                            //updated.edges[i].hidden = true;
+                            console.log(updated.edges[i].from.localeCompare(updated.edges[i].to), updated.edges[i].from, updated.edges[i].to);
                         }
                     } else if (updated.edges[i].role === roleWithPrefix + "geom") {
                         updated.edges[i].color = {
-                            color: "Red",
+                            color: "blue",
                             highlight: "black"
                         };
                         updated.edges[i].dashes = true;
-                        updated.edges[i].length = 200;
+                        updated.edges[i].length = 50;
                         updated.edges[i].smooth = false;
                         if (updated.edges[i].from.localeCompare(updated.edges[i].to) >= 0) {
-                            updated.edges[i].hidden = true;
+                            //updated.edges[i].hidden = true;
+                        }
+                    } else if (updated.edges[i].role === roleWithPrefix + "e" ||
+                        updated.edges[i].role === roleWithPrefix + "b" ||
+                        updated.edges[i].role === roleWithPrefix + "a" ||
+                        updated.edges[i].role === roleWithPrefix + "d" ||
+                        updated.edges[i].role === roleWithPrefix + "di" ||
+                        updated.edges[i].role === roleWithPrefix + "o" ||
+                        updated.edges[i].role === roleWithPrefix + "oi" ||
+                        updated.edges[i].role === roleWithPrefix + "m" ||
+                        updated.edges[i].role === roleWithPrefix + "mi" ||
+                        updated.edges[i].role === roleWithPrefix + "s" ||
+                        updated.edges[i].role === roleWithPrefix + "si" ||
+                        updated.edges[i].role === roleWithPrefix + "f" ||
+                        updated.edges[i].role === roleWithPrefix + "fi"
+                    ) {
+                        updated.edges[i].color = {
+                            color: "blue",
+                            highlight: "black"
+                        };
+                        updated.edges[i].dashes = false;
+                        updated.edges[i].length = 250;
+                        updated.edges[i].smooth = true;
+                        updated.edges[i].label = updated.edges[i].role.replace(EAA.prefix, "");
+                        if (updated.edges[i].from.localeCompare(updated.edges[i].to) >= 0) {
+                            //updated.edges[i].hidden = true;
                         }
                     } else {
                         updated.edges[i].color = {
@@ -186,9 +246,9 @@
                         updated.edges[i].dashes = true;
                     }
                     if (!updated.edges[i].hidden) {
-                        console.log(updated.edges[i].role, updated.edges[i].width);
+                        //console.log(updated.edges[i].role, updated.edges[i].width);
                     }
-                }*/
+                }
                 EAA.graph.nodes.update(updated.nodes);
                 EAA.graph.edges.update(updated.edges);
                 EAA.thisNodes = updated.nodes;
@@ -208,7 +268,7 @@
             }
             update();
         };
-        var cancel = function() {
+        /*var cancel = function() {
             EAA.amt.cancel();
             $("#store").hide();
             edit();
@@ -276,8 +336,8 @@
             });
             $("#role").material_select();
             $("#modal").modal("open");
-        };
-        var remove = function() {
+        };*/
+        /*var remove = function() {
             var from = $("#uri").val();
             if (from) {
                 $("#save").show();
@@ -315,36 +375,60 @@
             $("#modal").modal("close");
             $("#label").val("");
             update();
-        };
+        };*/
         $(function() {
             EAA.amt = new AMT();
             EAA.amt.load(function() {
-                var concepts = EAA.amt.getConcepts();
+                /*var concepts = EAA.amt.getConcepts();
                 for (var i in concepts) {
                     var a = $("<a class='btn-floating btn-large edit green' onclick='openModal(false,\"" + concepts[i].concept + "\")' title='Add " + concepts[i].label + " node'><i class='material-icons'>add" + concepts[i].label.substr(
                         0, 1) + "</i></a>");
                     $("#buttons").prepend(a);
-                }
+                }*/
                 $(".edit").hide();
                 $("#r-but").show();
                 $("#e-but").hide();
                 var graph = EAA.amt.getGraph(false, true);
                 EAA.graph.nodes = new vis.DataSet(graph.nodes);
                 EAA.graph.edges = new vis.DataSet(graph.edges);
+                var options = {
+                    /*layout: {
+                    	hierarchical: {
+                    		enabled: true,
+                    		nodeSpacing: 800,
+                    		blockShifting: false,
+                    		edgeMinimization: false,
+                    		parentCentralization: false,
+                    		direction: 'UD', // UD, DU, LR, RL
+                    		sortMethod: 'directed' // hubsize, directed
+                    	},
+                    },*/
+                    //physics: false
+                    /*smooth: {
+                    	type: 'dynamic',
+                    	roundness: 0.2
+                    }*/
+                };
+                var options = {
+                    layout: {
+                        randomSeed: 10
+                    }
+                };
                 var network = new vis.Network(document.getElementById("graph"), {
                     nodes: EAA.graph.nodes,
                     edges: EAA.graph.edges
-                }, {});
-                network.on("selectNode", function(params) {
+                }, options);
+                update();
+                /*network.on("selectNode", function(params) {
                     if (EAA.edit)
                         openModal(params.nodes[0]);
-                });
-                switchOntology();
+                });*/
+                //switchOntology();
                 //info();
             });
-            $("#modal").modal({
+            /*$("#modal").modal({
                 complete: cancelEdit
-            });
+            });*/
             $("#info").modal({
                 complete: function() {
                     info(true);
@@ -375,20 +459,14 @@
             $(".edit").hide();
             $("#store").hide();
         });
-        var switchOntology = function() {
+        /*var switchOntology = function() {
             EAA = {};
             EAA.prefix = "http://github.com/RGZM/amt-eaa2018#";
-            EAA.ontology = $("#ontology").val();
             EAA.graph = {};
             EAA.edit = true;
             EAA.thisNodes = [];
             EAA.thisEdges = [];
             EAA.amt = new AMT();
-            if (EAA.ontology === "limes") {
-                EAA.amt.setStore("http://ls-dev.i3mainz.hs-mainz.de/rdf4j-server/repositories/amteaa2018");
-            } else if (EAA.ontology === "limes2") {
-                EAA.amt.setStore("http://ls-dev.i3mainz.hs-mainz.de/rdf4j-server/repositories/amteaa2018");
-            }
             console.log(EAA);
             EAA.amt.load(function() {
                 var concepts = EAA.amt.getConcepts();
@@ -410,7 +488,7 @@
                     if (EAA.edit)
                         openModal(params.nodes[0]);
                 });
-                update();
+                //update();
             });
             $("#modal").modal({
                 complete: cancelEdit
@@ -444,7 +522,7 @@
             });
             $(".edit").hide();
             $("#store").hide();
-        };
+        };*/
         var info = function(close) {
             if (close)
                 $("#info").modal("close");
