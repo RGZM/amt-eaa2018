@@ -3,549 +3,503 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rgzm: <http://rgzm.de/datingmechanism#> .
 
-rgzm:Pdrp7rvA amt:instanceOf rgzm:Province.
-rgzm:Pdrp7rvA rdfs:label 'Germania Superior'.
-rgzm:OQzKonxN amt:instanceOf rgzm:Province.
-rgzm:OQzKonxN rdfs:label 'Britannia'.
-rgzm:pyoJLNr2 amt:instanceOf rgzm:Province.
-rgzm:pyoJLNr2 rdfs:label 'Raetia'.
-rgzm:dRr5vzy7 amt:instanceOf rgzm:LimesPart.
-rgzm:dRr5vzy7 rdfs:label 'AlbLimes'.
-rgzm:k6lvRVZX amt:instanceOf rgzm:LimesPart.
-rgzm:k6lvRVZX rdfs:label 'DonauLimes'.
-rgzm:O2VyGw1K amt:instanceOf rgzm:LimesPart.
-rgzm:O2VyGw1K rdfs:label 'Elisabethenstrasse'.
-rgzm:zXamrQEX amt:instanceOf rgzm:LimesPart.
-rgzm:zXamrQEX rdfs:label 'HadriansWall'.
-rgzm:Bm057ME9 amt:instanceOf rgzm:LimesPart.
-rgzm:Bm057ME9 rdfs:label 'Neckarlimes'.
-rgzm:qz5OnyEk amt:instanceOf rgzm:LimesPart.
-rgzm:qz5OnyEk rdfs:label 'NördlingerRies'.
-rgzm:gM6qkG9A amt:instanceOf rgzm:LimesPart.
-rgzm:gM6qkG9A rdfs:label 'Odenwaldlimes'.
-rgzm:j4xgYvNn amt:instanceOf rgzm:LimesPart.
-rgzm:j4xgYvNn rdfs:label 'WestRätLimes'.
-rgzm:vAJzox6A amt:instanceOf rgzm:LimesPart.
-rgzm:vAJzox6A rdfs:label 'Wetteraulimes'.
-rgzm:NgmkP1LB amt:instanceOf rgzm:Site.
-rgzm:NgmkP1LB rdfs:label 'Arnsburg'.
-rgzm:kJyYmqOJ amt:instanceOf rgzm:Site.
-rgzm:kJyYmqOJ rdfs:label 'Bad Nauheim'.
-rgzm:VjPdv06j amt:instanceOf rgzm:Site.
-rgzm:VjPdv06j rdfs:label 'Benwell'.
-rgzm:GJBde87j amt:instanceOf rgzm:Site.
-rgzm:GJBde87j rdfs:label 'Birdoswald'.
-rgzm:v3PR4bDX amt:instanceOf rgzm:Site.
-rgzm:v3PR4bDX rdfs:label 'Burladingen'.
-rgzm:q61drZOP amt:instanceOf rgzm:Site.
-rgzm:q61drZOP rdfs:label 'Butzbach'.
-rgzm:J3rLAPa1 amt:instanceOf rgzm:Site.
-rgzm:J3rLAPa1 rdfs:label 'Cannstatt'.
-rgzm:NP2aZBre amt:instanceOf rgzm:Site.
-rgzm:NP2aZBre rdfs:label 'Carrawburgh'.
-rgzm:jr5QjEWr amt:instanceOf rgzm:Site.
-rgzm:jr5QjEWr rdfs:label 'Chesters'.
-rgzm:nNBLpB7k amt:instanceOf rgzm:Site.
-rgzm:nNBLpB7k rdfs:label 'Dambach'.
-rgzm:B6v20QR6 amt:instanceOf rgzm:Site.
-rgzm:B6v20QR6 rdfs:label 'Donnstetten'.
-rgzm:LGKXROAp amt:instanceOf rgzm:Site.
-rgzm:LGKXROAp rdfs:label 'Echzell'.
-rgzm:PA33kzvA amt:instanceOf rgzm:Site.
-rgzm:PA33kzvA rdfs:label 'Eining'.
-rgzm:qYOjLB64 amt:instanceOf rgzm:Site.
-rgzm:qYOjLB64 rdfs:label 'Feldberg'.
-rgzm:kDJn13JD amt:instanceOf rgzm:Site.
-rgzm:kDJn13JD rdfs:label 'Friedberg'.
-rgzm:ylw01d9P amt:instanceOf rgzm:Site.
-rgzm:ylw01d9P rdfs:label 'Geislingen'.
-rgzm:VLvwdgbp amt:instanceOf rgzm:Site.
-rgzm:VLvwdgbp rdfs:label 'Gnotzheim'.
-rgzm:G51z7Mpe amt:instanceOf rgzm:Site.
-rgzm:G51z7Mpe rdfs:label 'Gomadingen'.
-rgzm:VK2JAQOK amt:instanceOf rgzm:Site.
-rgzm:VK2JAQOK rdfs:label 'Günzburg'.
-rgzm:en2BeMGn amt:instanceOf rgzm:Site.
-rgzm:en2BeMGn rdfs:label 'Hanau-Salisberg'.
-rgzm:r57B67Rd amt:instanceOf rgzm:Site.
-rgzm:r57B67Rd rdfs:label 'Heidenheim'.
-rgzm:b0qEJLK0 amt:instanceOf rgzm:Site.
-rgzm:b0qEJLK0 rdfs:label 'Heilbronn-Böckingen'.
-rgzm:EQbNPJpQ amt:instanceOf rgzm:Site.
-rgzm:EQbNPJpQ rdfs:label 'Hofheim'.
-rgzm:R6pAx1rm amt:instanceOf rgzm:Site.
-rgzm:R6pAx1rm rdfs:label 'Köngen'.
-rgzm:lr4MGwXB amt:instanceOf rgzm:Site.
-rgzm:lr4MGwXB rdfs:label 'Kösching'.
-rgzm:n96ylEeB amt:instanceOf rgzm:Site.
-rgzm:n96ylEeB rdfs:label 'Marköbel'.
-rgzm:NKAgW7XZ amt:instanceOf rgzm:Site.
-rgzm:NKAgW7XZ rdfs:label 'Munningen'.
-rgzm:jWrx8Ag6 amt:instanceOf rgzm:Site.
-rgzm:jWrx8Ag6 rdfs:label 'Neckarburken'.
-rgzm:qQxYde27 amt:instanceOf rgzm:Site.
-rgzm:qQxYde27 rdfs:label 'Oberdorf am Ipf'.
-rgzm:GpNbdqxp amt:instanceOf rgzm:Site.
-rgzm:GpNbdqxp rdfs:label 'Oberflorstadt'.
-rgzm:Gd6gnARB amt:instanceOf rgzm:Site.
-rgzm:Gd6gnARB rdfs:label 'Obernburg'.
-rgzm:b59QDWj5 amt:instanceOf rgzm:Site.
-rgzm:b59QDWj5 rdfs:label 'Okarben'.
-rgzm:OrbnKAEr amt:instanceOf rgzm:Site.
-rgzm:OrbnKAEr rdfs:label 'Pfünz'.
-rgzm:eEqegpqE amt:instanceOf rgzm:Site.
-rgzm:eEqegpqE rdfs:label 'Saalburg'.
-rgzm:QNjmoqj5 amt:instanceOf rgzm:Site.
-rgzm:QNjmoqj5 rdfs:label 'Stanwix'.
-rgzm:XoJ3z0Y5 amt:instanceOf rgzm:Site.
-rgzm:XoJ3z0Y5 rdfs:label 'Stockstadt'.
-rgzm:La3lLx20 amt:instanceOf rgzm:Site.
-rgzm:La3lLx20 rdfs:label 'Theilenhofen'.
-rgzm:vMeWnK03 amt:instanceOf rgzm:Site.
-rgzm:vMeWnK03 rdfs:label 'Urspring'.
-rgzm:OV9NkB8z amt:instanceOf rgzm:Site.
-rgzm:OV9NkB8z rdfs:label 'Walheim'.
-rgzm:obEMvdqb amt:instanceOf rgzm:Site.
-rgzm:obEMvdqb rdfs:label 'Wallsend'.
-rgzm:rj70nGwm amt:instanceOf rgzm:Site.
-rgzm:rj70nGwm rdfs:label 'Walltown'.
-rgzm:V02DOjrd amt:instanceOf rgzm:Site.
-rgzm:V02DOjrd rdfs:label 'Weissenburg'.
-rgzm:RVbvQenV amt:instanceOf rgzm:Site.
-rgzm:RVbvQenV rdfs:label 'Zugmantel'.
-rgzm:nlOB1vb5 amt:instanceOf rgzm:SpatialThing.
-rgzm:nlOB1vb5 rdfs:label '{ "type": "Point", "coordinates": [8.784294, 50.487393]}'.
-rgzm:OBKwJbeB amt:instanceOf rgzm:SpatialThing.
-rgzm:OBKwJbeB rdfs:label '{ "type": "Point", "coordinates": [8.75, 50.366661]}'.
-rgzm:V9o8aJXw amt:instanceOf rgzm:SpatialThing.
-rgzm:V9o8aJXw rdfs:label '{ "type": "Point", "coordinates": [-1.660947, 54.975463]}'.
-rgzm:AlBx8ZK0 amt:instanceOf rgzm:SpatialThing.
-rgzm:AlBx8ZK0 rdfs:label '{ "type": "Point", "coordinates": [-2.60325, 54.991588]}'.
-rgzm:ANneaJZk amt:instanceOf rgzm:SpatialThing.
-rgzm:ANneaJZk rdfs:label '{ "type": "Point", "coordinates": [9.116666, 48.283332]}'.
-rgzm:kO2bdKzO amt:instanceOf rgzm:SpatialThing.
-rgzm:kO2bdKzO rdfs:label '{ "type": "Point", "coordinates": [8.665183, 50.439681]}'.
-rgzm:Kw8keAmW amt:instanceOf rgzm:SpatialThing.
-rgzm:Kw8keAmW rdfs:label '{ "type": "Point", "coordinates": [9.2141, 48.8056]}'.
-rgzm:GwLlo3Bw amt:instanceOf rgzm:SpatialThing.
-rgzm:GwLlo3Bw rdfs:label '{ "type": "Point", "coordinates": [-2.222198, 55.035053]}'.
-rgzm:RP08ywgP amt:instanceOf rgzm:SpatialThing.
-rgzm:RP08ywgP rdfs:label '{ "type": "Point", "coordinates": [-2.15, 55.016666]}'.
-rgzm:XLRAKV7Z amt:instanceOf rgzm:SpatialThing.
-rgzm:XLRAKV7Z rdfs:label '{ "type": "Point", "coordinates": [10.578748, 49.102804]}'.
-rgzm:J2KYXx0e amt:instanceOf rgzm:SpatialThing.
-rgzm:J2KYXx0e rdfs:label '{ "type": "Point", "coordinates": [9.566666, 48.51667]}'.
-rgzm:PNnKEarp amt:instanceOf rgzm:SpatialThing.
-rgzm:PNnKEarp rdfs:label '{ "type": "Point", "coordinates": [8.883176, 50.393087]}'.
-rgzm:BnYy1kln amt:instanceOf rgzm:SpatialThing.
-rgzm:BnYy1kln rdfs:label '{ "type": "Point", "coordinates": [11.76667, 48.849998]}'.
-rgzm:NnP0jrpn amt:instanceOf rgzm:SpatialThing.
-rgzm:NnP0jrpn rdfs:label '{ "type": "Point", "coordinates": [8.444662, 50.227149]}'.
-rgzm:PzaYVjBz amt:instanceOf rgzm:SpatialThing.
-rgzm:PzaYVjBz rdfs:label '{ "type": "Point", "coordinates": [8.753502, 50.341669]}'.
-rgzm:Kdzp2aRl amt:instanceOf rgzm:SpatialThing.
-rgzm:Kdzp2aRl rdfs:label '{ "type": "Point", "coordinates": [8.816666, 48.283332]}'.
-rgzm:QdZgxVRp amt:instanceOf rgzm:SpatialThing.
-rgzm:QdZgxVRp rdfs:label '{ "type": "Point", "coordinates": [10.704499, 49.057194]}'.
-rgzm:nA0gQD8j amt:instanceOf rgzm:SpatialThing.
-rgzm:nA0gQD8j rdfs:label '{ "type": "Point", "coordinates": [9.4, 48.4]}'.
-rgzm:d7Xq3X8y amt:instanceOf rgzm:SpatialThing.
-rgzm:d7Xq3X8y rdfs:label '{ "type": "Point", "coordinates": [10.26667, 48.45]}'.
-rgzm:pQ7Y5pAr amt:instanceOf rgzm:SpatialThing.
-rgzm:pQ7Y5pAr rdfs:label '{ "type": "Point", "coordinates": [8.93, 50.133338]}'.
-rgzm:vo8neD3W amt:instanceOf rgzm:SpatialThing.
-rgzm:vo8neD3W rdfs:label '{ "type": "Point", "coordinates": [10.149999, 48.683334]}'.
-rgzm:AGbRMo1G amt:instanceOf rgzm:SpatialThing.
-rgzm:AGbRMo1G rdfs:label '{ "type": "Point", "coordinates": [9.188611, 49.133888]}'.
-rgzm:m4lPqZM4 amt:instanceOf rgzm:SpatialThing.
-rgzm:m4lPqZM4 rdfs:label '{ "type": "Point", "coordinates": [8.449999, 50.083332]}'.
-rgzm:oWGzyXm2 amt:instanceOf rgzm:SpatialThing.
-rgzm:oWGzyXm2 rdfs:label '{ "type": "Point", "coordinates": [9.366666, 48.68333]}'.
-rgzm:GRyMB67R amt:instanceOf rgzm:SpatialThing.
-rgzm:GRyMB67R rdfs:label '{ "type": "Point", "coordinates": [11.5, 48.816665]}'.
-rgzm:No7DRp5K amt:instanceOf rgzm:SpatialThing.
-rgzm:No7DRp5K rdfs:label '{ "type": "Point", "coordinates": [8.98419, 50.222685]}'.
-rgzm:Je2AokmQ amt:instanceOf rgzm:SpatialThing.
-rgzm:Je2AokmQ rdfs:label '{ "type": "Point", "coordinates": [10.6, 48.916667]}'.
-rgzm:y6ZdwmNV amt:instanceOf rgzm:SpatialThing.
-rgzm:y6ZdwmNV rdfs:label '{ "type": "Point", "coordinates": [9.169166, 49.378059]}'.
-rgzm:nRv9yOVz amt:instanceOf rgzm:SpatialThing.
-rgzm:nRv9yOVz rdfs:label '{ "type": "Point", "coordinates": [10.341667, 48.868611]}'.
-rgzm:a9YPqD8O amt:instanceOf rgzm:SpatialThing.
-rgzm:a9YPqD8O rdfs:label '{ "type": "Point", "coordinates": [8.866666, 50.333332]}'.
-rgzm:ANVgw0d9 amt:instanceOf rgzm:SpatialThing.
-rgzm:ANVgw0d9 rdfs:label '{ "type": "Point", "coordinates": [9.146593, 49.841111]}'.
-rgzm:KpokJgwp amt:instanceOf rgzm:SpatialThing.
-rgzm:KpokJgwp rdfs:label '{ "type": "Point", "coordinates": [8.75, 50.25]}'.
-rgzm:bdeeq6Wd amt:instanceOf rgzm:SpatialThing.
-rgzm:bdeeq6Wd rdfs:label '{ "type": "Point", "coordinates": [11.263661, 48.883931]}'.
-rgzm:MRY61paP amt:instanceOf rgzm:SpatialThing.
-rgzm:MRY61paP rdfs:label '{ "type": "Point", "coordinates": [8.566659, 50.271522]}'.
-rgzm:mN9wMJL4 amt:instanceOf rgzm:SpatialThing.
-rgzm:mN9wMJL4 rdfs:label '{ "type": "Point", "coordinates": [-2.933332, 54.900001]}'.
-rgzm:l6NOYGq3 amt:instanceOf rgzm:SpatialThing.
-rgzm:l6NOYGq3 rdfs:label '{ "type": "Point", "coordinates": [9.064167, 49.976943]}'.
-rgzm:mY6x8pG7 amt:instanceOf rgzm:SpatialThing.
-rgzm:mY6x8pG7 rdfs:label '{ "type": "Point", "coordinates": [11.85, 49.083333]}'.
-rgzm:D7X29ge4 amt:instanceOf rgzm:SpatialThing.
-rgzm:D7X29ge4 rdfs:label '{ "type": "Point", "coordinates": [9.716667, 48.383338]}'.
-rgzm:BewBx60r amt:instanceOf rgzm:SpatialThing.
-rgzm:BewBx60r rdfs:label '{ "type": "Point", "coordinates": [9.15111, 49.014167]}'.
-rgzm:LbyRy610 amt:instanceOf rgzm:SpatialThing.
-rgzm:LbyRy610 rdfs:label '{ "type": "Point", "coordinates": [-1.523298, 54.988491]}'.
-rgzm:L1apv39q amt:instanceOf rgzm:SpatialThing.
-rgzm:L1apv39q rdfs:label '{ "type": "Point", "coordinates": [-2.516099, 54.988143]}'.
-rgzm:krDg0LAw amt:instanceOf rgzm:SpatialThing.
-rgzm:krDg0LAw rdfs:label '{ "type": "Point", "coordinates": [10.9624, 49.030803]}'.
-rgzm:E7mRGxoe amt:instanceOf rgzm:SpatialThing.
-rgzm:E7mRGxoe rdfs:label '{ "type": "Point", "coordinates": [8.203443, 50.189704]}'.
-rgzm:E8rpnlAa amt:instanceOf rgzm:SpatialThing.
-rgzm:E8rpnlAa rdfs:label '{ "type": "Feature", "properties": { "name": "Germania Superior" }, "geometry": { "type": "MultiPolygon", "coordinates": [ [ [ [ 7.285309228129919, 50.541040348329325 ], [ 7.38265885194615, 50.483843214018258 ], [ 7.536524075838276, 50.41045094301105 ], [ 7.697515428185406, 50.368786193069006 ], [ 7.862446669674997, 50.302348209103592 ], [ 8.087405053194496, 50.222835299080039 ], [ 8.342624425064223, 50.158921993485748 ], [ 8.49857839457033, 50.139785641857095 ], [ 8.597661806217369, 50.159065152458865 ], [ 8.664142930194066, 50.231491984014092 ], [ 8.730824028683863, 50.353491797120235 ], [ 8.809177079639957, 50.418099914160521 ], [ 8.896839391272932, 50.429844493282587 ], [ 9.01620859033646, 50.373175555990294 ], [ 9.07542432802655, 50.295184779427956 ], [ 9.096831983086254, 50.215014648419398 ], [ 9.08316529064447, 50.093538760082524 ], [ 9.102821450415906, 49.983340679575825 ], [ 9.154345707353652, 49.903975577609501 ], [ 9.210679898599341, 49.830484592195489 ], [ 9.224610699409492, 49.74896750079521 ], [ 9.343278950575471, 49.637811551296849 ], [ 9.505762685429742, 49.460717133589277 ], [ 9.589159520449757, 49.323155855135951 ], [ 9.693975267969975, 49.135311543994639 ], [ 9.783572844902601, 48.980735728647218 ], [ 9.825969129961321, 48.89980889696821 ], [ 9.859227852619608, 48.787576260149827 ], [ 9.799778868898496, 48.682642182859126 ], [ 9.689480587155648, 48.592691996441779 ], [ 9.586457677701167, 48.503949003038443 ], [ 9.448659532371993, 48.393524402151677 ], [ 9.307782425551945, 48.257496769135841 ], [ 9.193722106231311, 48.146200063436346 ], [ 9.097753948037184, 48.028375053561454 ], [ 9.063166737360863, 47.922583329988882 ], [ 9.077671592474003, 47.772113686848776 ], [ 9.101791877375959, 47.616179794854922 ], [ 9.1310881426697, 47.49840637644941 ], [ 9.208299715286879, 47.370446185776224 ], [ 9.295139219288808, 47.303712855732783 ], [ 9.350505718810334, 47.19122741053129 ], [ 9.303471967837181, 47.097937040519732 ], [ 9.214765640546995, 47.001199768997111 ], [ 9.110406991207036, 46.891292101935399 ], [ 8.9244711829138, 46.754693852476841 ], [ 8.72570901650921, 46.649562729780008 ], [ 8.555876516273113, 46.594496979794201 ], [ 8.447243001647653, 46.596524812335204 ], [ 8.336982869605826, 46.553509008149526 ], [ 8.127029588137622, 46.508944425688178 ], [ 7.913361640459567, 46.47300941086295 ], [ 7.672143557745407, 46.450433645114281 ], [ 7.450995282622801, 46.446610256519143 ], [ 7.271338482437707, 46.461513487705616 ], [ 7.080817630072123, 46.483658391242294 ], [ 6.978772328959582, 46.470662451666719 ], [ 6.941434523833612, 46.412395581878876 ], [ 6.897682682182922, 46.352645492875816 ], [ 6.780970867590793, 46.370965404452143 ], [ 6.685725904429559, 46.359170167565999 ], [ 6.577560964270384, 46.359278159622214 ], [ 6.508342766503409, 46.338320648790436 ], [ 6.441325877291741, 46.327803859342282 ], [ 6.35272194653476, 46.317211152360279 ], [ 6.285979304810182, 46.261667787626038 ], [ 6.182606726998081, 46.222444819332296 ], [ 6.096182649252371, 46.237101740930619 ], [ 6.025130707281202, 46.220314204601451 ], [ 5.976606357062044, 46.142935505776485 ], [ 5.929240098404235, 46.23993227169094 ], [ 5.89113143208279, 46.317026636808805 ], [ 5.827249317856167, 46.406158632466152 ], [ 5.722768776121145, 46.562810546598257 ], [ 5.6237753760626, 46.707227823357201 ], [ 5.530389169036175, 46.83941906341731 ], [ 5.440652013573183, 46.963445276562084 ], [ 5.351525218026538, 47.059451641790275 ], [ 5.280127973071006, 47.133333468912411 ], [ 5.165822713320379, 47.237879733052011 ], [ 5.019566349414905, 47.325576799961645 ], [ 4.89290326465434, 47.349535229066468 ], [ 4.768743153861673, 47.355725385125396 ], [ 4.697054832606665, 47.402081758054294 ], [ 4.692389540791564, 47.474017708090472 ], [ 4.720201389034703, 47.535637287965493 ], [ 4.736133677003162, 47.594337972828029 ], [ 4.696121625678098, 47.643950717309053 ], [ 4.611981250193437, 47.687342812295348 ], [ 4.479263104703441, 47.732483533789129 ], [ 4.390396399732489, 47.783780227757518 ], [ 4.331300797707551, 47.842415242190157 ], [ 4.310260615509641, 47.905887347382595 ], [ 4.297204341824644, 47.979586417612175 ], [ 4.352289049653091, 48.016055609076581 ], [ 4.451806413944046, 48.058791871401844 ], [ 4.582765113600495, 48.131915605789381 ], [ 4.711425587104465, 48.222518885723417 ], [ 4.80417812445293, 48.304250804968923 ], [ 4.859858807781631, 48.404385967021589 ], [ 4.913323486686527, 48.414178015898862 ], [ 4.982521059365856, 48.425694553932892 ], [ 5.084222548595396, 48.465378569649047 ], [ 5.196820509406241, 48.495815251142822 ], [ 5.315060927646184, 48.515752748864443 ], [ 5.464948516326222, 48.531230389939111 ], [ 5.591092605604609, 48.513808987425257 ], [ 5.73678414072983, 48.46969598269331 ], [ 5.807094918541296, 48.435367579274889 ], [ 5.872250898307398, 48.38820134274237 ], [ 5.951668864861026, 48.301626113886002 ], [ 5.997862444308327, 48.211364719284795 ], [ 6.047304726169367, 48.125746152238371 ], [ 6.089427624873657, 48.065602557242201 ], [ 6.148641364410368, 48.017106271348446 ], [ 6.266348284720281, 47.989613866242983 ], [ 6.375234782015824, 47.979381008712465 ], [ 6.473690341106643, 47.989912282791892 ], [ 6.57561423990739, 47.970196168537029 ], [ 6.687784162580879, 47.941091334932239 ], [ 6.793444785356316, 47.913163216950622 ], [ 6.886670215922709, 47.922172320255008 ], [ 6.95609439434242, 47.968313776518968 ], [ 7.003504290673599, 48.048150710311148 ], [ 7.011435812710112, 48.150197498532641 ], [ 7.01769853119248, 48.255741077795726 ], [ 7.020577158475144, 48.368270939039043 ], [ 7.014917879504051, 48.498255516461775 ], [ 7.017686631869355, 48.59920276520397 ], [ 7.023662755553967, 48.669968313536472 ], [ 7.057757269350977, 48.742926678096879 ], [ 7.099233153148095, 48.836733351267725 ], [ 7.156618942184286, 48.922316422115124 ], [ 7.23887702160876, 49.00539703249683 ], [ 7.301472050015721, 49.057217059158575 ], [ 7.378812672369778, 49.115161444234701 ], [ 7.472003300414942, 49.177101575122087 ], [ 7.567385415664761, 49.247075112492801 ], [ 7.643595602938463, 49.320649439140716 ], [ 7.689833207774169, 49.395654260826291 ], [ 7.707944088965347, 49.480234946478433 ], [ 7.688435352214676, 49.55708387270014 ], [ 7.635088511247856, 49.642400032589521 ], [ 7.552839529589215, 49.725636854948895 ], [ 7.448904960704263, 49.815961733356076 ], [ 7.34804670662341, 49.899200078671591 ], [ 7.275499535582882, 49.972873105142881 ], [ 7.190117046916225, 50.047737396222203 ], [ 7.124288127762447, 50.118951919569859 ], [ 7.076349264960492, 50.190043626410123 ], [ 7.03928813798931, 50.275005350405046 ], [ 7.030636104192825, 50.276278124355549 ], [ 7.070791152101748, 50.346137764344917 ], [ 7.127372233814182, 50.423131627856897 ], [ 7.208978837010815, 50.488913081179113 ], [ 7.285309228129919, 50.541040348329325 ] ] ] ] } }'.
-rgzm:y3ravz9j amt:instanceOf rgzm:SpatialThing.
-rgzm:y3ravz9j rdfs:label '{ "type": "Feature", "properties": { "name": "Raetia" }, "geometry": { "type": "MultiPolygon", "coordinates": [ [ [ [ 10.143768374766253, 46.775003413606925 ], [ 10.119729258854536, 46.734985085212017 ], [ 10.076014910053278, 46.694344402514808 ], [ 10.006607194247344, 46.634887793696983 ], [ 9.932125333658021, 46.588189861993172 ], [ 9.861283533289079, 46.532912503847548 ], [ 9.791565832241298, 46.523864887719824 ], [ 9.654843254170388, 46.515375168839057 ], [ 9.5137779952298, 46.501221384234604 ], [ 9.372792504018149, 46.486879627040729 ], [ 9.211614188437007, 46.472867789071159 ], [ 9.091064759136346, 46.457632886360521 ], [ 8.961941538884451, 46.431241685965006 ], [ 8.849540654259229, 46.412742912280045 ], [ 8.71942650815754, 46.404311755445505 ], [ 8.591209116444096, 46.391477723373342 ], [ 8.471586126699908, 46.389546947517168 ], [ 8.377201405690299, 46.404491169649994 ], [ 8.393281975080086, 46.416817863024647 ], [ 8.472019647083162, 46.503717052965975 ], [ 8.535762962754323, 46.594880857574921 ], [ 8.555876516273113, 46.594496979794201 ], [ 8.72570901650921, 46.649562729780008 ], [ 8.9244711829138, 46.754693852476841 ], [ 9.110406991207036, 46.891292101935399 ], [ 9.214765640546995, 47.001199768997111 ], [ 9.303471967837181, 47.097937040519732 ], [ 9.350505718810334, 47.19122741053129 ], [ 9.295139219288808, 47.303712855732783 ], [ 9.208299715286879, 47.370446185776224 ], [ 9.1310881426697, 47.49840637644941 ], [ 9.101791877375959, 47.616179794854922 ], [ 9.077671592474003, 47.772113686848776 ], [ 9.063166737360863, 47.922583329988882 ], [ 9.097753948037184, 48.028375053561454 ], [ 9.193722106231311, 48.146200063436346 ], [ 9.307782425551945, 48.257496769135841 ], [ 9.448659532371993, 48.393524402151677 ], [ 9.586457677701167, 48.503949003038443 ], [ 9.689480587155648, 48.592691996441779 ], [ 9.799778868898496, 48.682642182859126 ], [ 9.859227852619608, 48.787576260149827 ], [ 9.844974914319954, 48.835737503519383 ], [ 9.980991785549009, 48.850969423517846 ], [ 10.146645331916599, 48.902197615235394 ], [ 10.323982410594688, 48.975827132013919 ], [ 10.458369939872227, 49.043395449809601 ], [ 10.586326781920468, 49.086962546793288 ], [ 10.78864738316245, 49.102420833943007 ], [ 11.033261439144164, 49.090660099673983 ], [ 11.280307824776989, 49.071963669916784 ], [ 11.530018888039251, 49.019046834574276 ], [ 11.661901900692143, 49.000429615493445 ], [ 11.737320013104414, 49.019969534809078 ], [ 11.888747459789464, 48.977089226614538 ], [ 12.025214949057359, 48.972486989822954 ], [ 12.073844878087227, 49.062348757269469 ], [ 12.200812517372825, 49.083190956601115 ], [ 12.281335748746244, 49.062254938002084 ], [ 12.366740599562169, 49.055687205569491 ], [ 12.43480282127565, 49.012209023131312 ], [ 12.507944743860035, 49.010378092227732 ], [ 12.612211508371812, 48.952225058758629 ], [ 12.692655321356719, 48.958259959617351 ], [ 12.772386992654361, 48.909703248437367 ], [ 12.876964401538814, 48.905836315726717 ], [ 13.038543184901437, 48.829234475993424 ], [ 13.177258322941631, 48.728557149119766 ], [ 13.325468864575601, 48.663210051582482 ], [ 13.493769761851258, 48.621152119321586 ], [ 13.486230047548863, 48.525014772200848 ], [ 13.433297119321727, 48.442263865990533 ], [ 13.308419005927886, 48.361898409366965 ], [ 13.146532782587945, 48.329853066752932 ], [ 13.076187848040771, 48.298418307273536 ], [ 12.979802692767009, 48.283179087949378 ], [ 12.823792904853072, 48.292300766714021 ], [ 12.727835663118666, 48.304092791143567 ], [ 12.624261212382386, 48.280563796736807 ], [ 12.51373748789452, 48.276200712001696 ], [ 12.395835099100575, 48.236474667169531 ], [ 12.316408326745448, 48.175723428349293 ], [ 12.306615350621064, 48.119634529639328 ], [ 12.215542883009135, 48.063643765086503 ], [ 12.184363404893446, 47.983523095387412 ], [ 12.188984879414216, 47.861717005868591 ], [ 12.181771435619721, 47.799221912028607 ], [ 12.198237616417252, 47.672623715137739 ], [ 12.198120322842025, 47.590910588309349 ], [ 12.141262127068972, 47.526848969194745 ], [ 11.992412149807192, 47.467491423672449 ], [ 11.912326553253983, 47.412896451631404 ], [ 11.749659282273726, 47.39162378549026 ], [ 11.64630916177601, 47.346360124999897 ], [ 11.564374037213442, 47.297909550388674 ], [ 11.425518363260602, 47.293887213903979 ], [ 11.3597786126508, 47.282224752398527 ], [ 11.28222349302335, 47.275234518053978 ], [ 11.164165489026056, 47.29506153649757 ], [ 11.037227288629257, 47.285837073211432 ], [ 10.944118807403147, 47.241601425491048 ], [ 10.751846069749044, 47.22008317475688 ], [ 10.639612287925964, 47.199360640168656 ], [ 10.597967372643636, 47.17795024997276 ], [ 10.635255701378298, 47.109603755621144 ], [ 10.63941835321603, 47.048801927702591 ], [ 10.566577019064045, 46.980499087947052 ], [ 10.54460953600281, 46.935336300977191 ], [ 10.44585675923765, 46.882579906202693 ], [ 10.377680053674533, 46.828638574580246 ], [ 10.275742816288369, 46.809297615775947 ], [ 10.192398284668796, 46.793400858710136 ], [ 10.143768374766253, 46.775003413606925 ] ] ] ] } }'.
-rgzm:DOjyr0kK amt:instanceOf rgzm:SpatialThing.
-rgzm:DOjyr0kK rdfs:label ''.
-_:7128021 rdf:subject rgzm:NgmkP1LB .
-_:7128021 rdf:predicate rgzm:part .
-_:7128021 rdf:object rgzm:Pdrp7rvA .
-_:7128021 amt:weight "0.95" .
-_:143858 rdf:subject rgzm:kJyYmqOJ .
-_:143858 rdf:predicate rgzm:part .
-_:143858 rdf:object rgzm:Pdrp7rvA .
-_:143858 amt:weight "0.95" .
-_:7536039 rdf:subject rgzm:VjPdv06j .
-_:7536039 rdf:predicate rgzm:part .
-_:7536039 rdf:object rgzm:OQzKonxN .
-_:7536039 amt:weight "0.95" .
-_:7112854 rdf:subject rgzm:GJBde87j .
-_:7112854 rdf:predicate rgzm:part .
-_:7112854 rdf:object rgzm:OQzKonxN .
-_:7112854 amt:weight "0.95" .
-_:6907292 rdf:subject rgzm:v3PR4bDX .
-_:6907292 rdf:predicate rgzm:part .
-_:6907292 rdf:object rgzm:pyoJLNr2 .
-_:6907292 amt:weight "0.95" .
-_:213298 rdf:subject rgzm:q61drZOP .
-_:213298 rdf:predicate rgzm:part .
-_:213298 rdf:object rgzm:Pdrp7rvA .
-_:213298 amt:weight "0.95" .
-_:4371677 rdf:subject rgzm:J3rLAPa1 .
-_:4371677 rdf:predicate rgzm:part .
-_:4371677 rdf:object rgzm:Pdrp7rvA .
-_:4371677 amt:weight "0.95" .
-_:3576456 rdf:subject rgzm:NP2aZBre .
-_:3576456 rdf:predicate rgzm:part .
-_:3576456 rdf:object rgzm:OQzKonxN .
-_:3576456 amt:weight "0.95" .
-_:6220802 rdf:subject rgzm:jr5QjEWr .
-_:6220802 rdf:predicate rgzm:part .
-_:6220802 rdf:object rgzm:OQzKonxN .
-_:6220802 amt:weight "0.95" .
-_:4030271 rdf:subject rgzm:nNBLpB7k .
-_:4030271 rdf:predicate rgzm:part .
-_:4030271 rdf:object rgzm:pyoJLNr2 .
-_:4030271 amt:weight "0.95" .
-_:6806189 rdf:subject rgzm:B6v20QR6 .
-_:6806189 rdf:predicate rgzm:part .
-_:6806189 rdf:object rgzm:pyoJLNr2 .
-_:6806189 amt:weight "0.95" .
-_:3188265 rdf:subject rgzm:LGKXROAp .
-_:3188265 rdf:predicate rgzm:part .
-_:3188265 rdf:object rgzm:Pdrp7rvA .
-_:3188265 amt:weight "0.95" .
-_:5154706 rdf:subject rgzm:PA33kzvA .
-_:5154706 rdf:predicate rgzm:part .
-_:5154706 rdf:object rgzm:pyoJLNr2 .
-_:5154706 amt:weight "0.95" .
-_:7113897 rdf:subject rgzm:qYOjLB64 .
-_:7113897 rdf:predicate rgzm:part .
-_:7113897 rdf:object rgzm:Pdrp7rvA .
-_:7113897 amt:weight "0.95" .
-_:3219008 rdf:subject rgzm:kDJn13JD .
-_:3219008 rdf:predicate rgzm:part .
-_:3219008 rdf:object rgzm:Pdrp7rvA .
-_:3219008 amt:weight "0.95" .
-_:8528622 rdf:subject rgzm:ylw01d9P .
-_:8528622 rdf:predicate rgzm:part .
-_:8528622 rdf:object rgzm:Pdrp7rvA .
-_:8528622 amt:weight "0.95" .
-_:5690073 rdf:subject rgzm:VLvwdgbp .
-_:5690073 rdf:predicate rgzm:part .
-_:5690073 rdf:object rgzm:pyoJLNr2 .
-_:5690073 amt:weight "0.95" .
-_:7345836 rdf:subject rgzm:G51z7Mpe .
-_:7345836 rdf:predicate rgzm:part .
-_:7345836 rdf:object rgzm:pyoJLNr2 .
-_:7345836 amt:weight "0.95" .
-_:7638352 rdf:subject rgzm:VK2JAQOK .
-_:7638352 rdf:predicate rgzm:part .
-_:7638352 rdf:object rgzm:pyoJLNr2 .
-_:7638352 amt:weight "0.95" .
-_:9108920 rdf:subject rgzm:en2BeMGn .
-_:9108920 rdf:predicate rgzm:part .
-_:9108920 rdf:object rgzm:Pdrp7rvA .
-_:9108920 amt:weight "0.95" .
-_:5148134 rdf:subject rgzm:r57B67Rd .
-_:5148134 rdf:predicate rgzm:part .
-_:5148134 rdf:object rgzm:pyoJLNr2 .
-_:5148134 amt:weight "0.95" .
-_:5701585 rdf:subject rgzm:b0qEJLK0 .
-_:5701585 rdf:predicate rgzm:part .
-_:5701585 rdf:object rgzm:Pdrp7rvA .
-_:5701585 amt:weight "0.95" .
-_:6484915 rdf:subject rgzm:EQbNPJpQ .
-_:6484915 rdf:predicate rgzm:part .
-_:6484915 rdf:object rgzm:Pdrp7rvA .
-_:6484915 amt:weight "0.95" .
-_:8189487 rdf:subject rgzm:R6pAx1rm .
-_:8189487 rdf:predicate rgzm:part .
-_:8189487 rdf:object rgzm:Pdrp7rvA .
-_:8189487 amt:weight "0.95" .
-_:8664566 rdf:subject rgzm:lr4MGwXB .
-_:8664566 rdf:predicate rgzm:part .
-_:8664566 rdf:object rgzm:pyoJLNr2 .
-_:8664566 amt:weight "0.95" .
-_:4853147 rdf:subject rgzm:n96ylEeB .
-_:4853147 rdf:predicate rgzm:part .
-_:4853147 rdf:object rgzm:Pdrp7rvA .
-_:4853147 amt:weight "0.95" .
-_:4489273 rdf:subject rgzm:NKAgW7XZ .
-_:4489273 rdf:predicate rgzm:part .
-_:4489273 rdf:object rgzm:pyoJLNr2 .
-_:4489273 amt:weight "0.95" .
-_:3098673 rdf:subject rgzm:jWrx8Ag6 .
-_:3098673 rdf:predicate rgzm:part .
-_:3098673 rdf:object rgzm:Pdrp7rvA .
-_:3098673 amt:weight "0.95" .
-_:9229387 rdf:subject rgzm:qQxYde27 .
-_:9229387 rdf:predicate rgzm:part .
-_:9229387 rdf:object rgzm:Pdrp7rvA .
-_:9229387 amt:weight "0.95" .
-_:3779781 rdf:subject rgzm:GpNbdqxp .
-_:3779781 rdf:predicate rgzm:part .
-_:3779781 rdf:object rgzm:Pdrp7rvA .
-_:3779781 amt:weight "0.95" .
-_:4076125 rdf:subject rgzm:Gd6gnARB .
-_:4076125 rdf:predicate rgzm:part .
-_:4076125 rdf:object rgzm:Pdrp7rvA .
-_:4076125 amt:weight "0.95" .
-_:7588968 rdf:subject rgzm:b59QDWj5 .
-_:7588968 rdf:predicate rgzm:part .
-_:7588968 rdf:object rgzm:Pdrp7rvA .
-_:7588968 amt:weight "0.95" .
-_:2123127 rdf:subject rgzm:OrbnKAEr .
-_:2123127 rdf:predicate rgzm:part .
-_:2123127 rdf:object rgzm:pyoJLNr2 .
-_:2123127 amt:weight "0.95" .
-_:31570 rdf:subject rgzm:eEqegpqE .
-_:31570 rdf:predicate rgzm:part .
-_:31570 rdf:object rgzm:Pdrp7rvA .
-_:31570 amt:weight "0.95" .
-_:9409197 rdf:subject rgzm:QNjmoqj5 .
-_:9409197 rdf:predicate rgzm:part .
-_:9409197 rdf:object rgzm:OQzKonxN .
-_:9409197 amt:weight "0.95" .
-_:2370090 rdf:subject rgzm:XoJ3z0Y5 .
-_:2370090 rdf:predicate rgzm:part .
-_:2370090 rdf:object rgzm:Pdrp7rvA .
-_:2370090 amt:weight "0.95" .
-_:9777006 rdf:subject rgzm:La3lLx20 .
-_:9777006 rdf:predicate rgzm:part .
-_:9777006 rdf:object rgzm:pyoJLNr2 .
-_:9777006 amt:weight "0.95" .
-_:1050985 rdf:subject rgzm:vMeWnK03 .
-_:1050985 rdf:predicate rgzm:part .
-_:1050985 rdf:object rgzm:Pdrp7rvA .
-_:1050985 amt:weight "0.95" .
-_:7857125 rdf:subject rgzm:OV9NkB8z .
-_:7857125 rdf:predicate rgzm:part .
-_:7857125 rdf:object rgzm:Pdrp7rvA .
-_:7857125 amt:weight "0.95" .
-_:9072457 rdf:subject rgzm:obEMvdqb .
-_:9072457 rdf:predicate rgzm:part .
-_:9072457 rdf:object rgzm:OQzKonxN .
-_:9072457 amt:weight "0.95" .
-_:5467776 rdf:subject rgzm:rj70nGwm .
-_:5467776 rdf:predicate rgzm:part .
-_:5467776 rdf:object rgzm:OQzKonxN .
-_:5467776 amt:weight "0.95" .
-_:529957 rdf:subject rgzm:V02DOjrd .
-_:529957 rdf:predicate rgzm:part .
-_:529957 rdf:object rgzm:Pdrp7rvA .
-_:529957 amt:weight "0.95" .
-_:9316782 rdf:subject rgzm:RVbvQenV .
-_:9316782 rdf:predicate rgzm:part .
-_:9316782 rdf:object rgzm:Pdrp7rvA .
-_:9316782 amt:weight "0.95" .
-_:3224378 rdf:subject rgzm:NgmkP1LB .
-_:3224378 rdf:predicate rgzm:part .
-_:3224378 rdf:object rgzm:vAJzox6A .
-_:3224378 amt:weight "0.95" .
-_:4189877 rdf:subject rgzm:kJyYmqOJ .
-_:4189877 rdf:predicate rgzm:part .
-_:4189877 rdf:object rgzm:vAJzox6A .
-_:4189877 amt:weight "0.95" .
-_:6533126 rdf:subject rgzm:VjPdv06j .
-_:6533126 rdf:predicate rgzm:part .
-_:6533126 rdf:object rgzm:vAJzox6A .
-_:6533126 amt:weight "0.95" .
-_:4364418 rdf:subject rgzm:GJBde87j .
-_:4364418 rdf:predicate rgzm:part .
-_:4364418 rdf:object rgzm:vAJzox6A .
-_:4364418 amt:weight "0.95" .
-_:6578769 rdf:subject rgzm:v3PR4bDX .
-_:6578769 rdf:predicate rgzm:part .
-_:6578769 rdf:object rgzm:vAJzox6A .
-_:6578769 amt:weight "0.95" .
-_:6177978 rdf:subject rgzm:q61drZOP .
-_:6177978 rdf:predicate rgzm:part .
-_:6177978 rdf:object rgzm:vAJzox6A .
-_:6177978 amt:weight "0.95" .
-_:7693809 rdf:subject rgzm:J3rLAPa1 .
-_:7693809 rdf:predicate rgzm:part .
-_:7693809 rdf:object rgzm:vAJzox6A .
-_:7693809 amt:weight "0.95" .
-_:4737605 rdf:subject rgzm:NP2aZBre .
-_:4737605 rdf:predicate rgzm:part .
-_:4737605 rdf:object rgzm:vAJzox6A .
-_:4737605 amt:weight "0.95" .
-_:7236816 rdf:subject rgzm:jr5QjEWr .
-_:7236816 rdf:predicate rgzm:part .
-_:7236816 rdf:object rgzm:vAJzox6A .
-_:7236816 amt:weight "0.95" .
-_:2401703 rdf:subject rgzm:nNBLpB7k .
-_:2401703 rdf:predicate rgzm:part .
-_:2401703 rdf:object rgzm:vAJzox6A .
-_:2401703 amt:weight "0.95" .
-_:5752230 rdf:subject rgzm:B6v20QR6 .
-_:5752230 rdf:predicate rgzm:part .
-_:5752230 rdf:object rgzm:vAJzox6A .
-_:5752230 amt:weight "0.95" .
-_:9122254 rdf:subject rgzm:LGKXROAp .
-_:9122254 rdf:predicate rgzm:part .
-_:9122254 rdf:object rgzm:vAJzox6A .
-_:9122254 amt:weight "0.95" .
-_:3038832 rdf:subject rgzm:PA33kzvA .
-_:3038832 rdf:predicate rgzm:part .
-_:3038832 rdf:object rgzm:vAJzox6A .
-_:3038832 amt:weight "0.95" .
-_:41601 rdf:subject rgzm:qYOjLB64 .
-_:41601 rdf:predicate rgzm:part .
-_:41601 rdf:object rgzm:vAJzox6A .
-_:41601 amt:weight "0.95" .
-_:2433859 rdf:subject rgzm:kDJn13JD .
-_:2433859 rdf:predicate rgzm:part .
-_:2433859 rdf:object rgzm:vAJzox6A .
-_:2433859 amt:weight "0.95" .
-_:9524822 rdf:subject rgzm:ylw01d9P .
-_:9524822 rdf:predicate rgzm:part .
-_:9524822 rdf:object rgzm:vAJzox6A .
-_:9524822 amt:weight "0.95" .
-_:9220873 rdf:subject rgzm:VLvwdgbp .
-_:9220873 rdf:predicate rgzm:part .
-_:9220873 rdf:object rgzm:vAJzox6A .
-_:9220873 amt:weight "0.95" .
-_:9674960 rdf:subject rgzm:G51z7Mpe .
-_:9674960 rdf:predicate rgzm:part .
-_:9674960 rdf:object rgzm:vAJzox6A .
-_:9674960 amt:weight "0.95" .
-_:1466866 rdf:subject rgzm:VK2JAQOK .
-_:1466866 rdf:predicate rgzm:part .
-_:1466866 rdf:object rgzm:vAJzox6A .
-_:1466866 amt:weight "0.95" .
-_:6459886 rdf:subject rgzm:en2BeMGn .
-_:6459886 rdf:predicate rgzm:part .
-_:6459886 rdf:object rgzm:vAJzox6A .
-_:6459886 amt:weight "0.95" .
-_:7037081 rdf:subject rgzm:r57B67Rd .
-_:7037081 rdf:predicate rgzm:part .
-_:7037081 rdf:object rgzm:vAJzox6A .
-_:7037081 amt:weight "0.95" .
-_:6743942 rdf:subject rgzm:b0qEJLK0 .
-_:6743942 rdf:predicate rgzm:part .
-_:6743942 rdf:object rgzm:vAJzox6A .
-_:6743942 amt:weight "0.95" .
-_:8118163 rdf:subject rgzm:EQbNPJpQ .
-_:8118163 rdf:predicate rgzm:part .
-_:8118163 rdf:object rgzm:vAJzox6A .
-_:8118163 amt:weight "0.95" .
-_:3808231 rdf:subject rgzm:R6pAx1rm .
-_:3808231 rdf:predicate rgzm:part .
-_:3808231 rdf:object rgzm:vAJzox6A .
-_:3808231 amt:weight "0.95" .
-_:1848002 rdf:subject rgzm:lr4MGwXB .
-_:1848002 rdf:predicate rgzm:part .
-_:1848002 rdf:object rgzm:vAJzox6A .
-_:1848002 amt:weight "0.95" .
-_:9071164 rdf:subject rgzm:n96ylEeB .
-_:9071164 rdf:predicate rgzm:part .
-_:9071164 rdf:object rgzm:vAJzox6A .
-_:9071164 amt:weight "0.95" .
-_:4877058 rdf:subject rgzm:NKAgW7XZ .
-_:4877058 rdf:predicate rgzm:part .
-_:4877058 rdf:object rgzm:vAJzox6A .
-_:4877058 amt:weight "0.95" .
-_:8942714 rdf:subject rgzm:jWrx8Ag6 .
-_:8942714 rdf:predicate rgzm:part .
-_:8942714 rdf:object rgzm:vAJzox6A .
-_:8942714 amt:weight "0.95" .
-_:7744302 rdf:subject rgzm:qQxYde27 .
-_:7744302 rdf:predicate rgzm:part .
-_:7744302 rdf:object rgzm:vAJzox6A .
-_:7744302 amt:weight "0.95" .
-_:1283174 rdf:subject rgzm:GpNbdqxp .
-_:1283174 rdf:predicate rgzm:part .
-_:1283174 rdf:object rgzm:vAJzox6A .
-_:1283174 amt:weight "0.95" .
-_:1232786 rdf:subject rgzm:Gd6gnARB .
-_:1232786 rdf:predicate rgzm:part .
-_:1232786 rdf:object rgzm:vAJzox6A .
-_:1232786 amt:weight "0.95" .
-_:8578294 rdf:subject rgzm:b59QDWj5 .
-_:8578294 rdf:predicate rgzm:part .
-_:8578294 rdf:object rgzm:vAJzox6A .
-_:8578294 amt:weight "0.95" .
-_:5801976 rdf:subject rgzm:OrbnKAEr .
-_:5801976 rdf:predicate rgzm:part .
-_:5801976 rdf:object rgzm:vAJzox6A .
-_:5801976 amt:weight "0.95" .
-_:6289263 rdf:subject rgzm:eEqegpqE .
-_:6289263 rdf:predicate rgzm:part .
-_:6289263 rdf:object rgzm:vAJzox6A .
-_:6289263 amt:weight "0.95" .
-_:928581 rdf:subject rgzm:QNjmoqj5 .
-_:928581 rdf:predicate rgzm:part .
-_:928581 rdf:object rgzm:vAJzox6A .
-_:928581 amt:weight "0.95" .
-_:9083960 rdf:subject rgzm:XoJ3z0Y5 .
-_:9083960 rdf:predicate rgzm:part .
-_:9083960 rdf:object rgzm:vAJzox6A .
-_:9083960 amt:weight "0.95" .
-_:23696 rdf:subject rgzm:La3lLx20 .
-_:23696 rdf:predicate rgzm:part .
-_:23696 rdf:object rgzm:vAJzox6A .
-_:23696 amt:weight "0.95" .
-_:928859 rdf:subject rgzm:vMeWnK03 .
-_:928859 rdf:predicate rgzm:part .
-_:928859 rdf:object rgzm:vAJzox6A .
-_:928859 amt:weight "0.95" .
-_:7362427 rdf:subject rgzm:OV9NkB8z .
-_:7362427 rdf:predicate rgzm:part .
-_:7362427 rdf:object rgzm:vAJzox6A .
-_:7362427 amt:weight "0.95" .
-_:5222786 rdf:subject rgzm:obEMvdqb .
-_:5222786 rdf:predicate rgzm:part .
-_:5222786 rdf:object rgzm:vAJzox6A .
-_:5222786 amt:weight "0.95" .
-_:3595177 rdf:subject rgzm:rj70nGwm .
-_:3595177 rdf:predicate rgzm:part .
-_:3595177 rdf:object rgzm:vAJzox6A .
-_:3595177 amt:weight "0.95" .
-_:9245080 rdf:subject rgzm:V02DOjrd .
-_:9245080 rdf:predicate rgzm:part .
-_:9245080 rdf:object rgzm:vAJzox6A .
-_:9245080 amt:weight "0.95" .
-_:981693 rdf:subject rgzm:RVbvQenV .
-_:981693 rdf:predicate rgzm:part .
-_:981693 rdf:object rgzm:vAJzox6A .
-_:981693 amt:weight "0.95" .
+rgzm:Pdrp7rvA amt:instanceOf rgzm:Province.	rgzm:Pdrp7rvA rdfs:label 'Germania Superior'.
+rgzm:OQzKonxN amt:instanceOf rgzm:Province.	rgzm:OQzKonxN rdfs:label 'Britannia'.
+rgzm:pyoJLNr2 amt:instanceOf rgzm:Province.	rgzm:pyoJLNr2 rdfs:label 'Raetia'.
+
+rgzm:dRr5vzy7 amt:instanceOf rgzm:LimesPart.	rgzm:dRr5vzy7 rdfs:label 'AlbLimes'.
+rgzm:k6lvRVZX amt:instanceOf rgzm:LimesPart.	rgzm:k6lvRVZX rdfs:label 'DonauLimes'.
+rgzm:O2VyGw1K amt:instanceOf rgzm:LimesPart.	rgzm:O2VyGw1K rdfs:label 'Elisabethenstrasse'.
+rgzm:zXamrQEX amt:instanceOf rgzm:LimesPart.	rgzm:zXamrQEX rdfs:label 'HadriansWall'.
+rgzm:Bm057ME9 amt:instanceOf rgzm:LimesPart.	rgzm:Bm057ME9 rdfs:label 'Neckarlimes'.
+rgzm:qz5OnyEk amt:instanceOf rgzm:LimesPart.	rgzm:qz5OnyEk rdfs:label 'NördlingerRies'.
+rgzm:gM6qkG9A amt:instanceOf rgzm:LimesPart.	rgzm:gM6qkG9A rdfs:label 'Odenwaldlimes'.
+rgzm:j4xgYvNn amt:instanceOf rgzm:LimesPart.	rgzm:j4xgYvNn rdfs:label 'WestRätLimes'.
+rgzm:vAJzox6A amt:instanceOf rgzm:LimesPart.	rgzm:vAJzox6A rdfs:label 'Wetteraulimes'.
+
+rgzm:NgmkP1LB amt:instanceOf rgzm:Site.	rgzm:NgmkP1LB rdfs:label 'Arnsburg'.
+rgzm:kJyYmqOJ amt:instanceOf rgzm:Site.	rgzm:kJyYmqOJ rdfs:label 'Bad Nauheim'.
+rgzm:VjPdv06j amt:instanceOf rgzm:Site.	rgzm:VjPdv06j rdfs:label 'Benwell'.
+rgzm:GJBde87j amt:instanceOf rgzm:Site.	rgzm:GJBde87j rdfs:label 'Birdoswald'.
+rgzm:v3PR4bDX amt:instanceOf rgzm:Site.	rgzm:v3PR4bDX rdfs:label 'Burladingen'.
+rgzm:q61drZOP amt:instanceOf rgzm:Site.	rgzm:q61drZOP rdfs:label 'Butzbach'.
+rgzm:J3rLAPa1 amt:instanceOf rgzm:Site.	rgzm:J3rLAPa1 rdfs:label 'Cannstatt'.
+rgzm:NP2aZBre amt:instanceOf rgzm:Site.	rgzm:NP2aZBre rdfs:label 'Carrawburgh'.
+rgzm:jr5QjEWr amt:instanceOf rgzm:Site.	rgzm:jr5QjEWr rdfs:label 'Chesters'.
+rgzm:nNBLpB7k amt:instanceOf rgzm:Site.	rgzm:nNBLpB7k rdfs:label 'Dambach'.
+rgzm:B6v20QR6 amt:instanceOf rgzm:Site.	rgzm:B6v20QR6 rdfs:label 'Donnstetten'.
+rgzm:LGKXROAp amt:instanceOf rgzm:Site.	rgzm:LGKXROAp rdfs:label 'Echzell'.
+rgzm:PA33kzvA amt:instanceOf rgzm:Site.	rgzm:PA33kzvA rdfs:label 'Eining'.
+rgzm:qYOjLB64 amt:instanceOf rgzm:Site.	rgzm:qYOjLB64 rdfs:label 'Feldberg'.
+rgzm:kDJn13JD amt:instanceOf rgzm:Site.	rgzm:kDJn13JD rdfs:label 'Friedberg'.
+rgzm:ylw01d9P amt:instanceOf rgzm:Site.	rgzm:ylw01d9P rdfs:label 'Geislingen'.
+rgzm:VLvwdgbp amt:instanceOf rgzm:Site.	rgzm:VLvwdgbp rdfs:label 'Gnotzheim'.
+rgzm:G51z7Mpe amt:instanceOf rgzm:Site.	rgzm:G51z7Mpe rdfs:label 'Gomadingen'.
+rgzm:VK2JAQOK amt:instanceOf rgzm:Site.	rgzm:VK2JAQOK rdfs:label 'Günzburg'.
+rgzm:en2BeMGn amt:instanceOf rgzm:Site.	rgzm:en2BeMGn rdfs:label 'Hanau-Salisberg'.
+rgzm:r57B67Rd amt:instanceOf rgzm:Site.	rgzm:r57B67Rd rdfs:label 'Heidenheim'.
+rgzm:b0qEJLK0 amt:instanceOf rgzm:Site.	rgzm:b0qEJLK0 rdfs:label 'Heilbronn-Böckingen'.
+rgzm:EQbNPJpQ amt:instanceOf rgzm:Site.	rgzm:EQbNPJpQ rdfs:label 'Hofheim'.
+rgzm:R6pAx1rm amt:instanceOf rgzm:Site.	rgzm:R6pAx1rm rdfs:label 'Köngen'.
+rgzm:lr4MGwXB amt:instanceOf rgzm:Site.	rgzm:lr4MGwXB rdfs:label 'Kösching'.
+rgzm:n96ylEeB amt:instanceOf rgzm:Site.	rgzm:n96ylEeB rdfs:label 'Marköbel'.
+rgzm:NKAgW7XZ amt:instanceOf rgzm:Site.	rgzm:NKAgW7XZ rdfs:label 'Munningen'.
+rgzm:jWrx8Ag6 amt:instanceOf rgzm:Site.	rgzm:jWrx8Ag6 rdfs:label 'Neckarburken'.
+rgzm:qQxYde27 amt:instanceOf rgzm:Site.	rgzm:qQxYde27 rdfs:label 'Oberdorf am Ipf'.
+rgzm:GpNbdqxp amt:instanceOf rgzm:Site.	rgzm:GpNbdqxp rdfs:label 'Oberflorstadt'.
+rgzm:Gd6gnARB amt:instanceOf rgzm:Site.	rgzm:Gd6gnARB rdfs:label 'Obernburg'.
+rgzm:b59QDWj5 amt:instanceOf rgzm:Site.	rgzm:b59QDWj5 rdfs:label 'Okarben'.
+rgzm:OrbnKAEr amt:instanceOf rgzm:Site.	rgzm:OrbnKAEr rdfs:label 'Pfünz'.
+rgzm:eEqegpqE amt:instanceOf rgzm:Site.	rgzm:eEqegpqE rdfs:label 'Saalburg'.
+rgzm:QNjmoqj5 amt:instanceOf rgzm:Site.	rgzm:QNjmoqj5 rdfs:label 'Stanwix'.
+rgzm:XoJ3z0Y5 amt:instanceOf rgzm:Site.	rgzm:XoJ3z0Y5 rdfs:label 'Stockstadt'.
+rgzm:La3lLx20 amt:instanceOf rgzm:Site.	rgzm:La3lLx20 rdfs:label 'Theilenhofen'.
+rgzm:vMeWnK03 amt:instanceOf rgzm:Site.	rgzm:vMeWnK03 rdfs:label 'Urspring'.
+rgzm:OV9NkB8z amt:instanceOf rgzm:Site.	rgzm:OV9NkB8z rdfs:label 'Walheim'.
+rgzm:obEMvdqb amt:instanceOf rgzm:Site.	rgzm:obEMvdqb rdfs:label 'Wallsend'.
+rgzm:rj70nGwm amt:instanceOf rgzm:Site.	rgzm:rj70nGwm rdfs:label 'Walltown'.
+rgzm:V02DOjrd amt:instanceOf rgzm:Site.	rgzm:V02DOjrd rdfs:label 'Weissenburg'.
+rgzm:RVbvQenV amt:instanceOf rgzm:Site.	rgzm:RVbvQenV rdfs:label 'Zugmantel'.
+
+rgzm:nlOB1vb5 amt:instanceOf rgzm:SpatialThing.	rgzm:nlOB1vb5 rdfs:label '{ "type": "Point", "coordinates": [8.784294, 50.487393]}'.
+rgzm:OBKwJbeB amt:instanceOf rgzm:SpatialThing.	rgzm:OBKwJbeB rdfs:label '{ "type": "Point", "coordinates": [8.75, 50.366661]}'.
+rgzm:V9o8aJXw amt:instanceOf rgzm:SpatialThing.	rgzm:V9o8aJXw rdfs:label '{ "type": "Point", "coordinates": [-1.660947, 54.975463]}'.
+rgzm:AlBx8ZK0 amt:instanceOf rgzm:SpatialThing.	rgzm:AlBx8ZK0 rdfs:label '{ "type": "Point", "coordinates": [-2.60325, 54.991588]}'.
+rgzm:ANneaJZk amt:instanceOf rgzm:SpatialThing.	rgzm:ANneaJZk rdfs:label '{ "type": "Point", "coordinates": [9.116666, 48.283332]}'.
+rgzm:kO2bdKzO amt:instanceOf rgzm:SpatialThing.	rgzm:kO2bdKzO rdfs:label '{ "type": "Point", "coordinates": [8.665183, 50.439681]}'.
+rgzm:Kw8keAmW amt:instanceOf rgzm:SpatialThing.	rgzm:Kw8keAmW rdfs:label '{ "type": "Point", "coordinates": [9.2141, 48.8056]}'.
+rgzm:GwLlo3Bw amt:instanceOf rgzm:SpatialThing.	rgzm:GwLlo3Bw rdfs:label '{ "type": "Point", "coordinates": [-2.222198, 55.035053]}'.
+rgzm:RP08ywgP amt:instanceOf rgzm:SpatialThing.	rgzm:RP08ywgP rdfs:label '{ "type": "Point", "coordinates": [-2.15, 55.016666]}'.
+rgzm:XLRAKV7Z amt:instanceOf rgzm:SpatialThing.	rgzm:XLRAKV7Z rdfs:label '{ "type": "Point", "coordinates": [10.578748, 49.102804]}'.
+rgzm:J2KYXx0e amt:instanceOf rgzm:SpatialThing.	rgzm:J2KYXx0e rdfs:label '{ "type": "Point", "coordinates": [9.566666, 48.51667]}'.
+rgzm:PNnKEarp amt:instanceOf rgzm:SpatialThing.	rgzm:PNnKEarp rdfs:label '{ "type": "Point", "coordinates": [8.883176, 50.393087]}'.
+rgzm:BnYy1kln amt:instanceOf rgzm:SpatialThing.	rgzm:BnYy1kln rdfs:label '{ "type": "Point", "coordinates": [11.76667, 48.849998]}'.
+rgzm:NnP0jrpn amt:instanceOf rgzm:SpatialThing.	rgzm:NnP0jrpn rdfs:label '{ "type": "Point", "coordinates": [8.444662, 50.227149]}'.
+rgzm:PzaYVjBz amt:instanceOf rgzm:SpatialThing.	rgzm:PzaYVjBz rdfs:label '{ "type": "Point", "coordinates": [8.753502, 50.341669]}'.
+rgzm:Kdzp2aRl amt:instanceOf rgzm:SpatialThing.	rgzm:Kdzp2aRl rdfs:label '{ "type": "Point", "coordinates": [8.816666, 48.283332]}'.
+rgzm:QdZgxVRp amt:instanceOf rgzm:SpatialThing.	rgzm:QdZgxVRp rdfs:label '{ "type": "Point", "coordinates": [10.704499, 49.057194]}'.
+rgzm:nA0gQD8j amt:instanceOf rgzm:SpatialThing.	rgzm:nA0gQD8j rdfs:label '{ "type": "Point", "coordinates": [9.4, 48.4]}'.
+rgzm:d7Xq3X8y amt:instanceOf rgzm:SpatialThing.	rgzm:d7Xq3X8y rdfs:label '{ "type": "Point", "coordinates": [10.26667, 48.45]}'.
+rgzm:pQ7Y5pAr amt:instanceOf rgzm:SpatialThing.	rgzm:pQ7Y5pAr rdfs:label '{ "type": "Point", "coordinates": [8.93, 50.133338]}'.
+rgzm:vo8neD3W amt:instanceOf rgzm:SpatialThing.	rgzm:vo8neD3W rdfs:label '{ "type": "Point", "coordinates": [10.149999, 48.683334]}'.
+rgzm:AGbRMo1G amt:instanceOf rgzm:SpatialThing.	rgzm:AGbRMo1G rdfs:label '{ "type": "Point", "coordinates": [9.188611, 49.133888]}'.
+rgzm:m4lPqZM4 amt:instanceOf rgzm:SpatialThing.	rgzm:m4lPqZM4 rdfs:label '{ "type": "Point", "coordinates": [8.449999, 50.083332]}'.
+rgzm:oWGzyXm2 amt:instanceOf rgzm:SpatialThing.	rgzm:oWGzyXm2 rdfs:label '{ "type": "Point", "coordinates": [9.366666, 48.68333]}'.
+rgzm:GRyMB67R amt:instanceOf rgzm:SpatialThing.	rgzm:GRyMB67R rdfs:label '{ "type": "Point", "coordinates": [11.5, 48.816665]}'.
+rgzm:No7DRp5K amt:instanceOf rgzm:SpatialThing.	rgzm:No7DRp5K rdfs:label '{ "type": "Point", "coordinates": [8.98419, 50.222685]}'.
+rgzm:Je2AokmQ amt:instanceOf rgzm:SpatialThing.	rgzm:Je2AokmQ rdfs:label '{ "type": "Point", "coordinates": [10.6, 48.916667]}'.
+rgzm:y6ZdwmNV amt:instanceOf rgzm:SpatialThing.	rgzm:y6ZdwmNV rdfs:label '{ "type": "Point", "coordinates": [9.169166, 49.378059]}'.
+rgzm:nRv9yOVz amt:instanceOf rgzm:SpatialThing.	rgzm:nRv9yOVz rdfs:label '{ "type": "Point", "coordinates": [10.341667, 48.868611]}'.
+rgzm:a9YPqD8O amt:instanceOf rgzm:SpatialThing.	rgzm:a9YPqD8O rdfs:label '{ "type": "Point", "coordinates": [8.866666, 50.333332]}'.
+rgzm:ANVgw0d9 amt:instanceOf rgzm:SpatialThing.	rgzm:ANVgw0d9 rdfs:label '{ "type": "Point", "coordinates": [9.146593, 49.841111]}'.
+rgzm:KpokJgwp amt:instanceOf rgzm:SpatialThing.	rgzm:KpokJgwp rdfs:label '{ "type": "Point", "coordinates": [8.75, 50.25]}'.
+rgzm:bdeeq6Wd amt:instanceOf rgzm:SpatialThing.	rgzm:bdeeq6Wd rdfs:label '{ "type": "Point", "coordinates": [11.263661, 48.883931]}'.
+rgzm:MRY61paP amt:instanceOf rgzm:SpatialThing.	rgzm:MRY61paP rdfs:label '{ "type": "Point", "coordinates": [8.566659, 50.271522]}'.
+rgzm:mN9wMJL4 amt:instanceOf rgzm:SpatialThing.	rgzm:mN9wMJL4 rdfs:label '{ "type": "Point", "coordinates": [-2.933332, 54.900001]}'.
+rgzm:l6NOYGq3 amt:instanceOf rgzm:SpatialThing.	rgzm:l6NOYGq3 rdfs:label '{ "type": "Point", "coordinates": [9.064167, 49.976943]}'.
+rgzm:mY6x8pG7 amt:instanceOf rgzm:SpatialThing.	rgzm:mY6x8pG7 rdfs:label '{ "type": "Point", "coordinates": [11.85, 49.083333]}'.
+rgzm:D7X29ge4 amt:instanceOf rgzm:SpatialThing.	rgzm:D7X29ge4 rdfs:label '{ "type": "Point", "coordinates": [9.716667, 48.383338]}'.
+rgzm:BewBx60r amt:instanceOf rgzm:SpatialThing.	rgzm:BewBx60r rdfs:label '{ "type": "Point", "coordinates": [9.15111, 49.014167]}'.
+rgzm:LbyRy610 amt:instanceOf rgzm:SpatialThing.	rgzm:LbyRy610 rdfs:label '{ "type": "Point", "coordinates": [-1.523298, 54.988491]}'.
+rgzm:L1apv39q amt:instanceOf rgzm:SpatialThing.	rgzm:L1apv39q rdfs:label '{ "type": "Point", "coordinates": [-2.516099, 54.988143]}'.
+rgzm:krDg0LAw amt:instanceOf rgzm:SpatialThing.	rgzm:krDg0LAw rdfs:label '{ "type": "Point", "coordinates": [10.9624, 49.030803]}'.
+rgzm:E7mRGxoe amt:instanceOf rgzm:SpatialThing.	rgzm:E7mRGxoe rdfs:label '{ "type": "Point", "coordinates": [8.203443, 50.189704]}'.
+rgzm:E8rpnlAa amt:instanceOf rgzm:SpatialThing.	rgzm:E8rpnlAa rdfs:label '{ "type": "Feature", "properties": { "name": "Germania Superior" }, "geometry": { "type": "MultiPolygon", "coordinates": [ [ [ [ 7.285309228129919, 50.541040348329325 ], [ 7.38265885194615, 50.483843214018258 ], [ 7.536524075838276, 50.41045094301105 ], [ 7.697515428185406, 50.368786193069006 ], [ 7.862446669674997, 50.302348209103592 ], [ 8.087405053194496, 50.222835299080039 ], [ 8.342624425064223, 50.158921993485748 ], [ 8.49857839457033, 50.139785641857095 ], [ 8.597661806217369, 50.159065152458865 ], [ 8.664142930194066, 50.231491984014092 ], [ 8.730824028683863, 50.353491797120235 ], [ 8.809177079639957, 50.418099914160521 ], [ 8.896839391272932, 50.429844493282587 ], [ 9.01620859033646, 50.373175555990294 ], [ 9.07542432802655, 50.295184779427956 ], [ 9.096831983086254, 50.215014648419398 ], [ 9.08316529064447, 50.093538760082524 ], [ 9.102821450415906, 49.983340679575825 ], [ 9.154345707353652, 49.903975577609501 ], [ 9.210679898599341, 49.830484592195489 ], [ 9.224610699409492, 49.74896750079521 ], [ 9.343278950575471, 49.637811551296849 ], [ 9.505762685429742, 49.460717133589277 ], [ 9.589159520449757, 49.323155855135951 ], [ 9.693975267969975, 49.135311543994639 ], [ 9.783572844902601, 48.980735728647218 ], [ 9.825969129961321, 48.89980889696821 ], [ 9.859227852619608, 48.787576260149827 ], [ 9.799778868898496, 48.682642182859126 ], [ 9.689480587155648, 48.592691996441779 ], [ 9.586457677701167, 48.503949003038443 ], [ 9.448659532371993, 48.393524402151677 ], [ 9.307782425551945, 48.257496769135841 ], [ 9.193722106231311, 48.146200063436346 ], [ 9.097753948037184, 48.028375053561454 ], [ 9.063166737360863, 47.922583329988882 ], [ 9.077671592474003, 47.772113686848776 ], [ 9.101791877375959, 47.616179794854922 ], [ 9.1310881426697, 47.49840637644941 ], [ 9.208299715286879, 47.370446185776224 ], [ 9.295139219288808, 47.303712855732783 ], [ 9.350505718810334, 47.19122741053129 ], [ 9.303471967837181, 47.097937040519732 ], [ 9.214765640546995, 47.001199768997111 ], [ 9.110406991207036, 46.891292101935399 ], [ 8.9244711829138, 46.754693852476841 ], [ 8.72570901650921, 46.649562729780008 ], [ 8.555876516273113, 46.594496979794201 ], [ 8.447243001647653, 46.596524812335204 ], [ 8.336982869605826, 46.553509008149526 ], [ 8.127029588137622, 46.508944425688178 ], [ 7.913361640459567, 46.47300941086295 ], [ 7.672143557745407, 46.450433645114281 ], [ 7.450995282622801, 46.446610256519143 ], [ 7.271338482437707, 46.461513487705616 ], [ 7.080817630072123, 46.483658391242294 ], [ 6.978772328959582, 46.470662451666719 ], [ 6.941434523833612, 46.412395581878876 ], [ 6.897682682182922, 46.352645492875816 ], [ 6.780970867590793, 46.370965404452143 ], [ 6.685725904429559, 46.359170167565999 ], [ 6.577560964270384, 46.359278159622214 ], [ 6.508342766503409, 46.338320648790436 ], [ 6.441325877291741, 46.327803859342282 ], [ 6.35272194653476, 46.317211152360279 ], [ 6.285979304810182, 46.261667787626038 ], [ 6.182606726998081, 46.222444819332296 ], [ 6.096182649252371, 46.237101740930619 ], [ 6.025130707281202, 46.220314204601451 ], [ 5.976606357062044, 46.142935505776485 ], [ 5.929240098404235, 46.23993227169094 ], [ 5.89113143208279, 46.317026636808805 ], [ 5.827249317856167, 46.406158632466152 ], [ 5.722768776121145, 46.562810546598257 ], [ 5.6237753760626, 46.707227823357201 ], [ 5.530389169036175, 46.83941906341731 ], [ 5.440652013573183, 46.963445276562084 ], [ 5.351525218026538, 47.059451641790275 ], [ 5.280127973071006, 47.133333468912411 ], [ 5.165822713320379, 47.237879733052011 ], [ 5.019566349414905, 47.325576799961645 ], [ 4.89290326465434, 47.349535229066468 ], [ 4.768743153861673, 47.355725385125396 ], [ 4.697054832606665, 47.402081758054294 ], [ 4.692389540791564, 47.474017708090472 ], [ 4.720201389034703, 47.535637287965493 ], [ 4.736133677003162, 47.594337972828029 ], [ 4.696121625678098, 47.643950717309053 ], [ 4.611981250193437, 47.687342812295348 ], [ 4.479263104703441, 47.732483533789129 ], [ 4.390396399732489, 47.783780227757518 ], [ 4.331300797707551, 47.842415242190157 ], [ 4.310260615509641, 47.905887347382595 ], [ 4.297204341824644, 47.979586417612175 ], [ 4.352289049653091, 48.016055609076581 ], [ 4.451806413944046, 48.058791871401844 ], [ 4.582765113600495, 48.131915605789381 ], [ 4.711425587104465, 48.222518885723417 ], [ 4.80417812445293, 48.304250804968923 ], [ 4.859858807781631, 48.404385967021589 ], [ 4.913323486686527, 48.414178015898862 ], [ 4.982521059365856, 48.425694553932892 ], [ 5.084222548595396, 48.465378569649047 ], [ 5.196820509406241, 48.495815251142822 ], [ 5.315060927646184, 48.515752748864443 ], [ 5.464948516326222, 48.531230389939111 ], [ 5.591092605604609, 48.513808987425257 ], [ 5.73678414072983, 48.46969598269331 ], [ 5.807094918541296, 48.435367579274889 ], [ 5.872250898307398, 48.38820134274237 ], [ 5.951668864861026, 48.301626113886002 ], [ 5.997862444308327, 48.211364719284795 ], [ 6.047304726169367, 48.125746152238371 ], [ 6.089427624873657, 48.065602557242201 ], [ 6.148641364410368, 48.017106271348446 ], [ 6.266348284720281, 47.989613866242983 ], [ 6.375234782015824, 47.979381008712465 ], [ 6.473690341106643, 47.989912282791892 ], [ 6.57561423990739, 47.970196168537029 ], [ 6.687784162580879, 47.941091334932239 ], [ 6.793444785356316, 47.913163216950622 ], [ 6.886670215922709, 47.922172320255008 ], [ 6.95609439434242, 47.968313776518968 ], [ 7.003504290673599, 48.048150710311148 ], [ 7.011435812710112, 48.150197498532641 ], [ 7.01769853119248, 48.255741077795726 ], [ 7.020577158475144, 48.368270939039043 ], [ 7.014917879504051, 48.498255516461775 ], [ 7.017686631869355, 48.59920276520397 ], [ 7.023662755553967, 48.669968313536472 ], [ 7.057757269350977, 48.742926678096879 ], [ 7.099233153148095, 48.836733351267725 ], [ 7.156618942184286, 48.922316422115124 ], [ 7.23887702160876, 49.00539703249683 ], [ 7.301472050015721, 49.057217059158575 ], [ 7.378812672369778, 49.115161444234701 ], [ 7.472003300414942, 49.177101575122087 ], [ 7.567385415664761, 49.247075112492801 ], [ 7.643595602938463, 49.320649439140716 ], [ 7.689833207774169, 49.395654260826291 ], [ 7.707944088965347, 49.480234946478433 ], [ 7.688435352214676, 49.55708387270014 ], [ 7.635088511247856, 49.642400032589521 ], [ 7.552839529589215, 49.725636854948895 ], [ 7.448904960704263, 49.815961733356076 ], [ 7.34804670662341, 49.899200078671591 ], [ 7.275499535582882, 49.972873105142881 ], [ 7.190117046916225, 50.047737396222203 ], [ 7.124288127762447, 50.118951919569859 ], [ 7.076349264960492, 50.190043626410123 ], [ 7.03928813798931, 50.275005350405046 ], [ 7.030636104192825, 50.276278124355549 ], [ 7.070791152101748, 50.346137764344917 ], [ 7.127372233814182, 50.423131627856897 ], [ 7.208978837010815, 50.488913081179113 ], [ 7.285309228129919, 50.541040348329325 ] ] ] ] } }'.
+rgzm:y3ravz9j amt:instanceOf rgzm:SpatialThing.	rgzm:y3ravz9j rdfs:label '{ "type": "Feature", "properties": { "name": "Raetia" }, "geometry": { "type": "MultiPolygon", "coordinates": [ [ [ [ 10.143768374766253, 46.775003413606925 ], [ 10.119729258854536, 46.734985085212017 ], [ 10.076014910053278, 46.694344402514808 ], [ 10.006607194247344, 46.634887793696983 ], [ 9.932125333658021, 46.588189861993172 ], [ 9.861283533289079, 46.532912503847548 ], [ 9.791565832241298, 46.523864887719824 ], [ 9.654843254170388, 46.515375168839057 ], [ 9.5137779952298, 46.501221384234604 ], [ 9.372792504018149, 46.486879627040729 ], [ 9.211614188437007, 46.472867789071159 ], [ 9.091064759136346, 46.457632886360521 ], [ 8.961941538884451, 46.431241685965006 ], [ 8.849540654259229, 46.412742912280045 ], [ 8.71942650815754, 46.404311755445505 ], [ 8.591209116444096, 46.391477723373342 ], [ 8.471586126699908, 46.389546947517168 ], [ 8.377201405690299, 46.404491169649994 ], [ 8.393281975080086, 46.416817863024647 ], [ 8.472019647083162, 46.503717052965975 ], [ 8.535762962754323, 46.594880857574921 ], [ 8.555876516273113, 46.594496979794201 ], [ 8.72570901650921, 46.649562729780008 ], [ 8.9244711829138, 46.754693852476841 ], [ 9.110406991207036, 46.891292101935399 ], [ 9.214765640546995, 47.001199768997111 ], [ 9.303471967837181, 47.097937040519732 ], [ 9.350505718810334, 47.19122741053129 ], [ 9.295139219288808, 47.303712855732783 ], [ 9.208299715286879, 47.370446185776224 ], [ 9.1310881426697, 47.49840637644941 ], [ 9.101791877375959, 47.616179794854922 ], [ 9.077671592474003, 47.772113686848776 ], [ 9.063166737360863, 47.922583329988882 ], [ 9.097753948037184, 48.028375053561454 ], [ 9.193722106231311, 48.146200063436346 ], [ 9.307782425551945, 48.257496769135841 ], [ 9.448659532371993, 48.393524402151677 ], [ 9.586457677701167, 48.503949003038443 ], [ 9.689480587155648, 48.592691996441779 ], [ 9.799778868898496, 48.682642182859126 ], [ 9.859227852619608, 48.787576260149827 ], [ 9.844974914319954, 48.835737503519383 ], [ 9.980991785549009, 48.850969423517846 ], [ 10.146645331916599, 48.902197615235394 ], [ 10.323982410594688, 48.975827132013919 ], [ 10.458369939872227, 49.043395449809601 ], [ 10.586326781920468, 49.086962546793288 ], [ 10.78864738316245, 49.102420833943007 ], [ 11.033261439144164, 49.090660099673983 ], [ 11.280307824776989, 49.071963669916784 ], [ 11.530018888039251, 49.019046834574276 ], [ 11.661901900692143, 49.000429615493445 ], [ 11.737320013104414, 49.019969534809078 ], [ 11.888747459789464, 48.977089226614538 ], [ 12.025214949057359, 48.972486989822954 ], [ 12.073844878087227, 49.062348757269469 ], [ 12.200812517372825, 49.083190956601115 ], [ 12.281335748746244, 49.062254938002084 ], [ 12.366740599562169, 49.055687205569491 ], [ 12.43480282127565, 49.012209023131312 ], [ 12.507944743860035, 49.010378092227732 ], [ 12.612211508371812, 48.952225058758629 ], [ 12.692655321356719, 48.958259959617351 ], [ 12.772386992654361, 48.909703248437367 ], [ 12.876964401538814, 48.905836315726717 ], [ 13.038543184901437, 48.829234475993424 ], [ 13.177258322941631, 48.728557149119766 ], [ 13.325468864575601, 48.663210051582482 ], [ 13.493769761851258, 48.621152119321586 ], [ 13.486230047548863, 48.525014772200848 ], [ 13.433297119321727, 48.442263865990533 ], [ 13.308419005927886, 48.361898409366965 ], [ 13.146532782587945, 48.329853066752932 ], [ 13.076187848040771, 48.298418307273536 ], [ 12.979802692767009, 48.283179087949378 ], [ 12.823792904853072, 48.292300766714021 ], [ 12.727835663118666, 48.304092791143567 ], [ 12.624261212382386, 48.280563796736807 ], [ 12.51373748789452, 48.276200712001696 ], [ 12.395835099100575, 48.236474667169531 ], [ 12.316408326745448, 48.175723428349293 ], [ 12.306615350621064, 48.119634529639328 ], [ 12.215542883009135, 48.063643765086503 ], [ 12.184363404893446, 47.983523095387412 ], [ 12.188984879414216, 47.861717005868591 ], [ 12.181771435619721, 47.799221912028607 ], [ 12.198237616417252, 47.672623715137739 ], [ 12.198120322842025, 47.590910588309349 ], [ 12.141262127068972, 47.526848969194745 ], [ 11.992412149807192, 47.467491423672449 ], [ 11.912326553253983, 47.412896451631404 ], [ 11.749659282273726, 47.39162378549026 ], [ 11.64630916177601, 47.346360124999897 ], [ 11.564374037213442, 47.297909550388674 ], [ 11.425518363260602, 47.293887213903979 ], [ 11.3597786126508, 47.282224752398527 ], [ 11.28222349302335, 47.275234518053978 ], [ 11.164165489026056, 47.29506153649757 ], [ 11.037227288629257, 47.285837073211432 ], [ 10.944118807403147, 47.241601425491048 ], [ 10.751846069749044, 47.22008317475688 ], [ 10.639612287925964, 47.199360640168656 ], [ 10.597967372643636, 47.17795024997276 ], [ 10.635255701378298, 47.109603755621144 ], [ 10.63941835321603, 47.048801927702591 ], [ 10.566577019064045, 46.980499087947052 ], [ 10.54460953600281, 46.935336300977191 ], [ 10.44585675923765, 46.882579906202693 ], [ 10.377680053674533, 46.828638574580246 ], [ 10.275742816288369, 46.809297615775947 ], [ 10.192398284668796, 46.793400858710136 ], [ 10.143768374766253, 46.775003413606925 ] ] ] ] } }'.
+rgzm:DOjyr0kK rdfs:label '{ "type": "Feature", "properties": { "name": "Britannia" } }'.
+
+_:node01 rdf:subject rgzm:NgmkP1LB .	_:node01 rdf:predicate rgzm:part .	_:node01 rdf:object rgzm:Pdrp7rvA .	_:node01 amt:weight "0.95" .
+_:node02 rdf:subject rgzm:kJyYmqOJ .	_:node02 rdf:predicate rgzm:part .	_:node02 rdf:object rgzm:Pdrp7rvA .	_:node02 amt:weight "0.95" .
+_:node03 rdf:subject rgzm:VjPdv06j .	_:node03 rdf:predicate rgzm:part .	_:node03 rdf:object rgzm:OQzKonxN .	_:node03 amt:weight "0.95" .
+_:node04 rdf:subject rgzm:GJBde87j .	_:node04 rdf:predicate rgzm:part .	_:node04 rdf:object rgzm:OQzKonxN .	_:node04 amt:weight "0.95" .
+_:node05 rdf:subject rgzm:v3PR4bDX .	_:node05 rdf:predicate rgzm:part .	_:node05 rdf:object rgzm:pyoJLNr2 .	_:node05 amt:weight "0.95" .
+_:node06 rdf:subject rgzm:q61drZOP .	_:node06 rdf:predicate rgzm:part .	_:node06 rdf:object rgzm:Pdrp7rvA .	_:node06 amt:weight "0.95" .
+_:node07 rdf:subject rgzm:J3rLAPa1 .	_:node07 rdf:predicate rgzm:part .	_:node07 rdf:object rgzm:Pdrp7rvA .	_:node07 amt:weight "0.95" .
+_:node08 rdf:subject rgzm:NP2aZBre .	_:node08 rdf:predicate rgzm:part .	_:node08 rdf:object rgzm:OQzKonxN .	_:node08 amt:weight "0.95" .
+_:node09 rdf:subject rgzm:jr5QjEWr .	_:node09 rdf:predicate rgzm:part .	_:node09 rdf:object rgzm:OQzKonxN .	_:node09 amt:weight "0.95" .
+_:node10 rdf:subject rgzm:nNBLpB7k .	_:node10 rdf:predicate rgzm:part .	_:node10 rdf:object rgzm:pyoJLNr2 .	_:node10 amt:weight "0.95" .
+_:node11 rdf:subject rgzm:B6v20QR6 .	_:node11 rdf:predicate rgzm:part .	_:node11 rdf:object rgzm:pyoJLNr2 .	_:node11 amt:weight "0.95" .
+_:node12 rdf:subject rgzm:LGKXROAp .	_:node12 rdf:predicate rgzm:part .	_:node12 rdf:object rgzm:Pdrp7rvA .	_:node12 amt:weight "0.95" .
+_:node13 rdf:subject rgzm:PA33kzvA .	_:node13 rdf:predicate rgzm:part .	_:node13 rdf:object rgzm:pyoJLNr2 .	_:node13 amt:weight "0.95" .
+_:node14 rdf:subject rgzm:qYOjLB64 .	_:node14 rdf:predicate rgzm:part .	_:node14 rdf:object rgzm:Pdrp7rvA .	_:node14 amt:weight "0.95" .
+_:node15 rdf:subject rgzm:kDJn13JD .	_:node15 rdf:predicate rgzm:part .	_:node15 rdf:object rgzm:Pdrp7rvA .	_:node15 amt:weight "0.95" .
+_:node16 rdf:subject rgzm:ylw01d9P .	_:node16 rdf:predicate rgzm:part .	_:node16 rdf:object rgzm:Pdrp7rvA .	_:node16 amt:weight "0.95" .
+_:node17 rdf:subject rgzm:VLvwdgbp .	_:node17 rdf:predicate rgzm:part .	_:node17 rdf:object rgzm:pyoJLNr2 .	_:node17 amt:weight "0.95" .
+_:node18 rdf:subject rgzm:G51z7Mpe .	_:node18 rdf:predicate rgzm:part .	_:node18 rdf:object rgzm:pyoJLNr2 .	_:node18 amt:weight "0.95" .
+_:node19 rdf:subject rgzm:VK2JAQOK .	_:node19 rdf:predicate rgzm:part .	_:node19 rdf:object rgzm:pyoJLNr2 .	_:node19 amt:weight "0.95" .
+_:node20 rdf:subject rgzm:en2BeMGn .	_:node20 rdf:predicate rgzm:part .	_:node20 rdf:object rgzm:Pdrp7rvA .	_:node20 amt:weight "0.95" .
+_:node21 rdf:subject rgzm:r57B67Rd .	_:node21 rdf:predicate rgzm:part .	_:node21 rdf:object rgzm:pyoJLNr2 .	_:node21 amt:weight "0.95" .
+_:node22 rdf:subject rgzm:b0qEJLK0 .	_:node22 rdf:predicate rgzm:part .	_:node22 rdf:object rgzm:Pdrp7rvA .	_:node22 amt:weight "0.95" .
+_:node23 rdf:subject rgzm:EQbNPJpQ .	_:node23 rdf:predicate rgzm:part .	_:node23 rdf:object rgzm:Pdrp7rvA .	_:node23 amt:weight "0.95" .
+_:node24 rdf:subject rgzm:R6pAx1rm .	_:node24 rdf:predicate rgzm:part .	_:node24 rdf:object rgzm:Pdrp7rvA .	_:node24 amt:weight "0.95" .
+_:node25 rdf:subject rgzm:lr4MGwXB .	_:node25 rdf:predicate rgzm:part .	_:node25 rdf:object rgzm:pyoJLNr2 .	_:node25 amt:weight "0.95" .
+_:node26 rdf:subject rgzm:n96ylEeB .	_:node26 rdf:predicate rgzm:part .	_:node26 rdf:object rgzm:Pdrp7rvA .	_:node26 amt:weight "0.95" .
+_:node27 rdf:subject rgzm:NKAgW7XZ .	_:node27 rdf:predicate rgzm:part .	_:node27 rdf:object rgzm:pyoJLNr2 .	_:node27 amt:weight "0.95" .
+_:node28 rdf:subject rgzm:jWrx8Ag6 .	_:node28 rdf:predicate rgzm:part .	_:node28 rdf:object rgzm:Pdrp7rvA .	_:node28 amt:weight "0.95" .
+_:node29 rdf:subject rgzm:qQxYde27 .	_:node29 rdf:predicate rgzm:part .	_:node29 rdf:object rgzm:Pdrp7rvA .	_:node29 amt:weight "0.95" .
+_:node30 rdf:subject rgzm:GpNbdqxp .	_:node30 rdf:predicate rgzm:part .	_:node30 rdf:object rgzm:Pdrp7rvA .	_:node30 amt:weight "0.95" .
+_:node31 rdf:subject rgzm:Gd6gnARB .	_:node31 rdf:predicate rgzm:part .	_:node31 rdf:object rgzm:Pdrp7rvA .	_:node31 amt:weight "0.95" .
+_:node32 rdf:subject rgzm:b59QDWj5 .	_:node32 rdf:predicate rgzm:part .	_:node32 rdf:object rgzm:Pdrp7rvA .	_:node32 amt:weight "0.95" .
+_:node33 rdf:subject rgzm:OrbnKAEr .	_:node33 rdf:predicate rgzm:part .	_:node33 rdf:object rgzm:pyoJLNr2 .	_:node33 amt:weight "0.95" .
+_:node34 rdf:subject rgzm:eEqegpqE .	_:node34 rdf:predicate rgzm:part .	_:node34 rdf:object rgzm:Pdrp7rvA .	_:node34 amt:weight "0.95" .
+_:node35 rdf:subject rgzm:QNjmoqj5 .	_:node35 rdf:predicate rgzm:part .	_:node35 rdf:object rgzm:OQzKonxN .	_:node35 amt:weight "0.95" .
+_:node36 rdf:subject rgzm:XoJ3z0Y5 .	_:node36 rdf:predicate rgzm:part .	_:node36 rdf:object rgzm:Pdrp7rvA .	_:node36 amt:weight "0.95" .
+_:node37 rdf:subject rgzm:La3lLx20 .	_:node37 rdf:predicate rgzm:part .	_:node37 rdf:object rgzm:pyoJLNr2 .	_:node37 amt:weight "0.95" .
+_:node38 rdf:subject rgzm:vMeWnK03 .	_:node38 rdf:predicate rgzm:part .	_:node38 rdf:object rgzm:Pdrp7rvA .	_:node38 amt:weight "0.95" .
+_:node39 rdf:subject rgzm:OV9NkB8z .	_:node39 rdf:predicate rgzm:part .	_:node39 rdf:object rgzm:Pdrp7rvA .	_:node39 amt:weight "0.95" .
+_:node40 rdf:subject rgzm:obEMvdqb .	_:node40 rdf:predicate rgzm:part .	_:node40 rdf:object rgzm:OQzKonxN .	_:node40 amt:weight "0.95" .
+_:node41 rdf:subject rgzm:rj70nGwm .	_:node41 rdf:predicate rgzm:part .	_:node41 rdf:object rgzm:OQzKonxN .	_:node41 amt:weight "0.95" .
+_:node42 rdf:subject rgzm:V02DOjrd .	_:node42 rdf:predicate rgzm:part .	_:node42 rdf:object rgzm:Pdrp7rvA .	_:node42 amt:weight "0.95" .
+_:node43 rdf:subject rgzm:RVbvQenV .	_:node43 rdf:predicate rgzm:part .	_:node43 rdf:object rgzm:Pdrp7rvA .	_:node43 amt:weight "0.95" .
+
+_:node50 rdf:subject rgzm:NgmkP1LB .	_:node50 rdf:predicate rgzm:part .	_:node50 rdf:object rgzm:vAJzox6A .	_:node50 amt:weight "0.95" .
+_:node51 rdf:subject rgzm:kJyYmqOJ .	_:node51 rdf:predicate rgzm:part .	_:node51 rdf:object rgzm:O2VyGw1K .	_:node51 amt:weight "0.95" .
+_:node52 rdf:subject rgzm:VjPdv06j .	_:node52 rdf:predicate rgzm:part .	_:node52 rdf:object rgzm:zXamrQEX .	_:node52 amt:weight "0.95" .
+_:node53 rdf:subject rgzm:GJBde87j .	_:node53 rdf:predicate rgzm:part .	_:node53 rdf:object rgzm:zXamrQEX .	_:node53 amt:weight "0.95" .
+_:node54 rdf:subject rgzm:v3PR4bDX .	_:node54 rdf:predicate rgzm:part .	_:node54 rdf:object rgzm:dRr5vzy7 .	_:node54 amt:weight "0.95" .
+_:node55 rdf:subject rgzm:q61drZOP .	_:node55 rdf:predicate rgzm:part .	_:node55 rdf:object rgzm:vAJzox6A .	_:node55 amt:weight "0.95" .
+_:node56 rdf:subject rgzm:J3rLAPa1 .	_:node56 rdf:predicate rgzm:part .	_:node56 rdf:object rgzm:Bm057ME9 .	_:node56 amt:weight "0.95" .
+_:node57 rdf:subject rgzm:NP2aZBre .	_:node57 rdf:predicate rgzm:part .	_:node57 rdf:object rgzm:zXamrQEX .	_:node57 amt:weight "0.95" .
+_:node58 rdf:subject rgzm:jr5QjEWr .	_:node58 rdf:predicate rgzm:part .	_:node58 rdf:object rgzm:zXamrQEX .	_:node58 amt:weight "0.95" .
+_:node59 rdf:subject rgzm:nNBLpB7k .	_:node59 rdf:predicate rgzm:part .	_:node59 rdf:object rgzm:qz5OnyEk .	_:node59 amt:weight "0.95" .
+_:node60 rdf:subject rgzm:B6v20QR6 .	_:node60 rdf:predicate rgzm:part .	_:node60 rdf:object rgzm:dRr5vzy7 .	_:node60 amt:weight "0.95" .
+_:node61 rdf:subject rgzm:LGKXROAp .	_:node61 rdf:predicate rgzm:part .	_:node61 rdf:object rgzm:vAJzox6A .	_:node61 amt:weight "0.95" .
+_:node62 rdf:subject rgzm:PA33kzvA .	_:node62 rdf:predicate rgzm:part .	_:node62 rdf:object rgzm:dRr5vzy7 .	_:node62 amt:weight "0.95" .
+_:node63 rdf:subject rgzm:qYOjLB64 .	_:node63 rdf:predicate rgzm:part .	_:node63 rdf:object rgzm:vAJzox6A .	_:node63 amt:weight "0.95" .
+_:node64 rdf:subject rgzm:kDJn13JD .	_:node64 rdf:predicate rgzm:part .	_:node64 rdf:object rgzm:O2VyGw1K .	_:node64 amt:weight "0.95" .
+_:node65 rdf:subject rgzm:ylw01d9P .	_:node65 rdf:predicate rgzm:part .	_:node65 rdf:object rgzm:dRr5vzy7 .	_:node65 amt:weight "0.95" .
+_:node66 rdf:subject rgzm:VLvwdgbp .	_:node66 rdf:predicate rgzm:part .	_:node66 rdf:object rgzm:dRr5vzy7 .	_:node66 amt:weight "0.95" .
+_:node67 rdf:subject rgzm:G51z7Mpe .	_:node67 rdf:predicate rgzm:part .	_:node67 rdf:object rgzm:dRr5vzy7 .	_:node67 amt:weight "0.95" .
+_:node68 rdf:subject rgzm:VK2JAQOK .	_:node68 rdf:predicate rgzm:part .	_:node68 rdf:object rgzm:j4xgYvNn .	_:node68 amt:weight "0.95" .
+_:node69 rdf:subject rgzm:en2BeMGn .	_:node69 rdf:predicate rgzm:part .	_:node69 rdf:object rgzm:vAJzox6A .	_:node69 amt:weight "0.95" .
+_:node70 rdf:subject rgzm:r57B67Rd .	_:node70 rdf:predicate rgzm:part .	_:node70 rdf:object rgzm:dRr5vzy7 .	_:node70 amt:weight "0.95" .
+_:node71 rdf:subject rgzm:b0qEJLK0 .	_:node71 rdf:predicate rgzm:part .	_:node71 rdf:object rgzm:Bm057ME9 .	_:node71 amt:weight "0.95" .
+_:node72 rdf:subject rgzm:EQbNPJpQ .	_:node72 rdf:predicate rgzm:part .	_:node72 rdf:object rgzm:O2VyGw1K .	_:node72 amt:weight "0.95" .
+_:node73 rdf:subject rgzm:R6pAx1rm .	_:node73 rdf:predicate rgzm:part .	_:node73 rdf:object rgzm:Bm057ME9 .	_:node73 amt:weight "0.95" .
+_:node74 rdf:subject rgzm:lr4MGwXB .	_:node74 rdf:predicate rgzm:part .	_:node74 rdf:object rgzm:dRr5vzy7 .	_:node74 amt:weight "0.95" .
+_:node75 rdf:subject rgzm:n96ylEeB .	_:node75 rdf:predicate rgzm:part .	_:node75 rdf:object rgzm:vAJzox6A .	_:node75 amt:weight "0.95" .
+_:node76 rdf:subject rgzm:NKAgW7XZ .	_:node76 rdf:predicate rgzm:part .	_:node76 rdf:object rgzm:dRr5vzy7 .	_:node76 amt:weight "0.95" .
+_:node77 rdf:subject rgzm:jWrx8Ag6 .	_:node77 rdf:predicate rgzm:part .	_:node77 rdf:object rgzm:Bm057ME9 .	_:node77 amt:weight "0.95" .
+_:node78 rdf:subject rgzm:qQxYde27 .	_:node78 rdf:predicate rgzm:part .	_:node78 rdf:object rgzm:dRr5vzy7 .	_:node78 amt:weight "0.95" .
+_:node79 rdf:subject rgzm:GpNbdqxp .	_:node79 rdf:predicate rgzm:part .	_:node79 rdf:object rgzm:vAJzox6A .	_:node79 amt:weight "0.95" .
+_:node80 rdf:subject rgzm:Gd6gnARB .	_:node80 rdf:predicate rgzm:part .	_:node80 rdf:object rgzm:gM6qkG9A .	_:node80 amt:weight "0.95" .
+_:node81 rdf:subject rgzm:b59QDWj5 .	_:node81 rdf:predicate rgzm:part .	_:node81 rdf:object rgzm:O2VyGw1K .	_:node81 amt:weight "0.95" .
+_:node82 rdf:subject rgzm:OrbnKAEr .	_:node82 rdf:predicate rgzm:part .	_:node82 rdf:object rgzm:j4xgYvNn .	_:node82 amt:weight "0.95" .
+_:node83 rdf:subject rgzm:eEqegpqE .	_:node83 rdf:predicate rgzm:part .	_:node83 rdf:object rgzm:vAJzox6A .	_:node83 amt:weight "0.95" .
+_:node84 rdf:subject rgzm:QNjmoqj5 .	_:node84 rdf:predicate rgzm:part .	_:node84 rdf:object rgzm:zXamrQEX .	_:node84 amt:weight "0.95" .
+_:node85 rdf:subject rgzm:XoJ3z0Y5 .	_:node85 rdf:predicate rgzm:part .	_:node85 rdf:object rgzm:vAJzox6A .	_:node85 amt:weight "0.95" .
+_:node86 rdf:subject rgzm:La3lLx20 .	_:node86 rdf:predicate rgzm:part .	_:node86 rdf:object rgzm:k6lvRVZX .	_:node86 amt:weight "0.95" .
+_:node87 rdf:subject rgzm:vMeWnK03 .	_:node87 rdf:predicate rgzm:part .	_:node87 rdf:object rgzm:dRr5vzy7 .	_:node87 amt:weight "0.95" .
+_:node88 rdf:subject rgzm:OV9NkB8z .	_:node88 rdf:predicate rgzm:part .	_:node88 rdf:object rgzm:Bm057ME9 .	_:node88 amt:weight "0.95" .
+_:node89 rdf:subject rgzm:obEMvdqb .	_:node89 rdf:predicate rgzm:part .	_:node89 rdf:object rgzm:zXamrQEX .	_:node89 amt:weight "0.95" .
+_:node90 rdf:subject rgzm:rj70nGwm .	_:node90 rdf:predicate rgzm:part .	_:node90 rdf:object rgzm:zXamrQEX .	_:node90 amt:weight "0.95" .
+_:node91 rdf:subject rgzm:V02DOjrd .	_:node91 rdf:predicate rgzm:part .	_:node91 rdf:object rgzm:dRr5vzy7 .	_:node91 amt:weight "0.95" .
+_:node92 rdf:subject rgzm:RVbvQenV .	_:node92 rdf:predicate rgzm:part .	_:node92 rdf:object rgzm:vAJzox6A .	_:node92 amt:weight "0.95" .
+
+_:nodeAllen01 rdf:subject rgzm:dRr5vzy7 .	_:nodeAllen01 rdf:predicate rgzm:e .	_:nodeAllen01 rdf:object rgzm:dRr5vzy7 .	_:nodeAllen01 amt:weight "0.99" .
+_:nodeAllen02 rdf:subject rgzm:dRr5vzy7 .	_:nodeAllen02 rdf:predicate rgzm:fi .	_:nodeAllen02 rdf:object rgzm:k6lvRVZX .	_:nodeAllen02 amt:weight "0.99" .
+_:nodeAllen03 rdf:subject rgzm:dRr5vzy7 .	_:nodeAllen03 rdf:predicate rgzm:f .	_:nodeAllen03 rdf:object rgzm:O2VyGw1K .	_:nodeAllen03 amt:weight "0.99" .
+_:nodeAllen04 rdf:subject rgzm:dRr5vzy7 .	_:nodeAllen04 rdf:predicate rgzm:o .	_:nodeAllen04 rdf:object rgzm:zXamrQEX .	_:nodeAllen04 amt:weight "0.99" .
+_:nodeAllen05 rdf:subject rgzm:dRr5vzy7 .	_:nodeAllen05 rdf:predicate rgzm:e .	_:nodeAllen05 rdf:object rgzm:Bm057ME9 .	_:nodeAllen05 amt:weight "0.99" .
+_:nodeAllen06 rdf:subject rgzm:dRr5vzy7 .	_:nodeAllen06 rdf:predicate rgzm:f .	_:nodeAllen06 rdf:object rgzm:qz5OnyEk .	_:nodeAllen06 amt:weight "0.99" .
+_:nodeAllen07 rdf:subject rgzm:dRr5vzy7 .	_:nodeAllen07 rdf:predicate rgzm:f .	_:nodeAllen07 rdf:object rgzm:gM6qkG9A .	_:nodeAllen07 amt:weight "0.99" .
+_:nodeAllen08 rdf:subject rgzm:dRr5vzy7 .	_:nodeAllen08 rdf:predicate rgzm:f .	_:nodeAllen08 rdf:object rgzm:j4xgYvNn .	_:nodeAllen08 amt:weight "0.99" .
+_:nodeAllen09 rdf:subject rgzm:dRr5vzy7 .	_:nodeAllen09 rdf:predicate rgzm:f .	_:nodeAllen09 rdf:object rgzm:vAJzox6A .	_:nodeAllen09 amt:weight "0.99" .
+_:nodeAllen10 rdf:subject rgzm:k6lvRVZX .	_:nodeAllen10 rdf:predicate rgzm:f .	_:nodeAllen10 rdf:object rgzm:dRr5vzy7 .	_:nodeAllen10 amt:weight "0.99" .
+_:nodeAllen11 rdf:subject rgzm:k6lvRVZX .	_:nodeAllen11 rdf:predicate rgzm:e .	_:nodeAllen11 rdf:object rgzm:k6lvRVZX .	_:nodeAllen11 amt:weight "0.99" .
+_:nodeAllen12 rdf:subject rgzm:k6lvRVZX .	_:nodeAllen12 rdf:predicate rgzm:f .	_:nodeAllen12 rdf:object rgzm:O2VyGw1K .	_:nodeAllen12 amt:weight "0.99" .
+_:nodeAllen13 rdf:subject rgzm:k6lvRVZX .	_:nodeAllen13 rdf:predicate rgzm:s .	_:nodeAllen13 rdf:object rgzm:zXamrQEX .	_:nodeAllen13 amt:weight "0.99" .
+_:nodeAllen14 rdf:subject rgzm:k6lvRVZX .	_:nodeAllen14 rdf:predicate rgzm:f .	_:nodeAllen14 rdf:object rgzm:Bm057ME9 .	_:nodeAllen14 amt:weight "0.99" .
+_:nodeAllen15 rdf:subject rgzm:k6lvRVZX .	_:nodeAllen15 rdf:predicate rgzm:f .	_:nodeAllen15 rdf:object rgzm:qz5OnyEk .	_:nodeAllen15 amt:weight "0.99" .
+_:nodeAllen16 rdf:subject rgzm:k6lvRVZX .	_:nodeAllen16 rdf:predicate rgzm:f .	_:nodeAllen16 rdf:object rgzm:gM6qkG9A .	_:nodeAllen16 amt:weight "0.99" .
+_:nodeAllen17 rdf:subject rgzm:k6lvRVZX .	_:nodeAllen17 rdf:predicate rgzm:f .	_:nodeAllen17 rdf:object rgzm:j4xgYvNn .	_:nodeAllen17 amt:weight "0.99" .
+_:nodeAllen18 rdf:subject rgzm:k6lvRVZX .	_:nodeAllen18 rdf:predicate rgzm:f .	_:nodeAllen18 rdf:object rgzm:vAJzox6A .	_:nodeAllen18 amt:weight "0.99" .
+_:nodeAllen19 rdf:subject rgzm:O2VyGw1K .	_:nodeAllen19 rdf:predicate rgzm:fi .	_:nodeAllen19 rdf:object rgzm:dRr5vzy7 .	_:nodeAllen19 amt:weight "0.99" .
+_:nodeAllen20 rdf:subject rgzm:O2VyGw1K .	_:nodeAllen20 rdf:predicate rgzm:fi .	_:nodeAllen20 rdf:object rgzm:k6lvRVZX .	_:nodeAllen20 amt:weight "0.99" .
+_:nodeAllen21 rdf:subject rgzm:O2VyGw1K .	_:nodeAllen21 rdf:predicate rgzm:e .	_:nodeAllen21 rdf:object rgzm:O2VyGw1K .	_:nodeAllen21 amt:weight "0.99" .
+_:nodeAllen22 rdf:subject rgzm:O2VyGw1K .	_:nodeAllen22 rdf:predicate rgzm:o .	_:nodeAllen22 rdf:object rgzm:zXamrQEX .	_:nodeAllen22 amt:weight "0.99" .
+_:nodeAllen23 rdf:subject rgzm:O2VyGw1K .	_:nodeAllen23 rdf:predicate rgzm:fi .	_:nodeAllen23 rdf:object rgzm:Bm057ME9 .	_:nodeAllen23 amt:weight "0.99" .
+_:nodeAllen24 rdf:subject rgzm:O2VyGw1K .	_:nodeAllen24 rdf:predicate rgzm:fi .	_:nodeAllen24 rdf:object rgzm:qz5OnyEk .	_:nodeAllen24 amt:weight "0.99" .
+_:nodeAllen25 rdf:subject rgzm:O2VyGw1K .	_:nodeAllen25 rdf:predicate rgzm:fi .	_:nodeAllen25 rdf:object rgzm:gM6qkG9A .	_:nodeAllen25 amt:weight "0.99" .
+_:nodeAllen26 rdf:subject rgzm:O2VyGw1K .	_:nodeAllen26 rdf:predicate rgzm:fi .	_:nodeAllen26 rdf:object rgzm:j4xgYvNn .	_:nodeAllen26 amt:weight "0.99" .
+_:nodeAllen27 rdf:subject rgzm:O2VyGw1K .	_:nodeAllen27 rdf:predicate rgzm:fi .	_:nodeAllen27 rdf:object rgzm:vAJzox6A .	_:nodeAllen27 amt:weight "0.99" .
+_:nodeAllen28 rdf:subject rgzm:zXamrQEX .	_:nodeAllen28 rdf:predicate rgzm:oi .	_:nodeAllen28 rdf:object rgzm:dRr5vzy7 .	_:nodeAllen28 amt:weight "0.99" .
+_:nodeAllen29 rdf:subject rgzm:zXamrQEX .	_:nodeAllen29 rdf:predicate rgzm:si .	_:nodeAllen29 rdf:object rgzm:k6lvRVZX .	_:nodeAllen29 amt:weight "0.99" .
+_:nodeAllen30 rdf:subject rgzm:zXamrQEX .	_:nodeAllen30 rdf:predicate rgzm:oi .	_:nodeAllen30 rdf:object rgzm:O2VyGw1K .	_:nodeAllen30 amt:weight "0.99" .
+_:nodeAllen31 rdf:subject rgzm:zXamrQEX .	_:nodeAllen31 rdf:predicate rgzm:e .	_:nodeAllen31 rdf:object rgzm:zXamrQEX .	_:nodeAllen31 amt:weight "0.99" .
+_:nodeAllen32 rdf:subject rgzm:zXamrQEX .	_:nodeAllen32 rdf:predicate rgzm:oi .	_:nodeAllen32 rdf:object rgzm:Bm057ME9 .	_:nodeAllen32 amt:weight "0.99" .
+_:nodeAllen33 rdf:subject rgzm:zXamrQEX .	_:nodeAllen33 rdf:predicate rgzm:oi .	_:nodeAllen33 rdf:object rgzm:qz5OnyEk .	_:nodeAllen33 amt:weight "0.99" .
+_:nodeAllen34 rdf:subject rgzm:zXamrQEX .	_:nodeAllen34 rdf:predicate rgzm:oi .	_:nodeAllen34 rdf:object rgzm:gM6qkG9A .	_:nodeAllen34 amt:weight "0.99" .
+_:nodeAllen35 rdf:subject rgzm:zXamrQEX .	_:nodeAllen35 rdf:predicate rgzm:oi .	_:nodeAllen35 rdf:object rgzm:j4xgYvNn .	_:nodeAllen35 amt:weight "0.99" .
+_:nodeAllen36 rdf:subject rgzm:zXamrQEX .	_:nodeAllen36 rdf:predicate rgzm:oi .	_:nodeAllen36 rdf:object rgzm:vAJzox6A .	_:nodeAllen36 amt:weight "0.99" .
+_:nodeAllen37 rdf:subject rgzm:Bm057ME9 .	_:nodeAllen37 rdf:predicate rgzm:e .	_:nodeAllen37 rdf:object rgzm:dRr5vzy7 .	_:nodeAllen37 amt:weight "0.99" .
+_:nodeAllen38 rdf:subject rgzm:Bm057ME9 .	_:nodeAllen38 rdf:predicate rgzm:fi .	_:nodeAllen38 rdf:object rgzm:k6lvRVZX .	_:nodeAllen38 amt:weight "0.99" .
+_:nodeAllen39 rdf:subject rgzm:Bm057ME9 .	_:nodeAllen39 rdf:predicate rgzm:f .	_:nodeAllen39 rdf:object rgzm:O2VyGw1K .	_:nodeAllen39 amt:weight "0.99" .
+_:nodeAllen40 rdf:subject rgzm:Bm057ME9 .	_:nodeAllen40 rdf:predicate rgzm:o .	_:nodeAllen40 rdf:object rgzm:zXamrQEX .	_:nodeAllen40 amt:weight "0.99" .
+_:nodeAllen41 rdf:subject rgzm:Bm057ME9 .	_:nodeAllen41 rdf:predicate rgzm:e .	_:nodeAllen41 rdf:object rgzm:Bm057ME9 .	_:nodeAllen41 amt:weight "0.99" .
+_:nodeAllen42 rdf:subject rgzm:Bm057ME9 .	_:nodeAllen42 rdf:predicate rgzm:f .	_:nodeAllen42 rdf:object rgzm:qz5OnyEk .	_:nodeAllen42 amt:weight "0.99" .
+_:nodeAllen43 rdf:subject rgzm:Bm057ME9 .	_:nodeAllen43 rdf:predicate rgzm:f .	_:nodeAllen43 rdf:object rgzm:gM6qkG9A .	_:nodeAllen43 amt:weight "0.99" .
+_:nodeAllen44 rdf:subject rgzm:Bm057ME9 .	_:nodeAllen44 rdf:predicate rgzm:f .	_:nodeAllen44 rdf:object rgzm:j4xgYvNn .	_:nodeAllen44 amt:weight "0.99" .
+_:nodeAllen45 rdf:subject rgzm:Bm057ME9 .	_:nodeAllen45 rdf:predicate rgzm:f .	_:nodeAllen45 rdf:object rgzm:vAJzox6A .	_:nodeAllen45 amt:weight "0.99" .
+_:nodeAllen46 rdf:subject rgzm:qz5OnyEk .	_:nodeAllen46 rdf:predicate rgzm:fi .	_:nodeAllen46 rdf:object rgzm:dRr5vzy7 .	_:nodeAllen46 amt:weight "0.99" .
+_:nodeAllen47 rdf:subject rgzm:qz5OnyEk .	_:nodeAllen47 rdf:predicate rgzm:fi .	_:nodeAllen47 rdf:object rgzm:k6lvRVZX .	_:nodeAllen47 amt:weight "0.99" .
+_:nodeAllen48 rdf:subject rgzm:qz5OnyEk .	_:nodeAllen48 rdf:predicate rgzm:f .	_:nodeAllen48 rdf:object rgzm:O2VyGw1K .	_:nodeAllen48 amt:weight "0.99" .
+_:nodeAllen49 rdf:subject rgzm:qz5OnyEk .	_:nodeAllen49 rdf:predicate rgzm:o .	_:nodeAllen49 rdf:object rgzm:zXamrQEX .	_:nodeAllen49 amt:weight "0.99" .
+_:nodeAllen50 rdf:subject rgzm:qz5OnyEk .	_:nodeAllen50 rdf:predicate rgzm:fi .	_:nodeAllen50 rdf:object rgzm:Bm057ME9 .	_:nodeAllen50 amt:weight "0.99" .
+_:nodeAllen51 rdf:subject rgzm:qz5OnyEk .	_:nodeAllen51 rdf:predicate rgzm:e .	_:nodeAllen51 rdf:object rgzm:qz5OnyEk .	_:nodeAllen51 amt:weight "0.99" .
+_:nodeAllen52 rdf:subject rgzm:qz5OnyEk .	_:nodeAllen52 rdf:predicate rgzm:e .	_:nodeAllen52 rdf:object rgzm:gM6qkG9A .	_:nodeAllen52 amt:weight "0.99" .
+_:nodeAllen53 rdf:subject rgzm:qz5OnyEk .	_:nodeAllen53 rdf:predicate rgzm:e .	_:nodeAllen53 rdf:object rgzm:j4xgYvNn .	_:nodeAllen53 amt:weight "0.99" .
+_:nodeAllen54 rdf:subject rgzm:qz5OnyEk .	_:nodeAllen54 rdf:predicate rgzm:e .	_:nodeAllen54 rdf:object rgzm:vAJzox6A .	_:nodeAllen54 amt:weight "0.99" .
+_:nodeAllen55 rdf:subject rgzm:gM6qkG9A .	_:nodeAllen55 rdf:predicate rgzm:fi .	_:nodeAllen55 rdf:object rgzm:dRr5vzy7 .	_:nodeAllen55 amt:weight "0.99" .
+_:nodeAllen56 rdf:subject rgzm:gM6qkG9A .	_:nodeAllen56 rdf:predicate rgzm:fi .	_:nodeAllen56 rdf:object rgzm:k6lvRVZX .	_:nodeAllen56 amt:weight "0.99" .
+_:nodeAllen57 rdf:subject rgzm:gM6qkG9A .	_:nodeAllen57 rdf:predicate rgzm:f .	_:nodeAllen57 rdf:object rgzm:O2VyGw1K .	_:nodeAllen57 amt:weight "0.99" .
+_:nodeAllen58 rdf:subject rgzm:gM6qkG9A .	_:nodeAllen58 rdf:predicate rgzm:o .	_:nodeAllen58 rdf:object rgzm:zXamrQEX .	_:nodeAllen58 amt:weight "0.99" .
+_:nodeAllen59 rdf:subject rgzm:gM6qkG9A .	_:nodeAllen59 rdf:predicate rgzm:fi .	_:nodeAllen59 rdf:object rgzm:Bm057ME9 .	_:nodeAllen59 amt:weight "0.99" .
+_:nodeAllen60 rdf:subject rgzm:gM6qkG9A .	_:nodeAllen60 rdf:predicate rgzm:e .	_:nodeAllen60 rdf:object rgzm:qz5OnyEk .	_:nodeAllen60 amt:weight "0.99" .
+_:nodeAllen61 rdf:subject rgzm:gM6qkG9A .	_:nodeAllen61 rdf:predicate rgzm:e .	_:nodeAllen61 rdf:object rgzm:gM6qkG9A .	_:nodeAllen61 amt:weight "0.99" .
+_:nodeAllen62 rdf:subject rgzm:gM6qkG9A .	_:nodeAllen62 rdf:predicate rgzm:e .	_:nodeAllen62 rdf:object rgzm:j4xgYvNn .	_:nodeAllen62 amt:weight "0.99" .
+_:nodeAllen63 rdf:subject rgzm:gM6qkG9A .	_:nodeAllen63 rdf:predicate rgzm:e .	_:nodeAllen63 rdf:object rgzm:vAJzox6A .	_:nodeAllen63 amt:weight "0.99" .
+_:nodeAllen64 rdf:subject rgzm:j4xgYvNn .	_:nodeAllen64 rdf:predicate rgzm:fi .	_:nodeAllen64 rdf:object rgzm:dRr5vzy7 .	_:nodeAllen64 amt:weight "0.99" .
+_:nodeAllen65 rdf:subject rgzm:j4xgYvNn .	_:nodeAllen65 rdf:predicate rgzm:fi .	_:nodeAllen65 rdf:object rgzm:k6lvRVZX .	_:nodeAllen65 amt:weight "0.99" .
+_:nodeAllen66 rdf:subject rgzm:j4xgYvNn .	_:nodeAllen66 rdf:predicate rgzm:f .	_:nodeAllen66 rdf:object rgzm:O2VyGw1K .	_:nodeAllen66 amt:weight "0.99" .
+_:nodeAllen67 rdf:subject rgzm:j4xgYvNn .	_:nodeAllen67 rdf:predicate rgzm:o .	_:nodeAllen67 rdf:object rgzm:zXamrQEX .	_:nodeAllen67 amt:weight "0.99" .
+_:nodeAllen68 rdf:subject rgzm:j4xgYvNn .	_:nodeAllen68 rdf:predicate rgzm:fi .	_:nodeAllen68 rdf:object rgzm:Bm057ME9 .	_:nodeAllen68 amt:weight "0.99" .
+_:nodeAllen69 rdf:subject rgzm:j4xgYvNn .	_:nodeAllen69 rdf:predicate rgzm:e .	_:nodeAllen69 rdf:object rgzm:qz5OnyEk .	_:nodeAllen69 amt:weight "0.99" .
+_:nodeAllen70 rdf:subject rgzm:j4xgYvNn .	_:nodeAllen70 rdf:predicate rgzm:e .	_:nodeAllen70 rdf:object rgzm:gM6qkG9A .	_:nodeAllen70 amt:weight "0.99" .
+_:nodeAllen71 rdf:subject rgzm:j4xgYvNn .	_:nodeAllen71 rdf:predicate rgzm:e .	_:nodeAllen71 rdf:object rgzm:j4xgYvNn .	_:nodeAllen71 amt:weight "0.99" .
+_:nodeAllen72 rdf:subject rgzm:j4xgYvNn .	_:nodeAllen72 rdf:predicate rgzm:e .	_:nodeAllen72 rdf:object rgzm:vAJzox6A .	_:nodeAllen72 amt:weight "0.99" .
+_:nodeAllen73 rdf:subject rgzm:vAJzox6A .	_:nodeAllen73 rdf:predicate rgzm:fi .	_:nodeAllen73 rdf:object rgzm:dRr5vzy7 .	_:nodeAllen73 amt:weight "0.99" .
+_:nodeAllen74 rdf:subject rgzm:vAJzox6A .	_:nodeAllen74 rdf:predicate rgzm:fi .	_:nodeAllen74 rdf:object rgzm:k6lvRVZX .	_:nodeAllen74 amt:weight "0.99" .
+_:nodeAllen75 rdf:subject rgzm:vAJzox6A .	_:nodeAllen75 rdf:predicate rgzm:f .	_:nodeAllen75 rdf:object rgzm:O2VyGw1K .	_:nodeAllen75 amt:weight "0.99" .
+_:nodeAllen76 rdf:subject rgzm:vAJzox6A .	_:nodeAllen76 rdf:predicate rgzm:o .	_:nodeAllen76 rdf:object rgzm:zXamrQEX .	_:nodeAllen76 amt:weight "0.99" .
+_:nodeAllen77 rdf:subject rgzm:vAJzox6A .	_:nodeAllen77 rdf:predicate rgzm:fi .	_:nodeAllen77 rdf:object rgzm:Bm057ME9 .	_:nodeAllen77 amt:weight "0.99" .
+_:nodeAllen78 rdf:subject rgzm:vAJzox6A .	_:nodeAllen78 rdf:predicate rgzm:e .	_:nodeAllen78 rdf:object rgzm:qz5OnyEk .	_:nodeAllen78 amt:weight "0.99" .
+_:nodeAllen79 rdf:subject rgzm:vAJzox6A .	_:nodeAllen79 rdf:predicate rgzm:e .	_:nodeAllen79 rdf:object rgzm:gM6qkG9A .	_:nodeAllen79 amt:weight "0.99" .
+_:nodeAllen80 rdf:subject rgzm:vAJzox6A .	_:nodeAllen80 rdf:predicate rgzm:e .	_:nodeAllen80 rdf:object rgzm:j4xgYvNn .	_:nodeAllen80 amt:weight "0.99" .
+_:nodeAllen81 rdf:subject rgzm:vAJzox6A .	_:nodeAllen81 rdf:predicate rgzm:e .	_:nodeAllen81 rdf:object rgzm:vAJzox6A .	_:nodeAllen81 amt:weight "0.99" .
+
+rgzm:e3EbQoJ5 amt:instanceOf rgzm:Potter.	rgzm:e3EbQoJ5 rdfs:label 'Abitus (Habitus)'.
+rgzm:de6YkvrZ amt:instanceOf rgzm:Potter.	rgzm:de6YkvrZ rdfs:label 'Acutus i'.
+rgzm:xgEyw4og amt:instanceOf rgzm:Potter.	rgzm:xgEyw4og rdfs:label 'Aemilius i'.
+rgzm:paLnzxky amt:instanceOf rgzm:Potter.	rgzm:paLnzxky rdfs:label 'Albanus ii'.
+rgzm:g94zWbpA amt:instanceOf rgzm:Potter.	rgzm:g94zWbpA rdfs:label 'Amandus ii'.
+rgzm:VD74ge1N amt:instanceOf rgzm:Potter.	rgzm:VD74ge1N rdfs:label 'Amandus iii (Amandinus)?'.
+rgzm:lRzONzvp amt:instanceOf rgzm:Potter.	rgzm:lRzONzvp rdfs:label 'Aper i'.
+rgzm:wn6mRMJ5 amt:instanceOf rgzm:Potter.	rgzm:wn6mRMJ5 rdfs:label 'Apro (Apro-)?'.
+rgzm:agND9rol amt:instanceOf rgzm:Potter.	rgzm:agND9rol rdfs:label 'Aquitanus'.
+rgzm:gjmy3EBj amt:instanceOf rgzm:Potter.	rgzm:gjmy3EBj rdfs:label 'Ardacus ii'.
+rgzm:rJPydq51 amt:instanceOf rgzm:Potter.	rgzm:rJPydq51 rdfs:label 'Ardanus'.
+rgzm:bOX5P9Lk amt:instanceOf rgzm:Potter.	rgzm:bOX5P9Lk rdfs:label 'Astaurus (Asaurus or Tastaurus?)'.
+rgzm:dBmkJd24 amt:instanceOf rgzm:Potter.	rgzm:dBmkJd24 rdfs:label 'Atticus i'.
+rgzm:AWjOpBKE amt:instanceOf rgzm:Potter.	rgzm:AWjOpBKE rdfs:label 'Ave (i) or Avetu or Ave tu or Ave Vale etc.'.
+rgzm:NBQ7j28R amt:instanceOf rgzm:Potter.	rgzm:NBQ7j28R rdfs:label 'Aveus ii/Avevus?'.
+rgzm:y89Ebe68 amt:instanceOf rgzm:Potter.	rgzm:y89Ebe68 rdfs:label 'Avitus ii'.
+rgzm:ZGzA6Zr9 amt:instanceOf rgzm:Potter.	rgzm:ZGzA6Zr9 rdfs:label 'Balbus i'.
+rgzm:GXjE13pe amt:instanceOf rgzm:Potter.	rgzm:GXjE13pe rdfs:label 'Bamsinus or Bamasinus?'.
+rgzm:lnaZQrPq amt:instanceOf rgzm:Potter.	rgzm:lnaZQrPq rdfs:label 'Bassinus i'.
+rgzm:QErAPaKY amt:instanceOf rgzm:Potter.	rgzm:QErAPaKY rdfs:label 'Bassus ii'.
+rgzm:jv35prNb amt:instanceOf rgzm:Potter.	rgzm:jv35prNb rdfs:label 'Bassus ii-Coelus'.
+rgzm:al7Py58r amt:instanceOf rgzm:Potter.	rgzm:al7Py58r rdfs:label 'Bassus iii'.
+rgzm:LVPvrKJz amt:instanceOf rgzm:Potter.	rgzm:LVPvrKJz rdfs:label 'Bellicus i'.
+rgzm:dJWP7oXE amt:instanceOf rgzm:Potter.	rgzm:dJWP7oXE rdfs:label 'Bilicatus (Bilicatos)'.
+rgzm:er3yvwqZ amt:instanceOf rgzm:Potter.	rgzm:er3yvwqZ rdfs:label 'Billicuro'.
+rgzm:eVegx9bN amt:instanceOf rgzm:Potter.	rgzm:eVegx9bN rdfs:label 'Bionis (Bio)?'.
+rgzm:a30jMGvx amt:instanceOf rgzm:Potter.	rgzm:a30jMGvx rdfs:label 'Biragillus i'.
+rgzm:zYEqKZwY amt:instanceOf rgzm:Potter.	rgzm:zYEqKZwY rdfs:label 'Blaesus ii'.
+rgzm:QqQm2ypq amt:instanceOf rgzm:Potter.	rgzm:QqQm2ypq rdfs:label 'Bollus ii'.
+rgzm:vDkJ81OB amt:instanceOf rgzm:Potter.	rgzm:vDkJ81OB rdfs:label 'C. Cincius Senovirus (G. Cingius)'.
+rgzm:v4zpQ71K amt:instanceOf rgzm:Potter.	rgzm:v4zpQ71K rdfs:label 'C. Ex- Albinus'.
+rgzm:NjV0ZnaG amt:instanceOf rgzm:Potter.	rgzm:NjV0ZnaG rdfs:label 'C. Iulius Clemens (C. Iul- Clem-)'.
+rgzm:lYLgry90 amt:instanceOf rgzm:Potter.	rgzm:lYLgry90 rdfs:label 'C. Iulius Primig- (C. Iul- Primic- or G. Iul- Prim- etc.)'.
+rgzm:Z5VZLgO5 amt:instanceOf rgzm:Potter.	rgzm:Z5VZLgO5 rdfs:label 'C. Iulius Vas- (C. Iul- Vas-)'.
+rgzm:lDAlAZXQ amt:instanceOf rgzm:Potter.	rgzm:lDAlAZXQ rdfs:label 'C. S- Ruf-'.
+rgzm:PklPjMNk amt:instanceOf rgzm:Potter.	rgzm:PklPjMNk rdfs:label 'C. Silvius Patricius'.
+rgzm:N9R53LZ1 amt:instanceOf rgzm:Potter.	rgzm:N9R53LZ1 rdfs:label 'C. Valerius Albanus?'.
+rgzm:GJDqganK amt:instanceOf rgzm:Potter.	rgzm:GJDqganK rdfs:label 'Cabucatus'.
+rgzm:wEzK3jJ6 amt:instanceOf rgzm:Potter.	rgzm:wEzK3jJ6 rdfs:label 'Cacabio (Cacabus)?'.
+rgzm:l5K0L2M9 amt:instanceOf rgzm:Potter.	rgzm:l5K0L2M9 rdfs:label 'Caicus'.
+rgzm:dlBnZ9Kl amt:instanceOf rgzm:Potter.	rgzm:dlBnZ9Kl rdfs:label 'Calvinus i'.
+rgzm:LkWjJq4m amt:instanceOf rgzm:Potter.	rgzm:LkWjJq4m rdfs:label 'Calvus i'.
+rgzm:XN8k8EQ6 amt:instanceOf rgzm:Potter.	rgzm:XN8k8EQ6 rdfs:label 'Candidus i'.
+rgzm:g3azgVAx amt:instanceOf rgzm:Potter.	rgzm:g3azgVAx rdfs:label 'Cantus'.
+rgzm:qPKkz0gP amt:instanceOf rgzm:Potter.	rgzm:qPKkz0gP rdfs:label 'Capito i'.
+rgzm:a1XW5kdv amt:instanceOf rgzm:Potter.	rgzm:a1XW5kdv rdfs:label 'Carantus i'.
+rgzm:aqgG5Wbq amt:instanceOf rgzm:Potter.	rgzm:aqgG5Wbq rdfs:label 'Carbo'.
+rgzm:gP3k5n3P amt:instanceOf rgzm:Potter.	rgzm:gP3k5n3P rdfs:label 'Carus ii'.
+rgzm:RzD8xRJz amt:instanceOf rgzm:Potter.	rgzm:RzD8xRJz rdfs:label 'Carus iii'.
+rgzm:MRzwMjoX amt:instanceOf rgzm:Potter.	rgzm:MRzwMjoX rdfs:label 'Casius?'.
+rgzm:Zxo5qm9E amt:instanceOf rgzm:Potter.	rgzm:Zxo5qm9E rdfs:label 'Castus i'.
+rgzm:exOzGNWa amt:instanceOf rgzm:Potter.	rgzm:exOzGNWa rdfs:label 'Cat- i'.
+rgzm:DExPNLXE amt:instanceOf rgzm:Potter.	rgzm:DExPNLXE rdfs:label 'Celadus'.
+rgzm:xWlALy65 amt:instanceOf rgzm:Potter.	rgzm:xWlALy65 rdfs:label 'Celer iii'.
+rgzm:B139ALEb amt:instanceOf rgzm:Potter.	rgzm:B139ALEb rdfs:label 'Celsus ii'.
+rgzm:aQwpK7mE amt:instanceOf rgzm:Potter.	rgzm:aQwpK7mE rdfs:label 'Cennatus'.
+rgzm:N0BqvD2Y amt:instanceOf rgzm:Potter.	rgzm:N0BqvD2Y rdfs:label 'Censor i'.
+rgzm:lbyP4eyN amt:instanceOf rgzm:Potter.	rgzm:lbyP4eyN rdfs:label 'Cinnamus i'.
+rgzm:rJz8kdZy amt:instanceOf rgzm:Potter.	rgzm:rJz8kdZy rdfs:label 'Cl- Gemma (Claudius Gemma)?'.
+rgzm:zM5yQKGM amt:instanceOf rgzm:Potter.	rgzm:zM5yQKGM rdfs:label 'Coelus ii'.
+rgzm:VPLXoNzP amt:instanceOf rgzm:Potter.	rgzm:VPLXoNzP rdfs:label 'Com-'.
+rgzm:Ymq7nOe6 amt:instanceOf rgzm:Potter.	rgzm:Ymq7nOe6 rdfs:label 'Cosius Iucundus (A. Co- Iuc-)?'.
+rgzm:xXWLKRk0 amt:instanceOf rgzm:Potter.	rgzm:xXWLKRk0 rdfs:label 'Cosius Rufinus'.
+rgzm:A1XYDne2 amt:instanceOf rgzm:Potter.	rgzm:A1XYDne2 rdfs:label 'Cotto ii'.
+rgzm:eAbgxWr4 amt:instanceOf rgzm:Potter.	rgzm:eAbgxWr4 rdfs:label 'Crassus'.
+rgzm:jdro78pn amt:instanceOf rgzm:Potter.	rgzm:jdro78pn rdfs:label 'Crestio'.
+rgzm:QVqnjqNv amt:instanceOf rgzm:Potter.	rgzm:QVqnjqNv rdfs:label 'Crestus i'.
+rgzm:dy8KmgA2 amt:instanceOf rgzm:Potter.	rgzm:dy8KmgA2 rdfs:label 'Crispus iii'.
+rgzm:VlOYQjZN amt:instanceOf rgzm:Potter.	rgzm:VlOYQjZN rdfs:label 'Crucuro i'.
+rgzm:b6QjQkR9 amt:instanceOf rgzm:Potter.	rgzm:b6QjQkR9 rdfs:label 'Crucus (Crucius)'.
+rgzm:PV0LWBoV amt:instanceOf rgzm:Potter.	rgzm:PV0LWBoV rdfs:label 'Darra (Darrantus)?'.
+rgzm:qoXbeDW9 amt:instanceOf rgzm:Potter.	rgzm:qoXbeDW9 rdfs:label 'Dontio'.
+rgzm:Dg2powlQ amt:instanceOf rgzm:Potter.	rgzm:Dg2powlQ rdfs:label 'Ego (Ego-)?'.
+rgzm:RWXqdXOZ amt:instanceOf rgzm:Potter.	rgzm:RWXqdXOZ rdfs:label 'Felicio i'.
+rgzm:zke5q7Ok amt:instanceOf rgzm:Potter.	rgzm:zke5q7Ok rdfs:label 'Felicio ii'.
+rgzm:wExjnO9Y amt:instanceOf rgzm:Potter.	rgzm:wExjnO9Y rdfs:label 'Felix i'.
+rgzm:zm7W3yOm amt:instanceOf rgzm:Potter.	rgzm:zm7W3yOm rdfs:label 'Felix i-Sev-'.
+rgzm:g5RD6wmy amt:instanceOf rgzm:Potter.	rgzm:g5RD6wmy rdfs:label 'Firmo i'.
+rgzm:v2qebnr2 amt:instanceOf rgzm:Potter.	rgzm:v2qebnr2 rdfs:label 'Firmo ii'.
+rgzm:mzJJOo8z amt:instanceOf rgzm:Potter.	rgzm:mzJJOo8z rdfs:label 'Flavius Germanus (L. Flavius Germanus)'.
+rgzm:Jy48BXry amt:instanceOf rgzm:Potter.	rgzm:Jy48BXry rdfs:label 'Flavius Sabinus'.
+rgzm:kREWv976 amt:instanceOf rgzm:Potter.	rgzm:kREWv976 rdfs:label 'Formosus'.
+rgzm:rJjKRl7b amt:instanceOf rgzm:Potter.	rgzm:rJjKRl7b rdfs:label 'Frontinus'.
+rgzm:oZJbqQPZ amt:instanceOf rgzm:Potter.	rgzm:oZJbqQPZ rdfs:label 'Fronto ii'.
+rgzm:brayv61r amt:instanceOf rgzm:Potter.	rgzm:brayv61r rdfs:label 'Fuscus i or ii'.
+rgzm:zpwLMyOR amt:instanceOf rgzm:Potter.	rgzm:zpwLMyOR rdfs:label 'Fuscus ii'.
+rgzm:B5l9D6lk amt:instanceOf rgzm:Potter.	rgzm:B5l9D6lk rdfs:label 'G. At- Pas-'.
+rgzm:VqzlbYjO amt:instanceOf rgzm:Potter.	rgzm:VqzlbYjO rdfs:label 'Gallicanus ii'.
+rgzm:RxrY8X1P amt:instanceOf rgzm:Potter.	rgzm:RxrY8X1P rdfs:label 'Germanus i'.
+rgzm:VxXwgqyB amt:instanceOf rgzm:Potter.	rgzm:VxXwgqyB rdfs:label 'Ingenuus ii'.
+rgzm:eZbBrlzZ amt:instanceOf rgzm:Potter.	rgzm:eZbBrlzZ rdfs:label 'Ingenuus iii'.
+rgzm:AnzJWkVn amt:instanceOf rgzm:Potter.	rgzm:AnzJWkVn rdfs:label 'Iucundus ii'.
+rgzm:v4J1lMRE amt:instanceOf rgzm:Potter.	rgzm:v4J1lMRE rdfs:label 'Iucundus iii'.
+rgzm:Z91JwY4M amt:instanceOf rgzm:Potter.	rgzm:Z91JwY4M rdfs:label 'Iulia- Tem- (Iulius Atem-/ Iulianus i- Tem-)'.
+rgzm:mbxwNG7P amt:instanceOf rgzm:Potter.	rgzm:mbxwNG7P rdfs:label 'Iulius i'.
+rgzm:A5A7VMN1 amt:instanceOf rgzm:Potter.	rgzm:A5A7VMN1 rdfs:label 'Iulius ii'.
+rgzm:kY71a8bO amt:instanceOf rgzm:Potter.	rgzm:kY71a8bO rdfs:label 'Iullinus i'.
+rgzm:Y5OK2R85 amt:instanceOf rgzm:Potter.	rgzm:Y5OK2R85 rdfs:label 'Iustus i'.
+rgzm:aBnDgMp5 amt:instanceOf rgzm:Potter.	rgzm:aBnDgMp5 rdfs:label 'Ivenalis'.
+rgzm:E6Y84Pea amt:instanceOf rgzm:Potter.	rgzm:E6Y84Pea rdfs:label 'L. Cosius'.
+rgzm:VapBymq3 amt:instanceOf rgzm:Potter.	rgzm:VapBymq3 rdfs:label 'L. Cosius Virilis'.
+rgzm:AD3MWoge amt:instanceOf rgzm:Potter.	rgzm:AD3MWoge rdfs:label 'L. Fabu-'.
+rgzm:aQ832lr9 amt:instanceOf rgzm:Potter.	rgzm:aQ832lr9 rdfs:label 'L. Iulius Senex'.
+rgzm:L6pawKOA amt:instanceOf rgzm:Potter.	rgzm:L6pawKOA rdfs:label 'L. Senis (L. Seni- S-)'.
+rgzm:RObwb3Xq amt:instanceOf rgzm:Potter.	rgzm:RObwb3Xq rdfs:label 'L. Ter- Secundus'.
+rgzm:Z19KrbB2 amt:instanceOf rgzm:Potter.	rgzm:Z19KrbB2 rdfs:label 'L. Tr- Masculus'.
+rgzm:lDkbQXnP amt:instanceOf rgzm:Potter.	rgzm:lDkbQXnP rdfs:label 'Labio'.
+rgzm:EXjz1obX amt:instanceOf rgzm:Potter.	rgzm:EXjz1obX rdfs:label 'Lauratus'.
+rgzm:MRBaO3AK amt:instanceOf rgzm:Potter.	rgzm:MRBaO3AK rdfs:label 'Legitumus'.
+rgzm:AEK0XbLw amt:instanceOf rgzm:Potter.	rgzm:AEK0XbLw rdfs:label 'Lentu-'.
+rgzm:VQe2K3aw amt:instanceOf rgzm:Potter.	rgzm:VQe2K3aw rdfs:label 'Lepidus ii'.
+rgzm:kpzRvJPp amt:instanceOf rgzm:Potter.	rgzm:kpzRvJPp rdfs:label 'Libertus i'.
+rgzm:JEPZvn5G amt:instanceOf rgzm:Potter.	rgzm:JEPZvn5G rdfs:label 'Lic- Seve- (Licinius Severus)?'.
+rgzm:WXlea6JV amt:instanceOf rgzm:Potter.	rgzm:WXlea6JV rdfs:label 'Licinus'.
+rgzm:K63aK1zo amt:instanceOf rgzm:Potter.	rgzm:K63aK1zo rdfs:label 'Logirnus'.
+rgzm:Z52XLOkq amt:instanceOf rgzm:Potter.	rgzm:Z52XLOkq rdfs:label 'Lucceius i'.
+rgzm:bk0xZRPk amt:instanceOf rgzm:Potter.	rgzm:bk0xZRPk rdfs:label 'Lucius ii'.
+rgzm:qGylarPJ amt:instanceOf rgzm:Potter.	rgzm:qGylarPJ rdfs:label 'M. Crestio (M- Crestio)'.
+rgzm:wjJvm2zj amt:instanceOf rgzm:Potter.	rgzm:wjJvm2zj rdfs:label 'M. Iulius Seve- (M. Iu- Seve-)'.
+rgzm:G90GrOE7 amt:instanceOf rgzm:Potter.	rgzm:G90GrOE7 rdfs:label 'Ma- ii'.
+rgzm:VJvkjbNl amt:instanceOf rgzm:Potter.	rgzm:VJvkjbNl rdfs:label 'Maccarus i'.
+rgzm:o0pPNMq0 amt:instanceOf rgzm:Potter.	rgzm:o0pPNMq0 rdfs:label 'Macer i'.
+rgzm:AX2anjM3 amt:instanceOf rgzm:Potter.	rgzm:AX2anjM3 rdfs:label 'Mando'.
+rgzm:vEJb60lE amt:instanceOf rgzm:Potter.	rgzm:vEJb60lE rdfs:label 'Manduilus'.
+rgzm:kDL4WNXD amt:instanceOf rgzm:Potter.	rgzm:kDL4WNXD rdfs:label 'Mansuetus i (Masuetus)'.
+rgzm:jl2rvyAl amt:instanceOf rgzm:Potter.	rgzm:jl2rvyAl rdfs:label 'Marianus i'.
+rgzm:nadMKkAp amt:instanceOf rgzm:Potter.	rgzm:nadMKkAp rdfs:label 'Marinus i'.
+rgzm:epq6Z9K2 amt:instanceOf rgzm:Potter.	rgzm:epq6Z9K2 rdfs:label 'Martialis i'.
+rgzm:Qz7V4LeY amt:instanceOf rgzm:Potter.	rgzm:Qz7V4LeY rdfs:label 'Mas- iv'.
+rgzm:LPOJOa8X amt:instanceOf rgzm:Potter.	rgzm:LPOJOa8X rdfs:label 'Masclinus'.
+rgzm:rYOo2XRY amt:instanceOf rgzm:Potter.	rgzm:rYOo2XRY rdfs:label 'Masclus i (Masculus)'.
+rgzm:RGQk7lzX amt:instanceOf rgzm:Potter.	rgzm:RGQk7lzX rdfs:label 'Maternus ii (Mater-)?'.
+rgzm:YNAPx70k amt:instanceOf rgzm:Potter.	rgzm:YNAPx70k rdfs:label 'Matugenus ii'.
+rgzm:WGWbjpgX amt:instanceOf rgzm:Potter.	rgzm:WGWbjpgX rdfs:label 'Meddillus (Mesillus)'.
+rgzm:dQny5Orl amt:instanceOf rgzm:Potter.	rgzm:dQny5Orl rdfs:label 'Memor'.
+rgzm:BO28oN6P amt:instanceOf rgzm:Potter.	rgzm:BO28oN6P rdfs:label 'Mercator i (Mercatoris)?'.
+rgzm:Aw5q4Vzw amt:instanceOf rgzm:Potter.	rgzm:Aw5q4Vzw rdfs:label 'Modestus i'.
+rgzm:pG8jpMNw amt:instanceOf rgzm:Potter.	rgzm:pG8jpMNw rdfs:label 'Mommo'.
+rgzm:Vj9g5aAm amt:instanceOf rgzm:Potter.	rgzm:Vj9g5aAm rdfs:label 'Momo'.
+rgzm:WmW82xXj amt:instanceOf rgzm:Potter.	rgzm:WmW82xXj rdfs:label 'Mon- i'.
+rgzm:MwGZlz20 amt:instanceOf rgzm:Potter.	rgzm:MwGZlz20 rdfs:label 'Mona-'.
+rgzm:g2QlvrGb amt:instanceOf rgzm:Potter.	rgzm:g2QlvrGb rdfs:label 'Monic-?'.
+rgzm:Vm2l1dOQ amt:instanceOf rgzm:Potter.	rgzm:Vm2l1dOQ rdfs:label 'Montanus i'.
+rgzm:wgNR9yMg amt:instanceOf rgzm:Potter.	rgzm:wgNR9yMg rdfs:label 'Montius (Montus)?'.
+rgzm:gv6gebPL amt:instanceOf rgzm:Potter.	rgzm:gv6gebPL rdfs:label 'Murranus i'.
+rgzm:xbW49Mov amt:instanceOf rgzm:Potter.	rgzm:xbW49Mov rdfs:label 'Natalis i'.
+rgzm:M4VoxReW amt:instanceOf rgzm:Potter.	rgzm:M4VoxReW rdfs:label 'Nequres'.
+rgzm:ZOKG5vAO amt:instanceOf rgzm:Potter.	rgzm:ZOKG5vAO rdfs:label 'Nertus i'.
+rgzm:xK8aBWQV amt:instanceOf rgzm:Potter.	rgzm:xK8aBWQV rdfs:label 'Nestor'.
+rgzm:pNm96ZbN amt:instanceOf rgzm:Potter.	rgzm:pNm96ZbN rdfs:label 'Nic- i'.
+rgzm:vzRRE5pz amt:instanceOf rgzm:Potter.	rgzm:vzRRE5pz rdfs:label 'Niger ii'.
+rgzm:ABkPXdr9 amt:instanceOf rgzm:Potter.	rgzm:ABkPXdr9 rdfs:label 'Niger ii-And-'.
+rgzm:WGr6QDgG amt:instanceOf rgzm:Potter.	rgzm:WGr6QDgG rdfs:label 'Ocel- (Oces-)?'.
+rgzm:Xv6G61wx amt:instanceOf rgzm:Potter.	rgzm:Xv6G61wx rdfs:label 'Paestor'.
+rgzm:oAzn8DbA amt:instanceOf rgzm:Potter.	rgzm:oAzn8DbA rdfs:label 'Pas-'.
+rgzm:Vwo2npzq amt:instanceOf rgzm:Potter.	rgzm:Vwo2npzq rdfs:label 'Passenus (Passienus)'.
+rgzm:EzA0QN24 amt:instanceOf rgzm:Potter.	rgzm:EzA0QN24 rdfs:label 'Patricius i'.
+rgzm:bkWN7KOQ amt:instanceOf rgzm:Potter.	rgzm:bkWN7KOQ rdfs:label 'Paullus i (Paulus)'.
+rgzm:AgpAKdG5 amt:instanceOf rgzm:Potter.	rgzm:AgpAKdG5 rdfs:label 'Paullus iii'.
+rgzm:ymvawPM9 amt:instanceOf rgzm:Potter.	rgzm:ymvawPM9 rdfs:label 'Perrus (Perus)'.
+rgzm:wKZAdOzn amt:instanceOf rgzm:Potter.	rgzm:wKZAdOzn rdfs:label 'Pi-'.
+rgzm:nm5rN42x amt:instanceOf rgzm:Potter.	rgzm:nm5rN42x rdfs:label 'Pleveus'.
+rgzm:XkQnQJRY amt:instanceOf rgzm:Potter.	rgzm:XkQnQJRY rdfs:label 'Polio ii (Pollio)'.
+rgzm:aq7DWRw1 amt:instanceOf rgzm:Potter.	rgzm:aq7DWRw1 rdfs:label 'Ponteius'.
+rgzm:ePDE4AkQ amt:instanceOf rgzm:Potter.	rgzm:ePDE4AkQ rdfs:label 'Pontus (Pontius)?'.
+rgzm:EdvaW7J5 amt:instanceOf rgzm:Potter.	rgzm:EdvaW7J5 rdfs:label 'Potitus i'.
+rgzm:B1EQm9M1 amt:instanceOf rgzm:Potter.	rgzm:B1EQm9M1 rdfs:label 'Potitus ii'.
+rgzm:yrnYWK5z amt:instanceOf rgzm:Potter.	rgzm:yrnYWK5z rdfs:label 'Priamus'.
+rgzm:Pw4MBVvY amt:instanceOf rgzm:Potter.	rgzm:Pw4MBVvY rdfs:label 'Primulus i'.
+rgzm:lQPGP68y amt:instanceOf rgzm:Potter.	rgzm:lQPGP68y rdfs:label 'Primus i'.
+rgzm:gwpZ6xnQ amt:instanceOf rgzm:Potter.	rgzm:gwpZ6xnQ rdfs:label 'Primus iii'.
+rgzm:w1gaBEJD amt:instanceOf rgzm:Potter.	rgzm:w1gaBEJD rdfs:label 'Primus iii-Sco-'.
+rgzm:ELeKV2qW amt:instanceOf rgzm:Potter.	rgzm:ELeKV2qW rdfs:label 'Pugnus i'.
+rgzm:GvRwB3WD amt:instanceOf rgzm:Potter.	rgzm:GvRwB3WD rdfs:label 'Quartus iii'.
+rgzm:MKmzd5Xl amt:instanceOf rgzm:Potter.	rgzm:MKmzd5Xl rdfs:label 'Quintanus'.
+rgzm:dND1MYal amt:instanceOf rgzm:Potter.	rgzm:dND1MYal rdfs:label 'Quintus iii'.
+rgzm:nDgone4D amt:instanceOf rgzm:Potter.	rgzm:nDgone4D rdfs:label 'Regenus'.
+rgzm:QPjDQGzn amt:instanceOf rgzm:Potter.	rgzm:QPjDQGzn rdfs:label 'Rogatus'.
+rgzm:nwYl90Ep amt:instanceOf rgzm:Potter.	rgzm:nwYl90Ep rdfs:label 'Romanus i'.
+rgzm:JVd1GloQ amt:instanceOf rgzm:Potter.	rgzm:JVd1GloQ rdfs:label 'Roppus i'.
+rgzm:ae3jvz3g amt:instanceOf rgzm:Potter.	rgzm:ae3jvz3g rdfs:label 'Rufinus ii'.
+rgzm:V0kQnarW amt:instanceOf rgzm:Potter.	rgzm:V0kQnarW rdfs:label 'Rufinus iii'.
+rgzm:W7onAo58 amt:instanceOf rgzm:Potter.	rgzm:W7onAo58 rdfs:label 'Rufus iii'.
+rgzm:bgL5bn9A amt:instanceOf rgzm:Potter.	rgzm:bgL5bn9A rdfs:label 'Rusticus'.
+rgzm:JYNwymNz amt:instanceOf rgzm:Potter.	rgzm:JYNwymNz rdfs:label 'S- Verius (Sex. Verius)?'.
+rgzm:ep3dQqna amt:instanceOf rgzm:Potter.	rgzm:ep3dQqna rdfs:label 'Sabinus iii'.
+rgzm:YKJ1l0j2 amt:instanceOf rgzm:Potter.	rgzm:YKJ1l0j2 rdfs:label 'Sabinus iv'.
+rgzm:YN790wxo amt:instanceOf rgzm:Potter.	rgzm:YN790wxo rdfs:label 'Salvetus i (Salve tu - Salve)?'.
+rgzm:GpPlDkdp amt:instanceOf rgzm:Potter.	rgzm:GpPlDkdp rdfs:label 'Sarrutus'.
+rgzm:Qad8Mpya amt:instanceOf rgzm:Potter.	rgzm:Qad8Mpya rdfs:label 'Scottius i'.
+rgzm:ePJlA65g amt:instanceOf rgzm:Potter.	rgzm:ePJlA65g rdfs:label 'Secundinus i'.
+rgzm:aR0j53Dz amt:instanceOf rgzm:Potter.	rgzm:aR0j53Dz rdfs:label 'Secundus i'.
+rgzm:vXlLp52X amt:instanceOf rgzm:Potter.	rgzm:vXlLp52X rdfs:label 'Secundus i or ii'.
+rgzm:RX3rod12 amt:instanceOf rgzm:Potter.	rgzm:RX3rod12 rdfs:label 'Secundus ii'.
+rgzm:g8aazrm8 amt:instanceOf rgzm:Potter.	rgzm:g8aazrm8 rdfs:label 'Senicio'.
+rgzm:bwEAMx3w amt:instanceOf rgzm:Potter.	rgzm:bwEAMx3w rdfs:label 'Sentrus i'.
+rgzm:Kmwr29Qy amt:instanceOf rgzm:Potter.	rgzm:Kmwr29Qy rdfs:label 'Severus iii'.
+rgzm:DJkgBbYJ amt:instanceOf rgzm:Potter.	rgzm:DJkgBbYJ rdfs:label 'Severus iii-Pud(ens)?'.
+rgzm:DrkK3QEr amt:instanceOf rgzm:Potter.	rgzm:DrkK3QEr rdfs:label 'Sextius Can- (Sex- Can-)'.
+rgzm:VqaMRYZq amt:instanceOf rgzm:Potter.	rgzm:VqaMRYZq rdfs:label 'Sextus i'.
+rgzm:vrXWdNmR amt:instanceOf rgzm:Potter.	rgzm:vrXWdNmR rdfs:label 'Silanus'.
+rgzm:xwdpmjew amt:instanceOf rgzm:Potter.	rgzm:xwdpmjew rdfs:label 'Silvanus i'.
+rgzm:zyBAKObZ amt:instanceOf rgzm:Potter.	rgzm:zyBAKObZ rdfs:label 'Silvinus ii'.
+rgzm:OvQ4pJbA amt:instanceOf rgzm:Potter.	rgzm:OvQ4pJbA rdfs:label 'Silvius i'.
+rgzm:JLoWme4L amt:instanceOf rgzm:Potter.	rgzm:JLoWme4L rdfs:label 'Stabilio'.
+rgzm:kjEQZr2j amt:instanceOf rgzm:Potter.	rgzm:kjEQZr2j rdfs:label 'Successus ii (Sucesus)'.
+rgzm:ZKjnbB7K amt:instanceOf rgzm:Potter.	rgzm:ZKjnbB7K rdfs:label 'Sulpicius'.
+rgzm:JvbkmGjr amt:instanceOf rgzm:Potter.	rgzm:JvbkmGjr rdfs:label 'T. Flavius Secundus'.
+rgzm:zlDvK0me amt:instanceOf rgzm:Potter.	rgzm:zlDvK0me rdfs:label 'T. Iulius Apa- (T. Iul- Apa-)'.
+rgzm:KYbLv4Xr amt:instanceOf rgzm:Potter.	rgzm:KYbLv4Xr rdfs:label 'Tabius Virtus (Tabus-Virtus or Tabus-Virutis)?'.
+rgzm:ZRa1q2NR amt:instanceOf rgzm:Potter.	rgzm:ZRa1q2NR rdfs:label 'Tertius iii'.
+rgzm:kQw435ZO amt:instanceOf rgzm:Potter.	rgzm:kQw435ZO rdfs:label 'Tetio ii'.
+rgzm:x74Xnz97 amt:instanceOf rgzm:Potter.	rgzm:x74Xnz97 rdfs:label 'Tetus (Tetius)'.
+rgzm:k82RxPN8 amt:instanceOf rgzm:Potter.	rgzm:k82RxPN8 rdfs:label 'Urs- i (Ursus i)?'.
+rgzm:l0QmQPn0 amt:instanceOf rgzm:Potter.	rgzm:l0QmQPn0 rdfs:label 'Vapuso (Vapusus)'.
+rgzm:V6gXbQ15 amt:instanceOf rgzm:Potter.	rgzm:V6gXbQ15 rdfs:label 'Vaxius?'.
+rgzm:ykY0gOWr amt:instanceOf rgzm:Potter.	rgzm:ykY0gOWr rdfs:label 'Vebr-'.
+rgzm:mL09QOa7 amt:instanceOf rgzm:Potter.	rgzm:mL09QOa7 rdfs:label 'Verecundus ii'.
+rgzm:VlN8n4Aj amt:instanceOf rgzm:Potter.	rgzm:VlN8n4Aj rdfs:label 'Vin- i'.
+rgzm:aL6rKmDL amt:instanceOf rgzm:Potter.	rgzm:aL6rKmDL rdfs:label 'Virilis ii'.
+rgzm:A7P0kEl7 amt:instanceOf rgzm:Potter.	rgzm:A7P0kEl7 rdfs:label 'Virtus i'.
+rgzm:jn2zJOWn amt:instanceOf rgzm:Potter.	rgzm:jn2zJOWn rdfs:label 'Vitalis i'.
+rgzm:p4yyed54 amt:instanceOf rgzm:Potter.	rgzm:p4yyed54 rdfs:label 'Vitalis ii'.
+rgzm:Nodb01eR amt:instanceOf rgzm:Potter.	rgzm:Nodb01eR rdfs:label 'Vitalis ii-P-'.
+rgzm:Vaw4kN57 amt:instanceOf rgzm:Potter.	rgzm:Vaw4kN57 rdfs:label 'Volus'.
