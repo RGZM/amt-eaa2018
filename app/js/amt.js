@@ -116,6 +116,7 @@ var AMT = function() {
         // load nodes
         queryStore("SELECT ?id ?label ?concept WHERE { ?concept rdf:type amt:Concept . ?id amt:instanceOf ?concept . ?id rdfs:label ?label . }", function(data) {
             graph.nodes = data;
+            console.log("NODES",graph.nodes);
             --todo;
             if (todo == 0 && callback) {
                 callback(graph);
@@ -125,6 +126,7 @@ var AMT = function() {
         // load edges
         queryStore("SELECT ?role ?from ?to ?width WHERE { ?role rdf:type amt:Role . ?stmt rdf:subject ?from . ?stmt rdf:predicate ?role . ?stmt rdf:object ?to . ?stmt amt:weight ?width . }", function(data) {
             graph.edges = data;
+            console.log("EDGES",graph.edges);
             --todo;
             if (todo == 0 && callback) {
                 callback(graph);
@@ -142,7 +144,7 @@ var AMT = function() {
                     AXIOMS[data[i].axiom][data[i].p.substr(PREFIX.length)] = data[i].o;
                 }
             }
-            console.log("AXIOMS",AXIOMS,AXIOMS.length);
+            //console.log("AXIOMS",AXIOMS,AXIOMS.length);
             --todo;
             if (todo == 0 && callback) {
                 callback(graph);
