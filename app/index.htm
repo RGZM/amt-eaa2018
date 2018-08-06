@@ -130,7 +130,7 @@
                             face: 'monospace'
                         };
                         updated.nodes[i].size = 10;
-                    } else if (updated.nodes[i].concept.includes("SpatialThing")) {
+                    } else if (updated.nodes[i].concept.includes("Geom")) {
                         updated.nodes[i].color = {
                             background: 'blue',
                             border: 'blue',
@@ -179,30 +179,18 @@
                         updated.edges[i].hidden = true;
                     }
                     var roleWithPrefix = EAA.prefix;
-                    if (updated.edges[i].role === roleWithPrefix + "connected") {
+                    if (updated.edges[i].role.includes("connected")) {
                         updated.edges[i].color = {
                             color: "Crimson",
-                            highlight: "black"
-                        };
-                        updated.edges[i].dashes = true;
-                        updated.edges[i].length = 200;
-                        updated.edges[i].smooth = false;
-                        if (updated.edges[i].from.localeCompare(updated.edges[i].to) >= 0) {
-                            updated.edges[i].hidden = true;
-                        }
-                    } else if (updated.edges[i].role === roleWithPrefix + "part") {
-                        updated.edges[i].color = {
-                            color: "red",
                             highlight: "black"
                         };
                         updated.edges[i].dashes = true;
                         updated.edges[i].length = 500;
                         updated.edges[i].smooth = false;
                         if (updated.edges[i].from.localeCompare(updated.edges[i].to) >= 0) {
-                            //updated.edges[i].hidden = true;
-                            console.log(updated.edges[i].from.localeCompare(updated.edges[i].to), updated.edges[i].from, updated.edges[i].to);
+                            updated.edges[i].hidden = true;
                         }
-                    } else if (updated.edges[i].role === roleWithPrefix + "geom") {
+                    } else if (updated.edges[i].role.includes("geom")) {
                         updated.edges[i].color = {
                             color: "blue",
                             highlight: "black"
@@ -211,7 +199,7 @@
                         updated.edges[i].length = 50;
                         updated.edges[i].smooth = false;
                         if (updated.edges[i].from.localeCompare(updated.edges[i].to) >= 0) {
-                            //updated.edges[i].hidden = true;
+                            updated.edges[i].hidden = true;
                         }
                     } else if (updated.edges[i].role === roleWithPrefix + "e" ||
                         updated.edges[i].role === roleWithPrefix + "b" ||
