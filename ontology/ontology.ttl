@@ -64,6 +64,11 @@ rgzm:connectedpl rdfs:label "connected with" .
 rgzm:connectedpl rdfs:domain rgzm:Potter .
 rgzm:connectedpl rdfs:range rgzm:LimesPart .
 
+rgzm:connectedll rdf:type amt:Role .
+rgzm:connectedll rdfs:label "connected with" .
+rgzm:connectedll rdfs:domain rgzm:LimesPart .
+rgzm:connectedll rdfs:range rgzm:LimesPart .
+
 rgzm:spatialconnectedsl rdf:type amt:Role .
 rgzm:spatialconnectedsl rdfs:label "spatially connected with" .
 rgzm:spatialconnectedsl rdfs:domain rgzm:Site .
@@ -104,11 +109,17 @@ rgzm:RCA01 amt:antecedent2 rgzm:spatialconnectedsl .
 rgzm:RCA01 amt:consequent rgzm:connectedpl .
 rgzm:RCA01 amt:logic amt:ProductLogic .
 
-rgzm:RCA04 rdf:type amt:RoleChainAxiom .
-rgzm:RCA04 amt:antecedent1 rgzm:spatialconnectedsl .
-rgzm:RCA04 amt:antecedent2 rgzm:spatialconnectedlp .
-rgzm:RCA04 amt:consequent rgzm:connectedsp .
-rgzm:RCA04 amt:logic amt:ProductLogic .
+rgzm:RCA02 rdf:type amt:RoleChainAxiom .
+rgzm:RCA02 amt:antecedent1 rgzm:spatialconnectedsl .
+rgzm:RCA02 amt:antecedent2 rgzm:spatialconnectedlp .
+rgzm:RCA02 amt:consequent rgzm:connectedsp .
+rgzm:RCA02 amt:logic amt:ProductLogic .
+
+rgzm:RCA03 rdf:type amt:RoleChainAxiom .
+rgzm:RCA03 amt:antecedent1 rgzm:connectedll .
+rgzm:RCA03 amt:antecedent2 rgzm:connectedll .
+rgzm:RCA03 amt:consequent rgzm:connectedll .
+rgzm:RCA03 amt:logic amt:ProductLogic .
 
 # InverseAxiom
 
@@ -116,33 +127,37 @@ rgzm:IA01 rdf:type amt:InverseAxiom .
 rgzm:IA01 amt:antecedent rgzm:connectedps .
 rgzm:IA01 amt:inverse rgzm:connectedps .
 
-rgzm:IA01a rdf:type amt:InverseAxiom .
-rgzm:IA01a amt:antecedent rgzm:connectedpl .
-rgzm:IA01a amt:inverse rgzm:connectedpl .
-
 rgzm:IA02 rdf:type amt:InverseAxiom .
-rgzm:IA02 amt:antecedent rgzm:spatialconnectedsl .
-rgzm:IA02 amt:inverse rgzm:spatialconnectedsl .
+rgzm:IA02 amt:antecedent rgzm:connectedpl .
+rgzm:IA02 amt:inverse rgzm:connectedpl .
 
 rgzm:IA03 rdf:type amt:InverseAxiom .
-rgzm:IA03 amt:antecedent rgzm:spatialconnectedlp .
-rgzm:IA03 amt:inverse rgzm:spatialconnectedlp .
+rgzm:IA03 amt:antecedent rgzm:connectedll .
+rgzm:IA03 amt:inverse rgzm:connectedll .
 
 rgzm:IA04 rdf:type amt:InverseAxiom .
-rgzm:IA04 amt:antecedent rgzm:spatialconnectedsp .
-rgzm:IA04 amt:inverse rgzm:spatialconnectedsp .
+rgzm:IA04 amt:antecedent rgzm:spatialconnectedsl .
+rgzm:IA04 amt:inverse rgzm:spatialconnectedsl .
 
 rgzm:IA05 rdf:type amt:InverseAxiom .
-rgzm:IA05 amt:antecedent rgzm:geoms .
-rgzm:IA05 amt:inverse rgzm:geoms .
+rgzm:IA05 amt:antecedent rgzm:spatialconnectedlp .
+rgzm:IA05 amt:inverse rgzm:spatialconnectedlp .
 
 rgzm:IA06 rdf:type amt:InverseAxiom .
-rgzm:IA06 amt:antecedent rgzm:geoml .
-rgzm:IA06 amt:inverse rgzm:geoml .
+rgzm:IA06 amt:antecedent rgzm:spatialconnectedsp .
+rgzm:IA06 amt:inverse rgzm:spatialconnectedsp .
 
 rgzm:IA07 rdf:type amt:InverseAxiom .
-rgzm:IA07 amt:antecedent rgzm:geomp .
-rgzm:IA07 amt:inverse rgzm:geomp .
+rgzm:IA07 amt:antecedent rgzm:geoms .
+rgzm:IA07 amt:inverse rgzm:geoms .
+
+rgzm:IA08 rdf:type amt:InverseAxiom .
+rgzm:IA08 amt:antecedent rgzm:geoml .
+rgzm:IA08 amt:inverse rgzm:geoml .
+
+rgzm:IA09 rdf:type amt:InverseAxiom .
+rgzm:IA09 amt:antecedent rgzm:geomp .
+rgzm:IA09 amt:inverse rgzm:geomp .
 
 # Roles
 
