@@ -69,10 +69,10 @@ rgzm:connectedll rdfs:label "connected with" .
 rgzm:connectedll rdfs:domain rgzm:LimesPart .
 rgzm:connectedll rdfs:range rgzm:LimesPart .
 
-rgzm:spatialconnectedsl rdf:type amt:Role .
-rgzm:spatialconnectedsl rdfs:label "spatially connected with" .
-rgzm:spatialconnectedsl rdfs:domain rgzm:Site .
-rgzm:spatialconnectedsl rdfs:range rgzm:LimesPart .
+rgzm:connectedsl rdf:type amt:Role .
+rgzm:connectedsl rdfs:label "spatially connected with" .
+rgzm:connectedsl rdfs:domain rgzm:Site .
+rgzm:connectedsl rdfs:range rgzm:LimesPart .
 
 rgzm:spatialconnectedlp rdf:type amt:Role .
 rgzm:spatialconnectedlp rdfs:label "spatially connected with" .
@@ -110,7 +110,7 @@ rgzm:RCA01 amt:consequent rgzm:connectedpl .
 rgzm:RCA01 amt:logic amt:ProductLogic .
 
 rgzm:RCA02 rdf:type amt:RoleChainAxiom .
-rgzm:RCA02 amt:antecedent1 rgzm:spatialconnectedsl .
+rgzm:RCA02 amt:antecedent1 rgzm:connectedsl .
 rgzm:RCA02 amt:antecedent2 rgzm:spatialconnectedlp .
 rgzm:RCA02 amt:consequent rgzm:connectedsp .
 rgzm:RCA02 amt:logic amt:ProductLogic .
@@ -136,8 +136,8 @@ rgzm:IA03 amt:antecedent rgzm:connectedll .
 rgzm:IA03 amt:inverse rgzm:connectedll .
 
 rgzm:IA04 rdf:type amt:InverseAxiom .
-rgzm:IA04 amt:antecedent rgzm:spatialconnectedsl .
-rgzm:IA04 amt:inverse rgzm:spatialconnectedsl .
+rgzm:IA04 amt:antecedent rgzm:connectedsl .
+rgzm:IA04 amt:inverse rgzm:connectedsl .
 
 rgzm:IA05 rdf:type amt:InverseAxiom .
 rgzm:IA05 amt:antecedent rgzm:spatialconnectedlp .
