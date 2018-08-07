@@ -50,112 +50,186 @@
     <script>
         var EAA = {};
         EAA.prefix = "http://rgzm.de/datingmechanism#";
-        EAA.ontology = "military";
         EAA.graph = {};
         EAA.edit = false;
         EAA.thisNodes = [];
         EAA.thisEdges = [];
         EAA.inverse = false;
+        EAA.mode = "limesConnections";
+        EAA.reasoning = false;
         var update = function() {
-            if (EAA.amt) {
-                //var updated = EAA.amt.getGraph(!EAA.edit, true);
-                var updated = EAA.amt.getGraph(false, false);
+            EAA.amt = new AMT();
+            EAA.amt.load(function() {
+                var graph = EAA.amt.getGraph(false, true);
+                EAA.graph.nodes = new vis.DataSet(graph.nodes);
+                EAA.graph.edges = new vis.DataSet(graph.edges);
+            });
+
+            //if (EAA.amt) {
+            setTimeout(function(){
+                var options = {
+                    layout: {
+                        randomSeed: 12
+                    },
+                    physics: false
+                };
+                new vis.Network(document.getElementById("graph"), {
+                    nodes: EAA.graph.nodes,
+                    edges: EAA.graph.edges
+                }, options);
+                console.log(EAA.reasoning);
+                var updated = EAA.amt.getGraph(EAA.reasoning, false);
+                //var updated = EAA.amt.getGraph(false, false);
                 EAA.graph.edges.clear();
                 EAA.graph.nodes.clear();
                 /*
                 	Hier wird spezifiziert, wie die Knoten aussehen sollen
                 */
+                //console.info("load nodes");
                 for (var i in updated.nodes) {
                     updated.nodes[i].length = 10 / updated.nodes[i].width;
                     if (!EAA.edit) {
                         updated.nodes[i].chosen = false;
                     }
-                    if (updated.nodes[i].concept.includes("Potter")) {
-                        updated.nodes[i].color = {
-                            background: 'Crimson',
-                            border: 'Crimson',
-                            highlight: {
-                                background: 'white',
-                                border: 'red'
-                            }
-                        };
-                        updated.nodes[i].shape = "square";
-                        updated.nodes[i].font = {
-                            size: 16,
-                            face: 'monospace'
-                        };
-                        updated.nodes[i].size = 10;
-                    } else if (updated.nodes[i].concept.includes("Site")) {
-                        updated.nodes[i].color = {
-                            background: 'green',
-                            border: 'green',
-                            highlight: {
-                                background: 'white',
-                                border: 'green'
-                            }
-                        };
-                        updated.nodes[i].shape = "star";
-                        updated.nodes[i].font = {
-                            size: 16,
-                            face: 'monospace'
-                        };
-                        updated.nodes[i].size = 20;
-                    } else if (updated.nodes[i].concept.includes("LimesPart")) {
-                        updated.nodes[i].color = {
-                            background: 'coral',
-                            border: 'coral',
-                            highlight: {
-                                background: 'white',
-                                border: 'coral'
-                            }
-                        };
-                        updated.nodes[i].shape = "diamond";
-                        updated.nodes[i].font = {
-                            size: 16,
-                            face: 'monospace'
-                        };
-                        updated.nodes[i].size = 20;
-                    } else if (updated.nodes[i].concept.includes("Province")) {
-                        updated.nodes[i].color = {
-                            background: 'GoldenRod',
-                            border: 'GoldenRod',
-                            highlight: {
-                                background: 'white',
-                                border: 'GoldenRod'
-                            }
-                        };
-                        updated.nodes[i].shape = "dot";
-                        updated.nodes[i].font = {
-                            size: 16,
-                            face: 'monospace'
-                        };
-                        updated.nodes[i].size = 10;
-                    } else if (updated.nodes[i].concept.includes("Geom")) {
-                        updated.nodes[i].color = {
-                            background: 'blue',
-                            border: 'blue',
-                            highlight: {
-                                background: 'white',
-                                border: 'blue'
-                            }
-                        };
-                        updated.nodes[i].font = {
-                            size: 16,
-                            face: 'monospace'
-                        };
-                        updated.nodes[i].size = 10;
-                        var geojson = JSON.parse(updated.nodes[i].label);
-                        var thislabel = "";
-                        if (geojson.type === "Point") {
-                            thislabel = JSON.stringify(geojson.coordinates);
-                            updated.nodes[i].shape = "dot";
+                    if (updated.nodes[i].concept === EAA.prefix + "Potter") {
+                        if (EAA.mode === "potterSiteLimes") {
+                            updated.nodes[i].color = {
+                                background: 'Crimson',
+                                border: 'Crimson',
+                                highlight: {
+                                    background: 'white',
+                                    border: 'red'
+                                }
+                            };
+                            updated.nodes[i].shape = "square";
+                            updated.nodes[i].font = {
+                                size: 16,
+                                face: 'monospace'
+                            };
+                            updated.nodes[i].size = 10;
+                        } else {
+                            updated.nodes[i].hidden = true;
+                        }
+                    } else if (updated.nodes[i].concept === EAA.prefix + "Site") {
+                        if (EAA.mode === "siteLimesProvince" || EAA.mode === "potterSiteLimes") {
+                            updated.nodes[i].color = {
+                                background: 'green',
+                                border: 'green',
+                                highlight: {
+                                    background: 'white',
+                                    border: 'green'
+                                }
+                            };
+                            updated.nodes[i].shape = "star";
+                            updated.nodes[i].font = {
+                                size: 16,
+                                face: 'monospace'
+                            };
                             updated.nodes[i].size = 20;
                         } else {
-                            var thislabel = "Feature of " + geojson.properties.name;
-                            updated.nodes[i].shape = "square";
-                            updated.nodes[i].size = 20;
+                            updated.nodes[i].hidden = true;
                         }
-                        updated.nodes[i].label = thislabel;
+                    } else if (updated.nodes[i].concept === EAA.prefix + "LimesPart") {
+                        if (EAA.mode === "siteLimesProvince" || EAA.mode === "potterSiteLimes" || EAA.mode === "limesConnections" || EAA.mode === "limesAllen") {
+                            updated.nodes[i].color = {
+                                background: 'coral',
+                                border: 'coral',
+                                highlight: {
+                                    background: 'white',
+                                    border: 'coral'
+                                }
+                            };
+                            updated.nodes[i].shape = "diamond";
+                            updated.nodes[i].font = {
+                                size: 16,
+                                face: 'monospace'
+                            };
+                            updated.nodes[i].size = 20;
+                        } else {
+                            updated.nodes[i].hidden = true;
+                        }
+                    } else if (updated.nodes[i].concept === EAA.prefix + "Province") {
+                        if (EAA.mode === "siteLimesProvince") {
+                            updated.nodes[i].color = {
+                                background: 'GoldenRod',
+                                border: 'GoldenRod',
+                                highlight: {
+                                    background: 'white',
+                                    border: 'GoldenRod'
+                                }
+                            };
+                            updated.nodes[i].shape = "dot";
+                            updated.nodes[i].font = {
+                                size: 16,
+                                face: 'monospace'
+                            };
+                            updated.nodes[i].size = 10;
+                        } else {
+                            updated.nodes[i].hidden = true;
+                        }
+                    } else if (updated.nodes[i].concept === EAA.prefix + "SiteGeom") {
+                        if ($("#showGeomConcepts").is(":checked")) {
+                            updated.nodes[i].color = {
+                                background: 'blue',
+                                border: 'blue',
+                                highlight: {
+                                    background: 'white',
+                                    border: 'blue'
+                                }
+                            };
+                            updated.nodes[i].font = {
+                                size: 8,
+                                face: 'monospace'
+                            };
+                            var geojson = JSON.parse(updated.nodes[i].label);
+                            var thislabel = "";
+                            thislabel = JSON.stringify(geojson.coordinates);
+                            updated.nodes[i].shape = "dot";
+                            updated.nodes[i].size = 5;
+                            updated.nodes[i].label = thislabel;
+                        } else {
+                            updated.nodes[i].hidden = true;
+                        }
+                    } else if (updated.nodes[i].concept === EAA.prefix + "LimesPartGeom") {
+                        if ($("#showGeomConcepts").is(":checked")) {
+                            updated.nodes[i].color = {
+                                background: 'blue',
+                                border: 'blue',
+                                highlight: {
+                                    background: 'white',
+                                    border: 'blue'
+                                }
+                            };
+                            updated.nodes[i].font = {
+                                size: 8,
+                                face: 'monospace'
+                            };
+                            updated.nodes[i].shape = "square";
+                            updated.nodes[i].size = 5;
+                            updated.nodes[i].label = "LineString";
+                        } else {
+                            updated.nodes[i].hidden = true;
+                        }
+                    } else if (updated.nodes[i].concept === EAA.prefix + "ProvinceGeom") {
+                        if ($("#showGeomConcepts").is(":checked")) {
+                            updated.nodes[i].color = {
+                                background: 'blue',
+                                border: 'blue',
+                                highlight: {
+                                    background: 'white',
+                                    border: 'blue'
+                                }
+                            };
+                            updated.nodes[i].font = {
+                                size: 8,
+                                face: 'monospace'
+                            };
+                            updated.nodes[i].shape = "square";
+                            updated.nodes[i].size = 5;
+                            updated.nodes[i].label = "Polygon";
+                        } else {
+                            updated.nodes[i].hidden = true;
+                        }
                     } else {
                         updated.nodes[i].color = {
                             background: 'grey',
@@ -171,37 +245,146 @@
                 /*
                 	Hier wird spezifiziert wie die Kanten aussehen sollen, welche angezeigt werden sollen, etc
                 */
-                console.info("load edges");
+                //console.info("load edges");
                 for (var i in updated.edges) {
                     updated.edges[i].arrowStrikethrough = false;
                     updated.edges[i].chosen = false;
-                    if (updated.edges[i].width < 0.01) {
+                    if (updated.edges[i].width < 0.0001) {
                         updated.edges[i].hidden = true;
                     }
                     var roleWithPrefix = EAA.prefix;
-                    if (updated.edges[i].role.includes("connected")) {
-                        updated.edges[i].color = {
-                            color: "Crimson",
-                            highlight: "black"
-                        };
-                        updated.edges[i].dashes = true;
-                        updated.edges[i].length = 500;
-                        updated.edges[i].smooth = false;
-                        if (updated.edges[i].from.localeCompare(updated.edges[i].to) >= 0) {
+                    if (updated.edges[i].role === EAA.prefix + "connectedsl") {
+                        if (EAA.mode === "potterSiteLimes" || EAA.mode === "siteLimesProvince") {
+                            updated.edges[i].color = {
+                                color: "FORESTGREEN",
+                                highlight: "black"
+                            };
+                            updated.edges[i].dashes = true;
+                            updated.edges[i].length = 500;
+                            updated.edges[i].smooth = false;
+                            /*if (updated.edges[i].from.localeCompare(updated.edges[i].to) >= 0) {
+                                updated.edges[i].hidden = true;
+                            }*/
+                        } else {
                             updated.edges[i].hidden = true;
                         }
-                    } else if (updated.edges[i].role.includes("geom")) {
-                        updated.edges[i].color = {
-                            color: "blue",
-                            highlight: "black"
-                        };
-                        updated.edges[i].dashes = true;
-                        updated.edges[i].length = 50;
-                        updated.edges[i].smooth = false;
-                        if (updated.edges[i].from.localeCompare(updated.edges[i].to) >= 0) {
+                    }
+                    if (updated.edges[i].role === EAA.prefix + "connectedps") {
+                        //console.log(updated.edges[i].role);
+                        if (EAA.mode === "potterSiteLimes") {
+                            updated.edges[i].color = {
+                                color: "FORESTGREEN",
+                                highlight: "black"
+                            };
+                            updated.edges[i].dashes = true;
+                            updated.edges[i].length = 250;
+                            updated.edges[i].smooth = false;
+                            if (updated.edges[i].from.localeCompare(updated.edges[i].to) >= 0) {
+                                updated.edges[i].hidden = true;
+                            }
+                        } else {
                             updated.edges[i].hidden = true;
                         }
-                    } else if (updated.edges[i].role === roleWithPrefix + "e" ||
+                    }
+                    if (updated.edges[i].role === EAA.prefix + "connectedpl") {
+                        //console.log(updated.edges[i].role);
+                        if (EAA.mode === "potterSiteLimes") {
+                            updated.edges[i].color = {
+                                color: "FORESTGREEN",
+                                highlight: "black"
+                            };
+                            updated.edges[i].dashes = true;
+                            updated.edges[i].length = 500;
+                            updated.edges[i].smooth = false;
+                            if (updated.edges[i].from.localeCompare(updated.edges[i].to) >= 0) {
+                                updated.edges[i].hidden = true;
+                            }
+                        } else {
+                            updated.edges[i].hidden = true;
+                        }
+                    }
+                    if (updated.edges[i].role === EAA.prefix + "spatialconnectedlp") {
+                        if (EAA.mode === "siteLimesProvince") {
+                            updated.edges[i].color = {
+                                color: "FORESTGREEN",
+                                highlight: "black"
+                            };
+                            updated.edges[i].dashes = true;
+                            updated.edges[i].length = 100;
+                            updated.edges[i].smooth = false;
+                            if (updated.edges[i].from.localeCompare(updated.edges[i].to) >= 0) {
+                                updated.edges[i].hidden = true;
+                            }
+                        } else {
+                            updated.edges[i].hidden = true;
+                        }
+                    }
+                    if (updated.edges[i].role === EAA.prefix + "spatialconnectedsp") {
+                        //console.log(updated.edges[i].role);
+                        if (EAA.mode === "siteLimesProvince") {
+                            updated.edges[i].color = {
+                                color: "FORESTGREEN",
+                                highlight: "black"
+                            };
+                            updated.edges[i].dashes = true;
+                            updated.edges[i].length = 100;
+                            updated.edges[i].smooth = false;
+                            if (updated.edges[i].from.localeCompare(updated.edges[i].to) >= 0) {
+                                updated.edges[i].hidden = true;
+                            }
+                        } else {
+                            updated.edges[i].hidden = true;
+                        }
+                    }
+                    if (updated.edges[i].role === EAA.prefix + "connectedll") {
+                        if (EAA.mode === "limesConnections") {
+                            updated.edges[i].color = {
+                                color: "FORESTGREEN",
+                                highlight: "black"
+                            };
+                            updated.edges[i].dashes = true;
+                            updated.edges[i].length = 250;
+                            updated.edges[i].smooth = false;
+                            if (updated.edges[i].from.localeCompare(updated.edges[i].to) >= 0) {
+                                updated.edges[i].hidden = true;
+                            }
+                        } else {
+                            updated.edges[i].hidden = true;
+                        }
+                    }
+                    if (updated.edges[i].role === EAA.prefix + "connectedlll") {
+                        if (EAA.mode === "limesConnections") {
+                            updated.edges[i].color = {
+                                color: "TOMATO",
+                                highlight: "black"
+                            };
+                            updated.edges[i].dashes = true;
+                            updated.edges[i].length = 250;
+                            updated.edges[i].smooth = false;
+                            if (updated.edges[i].from.localeCompare(updated.edges[i].to) >= 0) {
+                                updated.edges[i].hidden = true;
+                            }
+                        } else {
+                            updated.edges[i].hidden = true;
+                        }
+                    }
+                    if (updated.edges[i].role.includes("geom")) {
+                        if ($("#showGeomConcepts").is(":checked")) {
+                            updated.edges[i].color = {
+                                color: "blue",
+                                highlight: "black"
+                            };
+                            updated.edges[i].dashes = true;
+                            updated.edges[i].length = 50;
+                            updated.edges[i].smooth = false;
+                            if (updated.edges[i].from.localeCompare(updated.edges[i].to) >= 0) {
+                                updated.edges[i].hidden = true;
+                            }
+                        } else {
+                            updated.edges[i].hidden = true;
+                        }
+                    }
+                    if (updated.edges[i].role === roleWithPrefix + "e" ||
                         updated.edges[i].role === roleWithPrefix + "b" ||
                         updated.edges[i].role === roleWithPrefix + "a" ||
                         updated.edges[i].role === roleWithPrefix + "d" ||
@@ -215,164 +398,52 @@
                         updated.edges[i].role === roleWithPrefix + "f" ||
                         updated.edges[i].role === roleWithPrefix + "fi"
                     ) {
-                        updated.edges[i].color = {
-                            color: "blue",
-                            highlight: "black"
-                        };
-                        updated.edges[i].dashes = false;
-                        updated.edges[i].length = 250;
-                        updated.edges[i].smooth = true;
-                        updated.edges[i].label = updated.edges[i].role.replace(EAA.prefix, "");
-                        if (updated.edges[i].from.localeCompare(updated.edges[i].to) >= 0) {
-                            //updated.edges[i].hidden = true;
+                        if (EAA.mode === "limesAllen") {
+                            updated.edges[i].color = {
+                                color: "blue",
+                                highlight: "black"
+                            };
+                            updated.edges[i].dashes = false;
+                            updated.edges[i].length = 250;
+                            updated.edges[i].smooth = true;
+                            updated.edges[i].label = updated.edges[i].role.replace(EAA.prefix, "");
+                            if (updated.edges[i].from.localeCompare(updated.edges[i].to) >= 0) {
+                                //updated.edges[i].hidden = true;
+                            }
+                        } else {
+                            updated.edges[i].hidden = true;
                         }
-                    } else {
-                        updated.edges[i].color = {
-                            color: "black",
-                            highlight: "black"
-                        };
-                        updated.edges[i].dashes = true;
                     }
                     if (!updated.edges[i].hidden) {
                         //console.log(updated.edges[i].role, updated.edges[i].width);
                     }
                 }
                 EAA.graph.nodes.update(updated.nodes);
-                EAA.graph.edges.update(updated.edges);
+                if ($("#showEdges").is(":checked")) {
+                    EAA.graph.edges.update(updated.edges);
+                }
                 EAA.thisNodes = updated.nodes;
                 EAA.thisEdges = updated.edges;
-            }
+            //}
+            }, 3000);
         };
         var edit = function() {
-            EAA.edit = !EAA.edit;
-            $(".edit").toggle();
-            $(".normal").toggle();
-            if (EAA.edit) {
-                $("#r-but").show();
-                $("#e-but").hide();
+            if (EAA.reasoning) {
+                EAA.reasoning = false;
+                $("#r-but").removeClass("red");
+                $("#r-but").addClass("blue");
             } else {
-                $("#r-but").hide();
-                $("#e-but").show();
+                EAA.reasoning = true;
+                $("#r-but").removeClass("blue");
+                $("#r-but").addClass("red");
             }
             update();
         };
-        /*var cancel = function() {
-            EAA.amt.cancel();
-            $("#store").hide();
-            edit();
-        };
-        var save = function() {
-            EAA.amt.save(function() {
-                location.reload();
-            });
-        }
-        var openModal = function(id, type) {
-            $("#uri").val("");
-            if (id) {
-                $("#uri").val(id);
-                var graph = EAA.amt.getGraph(false, true);
-                var node = false;
-                for (var i in graph.nodes) {
-                    if (graph.nodes[i].id == id)
-                        node = graph.nodes[i];
-                }
-                type = node.concept;
-                $("#label").val(node.label);
-            }
-            $("#concept").val(type);
-            $("#role").empty();
-            $("#table").empty();
-            var concepts = EAA.amt.getConcepts();
-            for (var i in concepts) {
-                if (concepts[i].concept == type) {
-                    $("#label").attr("placeholder", concepts[i].placeholder);
-                }
-            }
-            $("#role").append("<option value='' disabled selected>Rolle wählen ...</option>");
-            var roles = EAA.amt.getRoles();
-            for (var i in roles) {
-                if (roles[i].domain == type) {
-                    var role = roles[i].role;
-                    var caaprefix = EAA.prefix;
-                    $("#role").append("<option value='" + roles[i].role + "'>" + roles[i].label + "</option>");
-                }
-            }
-            $("#role").on("change", function() {
-                $("#table").empty();
-                var concept = "";
-                for (var i in roles) {
-                    if (roles[i].role == $("#role").val()) {
-                        concept = roles[i].range;
-                    }
-                }
-                var graph = EAA.amt.getGraph(false, true);
-                for (var i in graph.nodes) {
-                    if (graph.nodes[i].concept == concept) {
-                        var w = 0;
-                        if (id) {
-                            for (var j in graph.edges) {
-                                if (graph.edges[j].role == $("#role").val() && graph.edges[j].from == id && graph.edges[j].to == graph.nodes[i].id)
-                                    w = graph.edges[j].width;
-                            }
-                        }
-                        var tr = $("<tr></tr>");
-                        tr.append("<td>" + graph.nodes[i].label + "</td>");
-                        tr.append("<td><p class='range-field'><input type='range' name='" + graph.nodes[i].id + "' min='0' max='100' value='" + w * 100 + "' /></p></td>");
-                        $("#table").append(tr);
-                    }
-                }
-            });
-            $("#role").material_select();
-            $("#modal").modal("open");
-        };*/
-        /*var remove = function() {
-            var from = $("#uri").val();
-            if (from) {
-                $("#save").show();
-                if (!EAA.amt.removeIndividual(from)) {
-                    console.log("Inkonsistenz vorhanden");
-                }
-            }
-            $("#store").show();
-            $("#modal").modal("close");
-            $("#label").val("");
-            update();
-        }
-        var cancelEdit = function() {
-            $("#modal").modal("close");
-            $("#label").val("");
-        };
-        var saveEdit = function() {
-            var role = $("#role").val();
-            var from = $("#uri").val();
-            if (!from) {
-                from = EAA.amt.addIndividual($("#label").val(), $("#concept").val());
-            }
-            $("#save").show();
-            $("#table tr td input").each(function(i) {
-                var w = Math.floor(Number($(this).val()));
-                var to = $(this).attr("name");
-                var inconsistent = false;
-                if (!EAA.amt.editAssertion(role, from, to, w / 100)) {
-                    if (!inconsistent)
-                        console.log("Inkonsistenz vorhanden");
-                    inconsistent = true;
-                }
-            });
-            $("#store").show();
-            $("#modal").modal("close");
-            $("#label").val("");
-            update();
-        };*/
+
         $(function() {
-            EAA.amt = new AMT();
+            update();
+            /*EAA.amt = new AMT();
             EAA.amt.load(function() {
-                /*var concepts = EAA.amt.getConcepts();
-                for (var i in concepts) {
-                    var a = $("<a class='btn-floating btn-large edit green' onclick='openModal(false,\"" + concepts[i].concept + "\")' title='Add " + concepts[i].label + " node'><i class='material-icons'>add" + concepts[i].label.substr(
-                        0, 1) + "</i></a>");
-                    $("#buttons").prepend(a);
-                }*/
                 $(".edit").hide();
                 $("#r-but").show();
                 $("#e-but").hide();
@@ -380,27 +451,10 @@
                 EAA.graph.nodes = new vis.DataSet(graph.nodes);
                 EAA.graph.edges = new vis.DataSet(graph.edges);
                 var options = {
-                    /*layout: {
-                    	hierarchical: {
-                    		enabled: true,
-                    		nodeSpacing: 800,
-                    		blockShifting: false,
-                    		edgeMinimization: false,
-                    		parentCentralization: false,
-                    		direction: 'UD', // UD, DU, LR, RL
-                    		sortMethod: 'directed' // hubsize, directed
-                    	},
-                    },*/
-                    //physics: false
-                    /*smooth: {
-                    	type: 'dynamic',
-                    	roundness: 0.2
-                    }*/
-                };
-                var options = {
                     layout: {
-                        randomSeed: 10
-                    }
+                        randomSeed: 12
+                    },
+                    physics: false
                 };
                 var network = new vis.Network(document.getElementById("graph"), {
                     nodes: EAA.graph.nodes,
@@ -410,12 +464,9 @@
                 /*network.on("selectNode", function(params) {
                     if (EAA.edit)
                         openModal(params.nodes[0]);
-                });*/
+                });
                 //switchOntology();
                 //info();
-            });
-            /*$("#modal").modal({
-                complete: cancelEdit
             });*/
             $("#info").modal({
                 complete: function() {
@@ -432,12 +483,6 @@
                     loadJSONGraph(true);
                 }
             });
-            $("#propertiesModal").modal({
-                dismissible: false,
-                complete: function() {
-                    loadJSONGraph(true);
-                }
-            });
             $("#graphPropModal").modal({
                 dismissible: false,
                 complete: function() {
@@ -447,70 +492,6 @@
             $(".edit").hide();
             $("#store").hide();
         });
-        /*var switchOntology = function() {
-            EAA = {};
-            EAA.prefix = "http://github.com/RGZM/amt-eaa2018#";
-            EAA.graph = {};
-            EAA.edit = true;
-            EAA.thisNodes = [];
-            EAA.thisEdges = [];
-            EAA.amt = new AMT();
-            console.log(EAA);
-            EAA.amt.load(function() {
-                var concepts = EAA.amt.getConcepts();
-                $("#buttons .green").remove();
-                for (var i in concepts) {
-                    var a = $("<a class='btn-floating btn-large edit green' onclick='openModal(false,\"" + concepts[i].concept + "\")' title='Add " + concepts[i].label + " node'><i class='material-icons'>add " + concepts[i].label.substr(
-                        0, 1) + "</i></a>");
-                    $("#buttons").prepend(a);
-                }
-                $(".edit").show();
-                var graph = EAA.amt.getGraph(true);
-                EAA.graph.nodes = new vis.DataSet(graph.nodes);
-                EAA.graph.edges = new vis.DataSet(graph.edges);
-                var network = new vis.Network(document.getElementById("graph"), {
-                    nodes: EAA.graph.nodes,
-                    edges: EAA.graph.edges
-                }, {});
-                network.on("selectNode", function(params) {
-                    if (EAA.edit)
-                        openModal(params.nodes[0]);
-                });
-                //update();
-            });
-            $("#modal").modal({
-                complete: cancelEdit
-            });
-            $("#info").modal({
-                complete: function() {
-                    info(true);
-                }
-            });
-            $("#exportModal").modal({
-                complete: function() {
-                    exportOptions(true);
-                }
-            });
-            $("#loadModal").modal({
-                complete: function() {
-                    loadJSONGraph(true);
-                }
-            });
-            $("#propertiesModal").modal({
-                dismissible: false,
-                complete: function() {
-                    propModal(true);
-                }
-            });
-            $("#graphPropModal").modal({
-                dismissible: false,
-                complete: function() {
-                    openGraphPropModal(true);
-                }
-            });
-            $(".edit").hide();
-            $("#store").hide();
-        };*/
         var info = function(close) {
             if (close)
                 $("#info").modal("close");
@@ -531,152 +512,24 @@
             else
                 $("#loadModal").modal("open");
         }
-        var propModal = function(close) {
-            $("#ontology").material_select();
-            $("#ontology").val(EAA.ontology);
+        /*var propModal = function(close) {
+            $("#amt-viz").material_select();
             if (close)
                 $("#propertiesModal").modal("close");
             else
                 $("#propertiesModal").modal("open");
-        }
+        }*/
         var openGraphPropModal = function(close) {
-            $("#exportModal").modal("close");
+            $("#amt-viz").material_select();
             if (close)
                 $("#graphPropModal").modal("close");
             else
                 $("#graphPropModal").modal("open");
         }
         var reloadGraphWithProperties = function() {
+            EAA.mode = $("#amt-viz").val();
             update();
             $("#graphPropModal").modal("close");
-        }
-        var exportData = function(type, kind) {
-            if (type === "json") {
-                var nodesAndEdges = {};
-                nodesAndEdges.nodes = EAA.thisNodes;
-                nodesAndEdges.edges = EAA.thisEdges;
-                nodesAndEdges = JSON.stringify(nodesAndEdges);
-                if (nodesAndEdges.includes("Infinity")) {
-                    nodesAndEdges = nodesAndEdges.replace("Infinity", 1.0);
-                }
-                // COPY TO CLIPBOARD
-                $("#hiddenclipboard").text(nodesAndEdges);
-                copyToClipboard('#hiddenclipboard');
-                // CLOSE MODAL
-                $("#exportModal").modal("close");
-            } else if (type === "geojson") {
-                // load json
-                var nodesAndEdges = {};
-                nodesAndEdges.nodes = EAA.thisNodes;
-                nodesAndEdges.edges = EAA.thisEdges;
-                nodesAndEdges = JSON.stringify(nodesAndEdges);
-                if (nodesAndEdges.includes("Infinity")) {
-                    nodesAndEdges = nodesAndEdges.replace("Infinity", 1.0);
-                }
-                nodesAndEdges = JSON.parse(nodesAndEdges);
-                console.log("geojson", nodesAndEdges.edges, nodesAndEdges.nodes);
-                let geojson = {};
-                geojson.type = "FeatureCollection";
-                let features = [];
-                for (var edge in nodesAndEdges.edges) {
-                    let width = null;
-                    let wkt = null;
-                    let place = null;
-                    let placeType = null;
-                    if (nodesAndEdges.edges[edge].role.indexOf("#geom") != -1) {
-                        for (var node in nodesAndEdges.nodes) {
-                            if (nodesAndEdges.nodes[node].id === nodesAndEdges.edges[edge].from && nodesAndEdges.nodes[node].concept.indexOf("#SpatialThing") != -1) {
-                                width = nodesAndEdges.edges[edge].label;
-                                wkt = nodesAndEdges.nodes[node].label;
-                                if (wkt !== null) {
-                                    for (var node in nodesAndEdges.nodes) {
-                                        if (nodesAndEdges.nodes[node].id === nodesAndEdges.edges[edge].to) {
-                                            place = nodesAndEdges.nodes[node].label;
-                                            placeType = nodesAndEdges.nodes[node].concept.replace(EAA.prefix, "");
-                                            //console.log("node","label",nodesAndEdges.nodes[node],place);
-                                        }
-                                    }
-                                }
-                                if (width > 0) {
-                                    //console.log("width","wkt","place",width,wkt,place);
-                                    let feature = {};
-                                    feature.type = "Feature";
-                                    let geometry = {};
-                                    geometry.type = "Point";
-                                    wkt = wkt.replace("POINT (", "");
-                                    wkt = wkt.replace(")", "");
-                                    coords = wkt.split(" ");
-                                    coords[0] = parseFloat(coords[0]);
-                                    coords[1] = parseFloat(coords[1]);
-                                    geometry.coordinates = coords;
-                                    feature.geometry = geometry;
-                                    let properties = {};
-                                    properties.name = place;
-                                    properties.type = placeType;
-                                    properties.width = parseFloat(width);
-                                    feature.properties = properties;
-                                    features.push(feature);
-                                }
-                            }
-                        }
-                    }
-                }
-                geojson.features = features;
-                console.log(JSON.stringify(geojson));
-                // COPY TO CLIPBOARD
-                $("#hiddenclipboard").text(JSON.stringify(geojson));
-                copyToClipboard('#hiddenclipboard');
-                // CLOSE MODAL
-                $("#exportModal").modal("close");
-            } else if (type === "csv") {
-                if (kind === "nodes") {
-                    var nodesAndEdges = "id,label,concept\r\n";
-                    for (var node in EAA.thisNodes) {
-                        nodesAndEdges += EAA.thisNodes[node].id + "," + EAA.thisNodes[node].label + "," + EAA.thisNodes[node].concept + "\r\n";
-                    }
-                    // COPY TO CLIPBOARD
-                    $("#hiddenclipboard").text(nodesAndEdges);
-                    copyToClipboard('#hiddenclipboard');
-                    // CLOSE MODAL
-                    $("#exportModal").modal("close");
-                } else {
-                    var nodesAndEdges = "from,to,role,width\r\n";
-                    for (var edge in EAA.thisEdges) {
-                        if (!EAA.thisEdges[edge].hidden) {
-                            nodesAndEdges += EAA.thisEdges[edge].from + "," + EAA.thisEdges[edge].to + "," + EAA.thisEdges[edge].role + "," + EAA.thisEdges[edge].width + "\r\n";
-                            if (nodesAndEdges.includes("Infinity")) {
-                                nodesAndEdges = nodesAndEdges.replace("Infinity", 1.0);
-                            }
-                        }
-                    }
-                    // COPY TO CLIPBOARD
-                    $("#hiddenclipboard").text(nodesAndEdges);
-                    copyToClipboard('#hiddenclipboard');
-                    // CLOSE MODAL
-                    $("#exportModal").modal("close");
-                }
-            } else if (type === "rdf") {
-                var nodesAndEdges = "";
-                for (var node in EAA.thisNodes) {
-                    nodesAndEdges += "<" + EAA.thisNodes[node].id + "> " + "<http://www.academic-meta-tool.xyz/instanceOf>" + " <" + EAA.thisNodes[node].concept + "> .\r\n";
-                    nodesAndEdges += "<" + EAA.thisNodes[node].id + "> " + "<http://www.w3.org/2000/01/rdf-schema#label>" + " \"" + EAA.thisNodes[node].label + "\" .\r\n";
-                }
-                for (var edge in EAA.thisEdges) {
-                    var emptyNode = "_:" + StrID();
-                    nodesAndEdges += emptyNode + " <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject>" + " <" + EAA.thisEdges[edge].from + "> .\r\n";
-                    nodesAndEdges += emptyNode + " <http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate>" + " <" + EAA.thisEdges[edge].role + "> .\r\n";
-                    nodesAndEdges += emptyNode + " <http://www.w3.org/1999/02/22-rdf-syntax-ns#object>" + " <" + EAA.thisEdges[edge].to + "> .\r\n";
-                    nodesAndEdges += emptyNode + " <http://www.academic-meta-tool.xyz/weight>" + " \"" + EAA.thisEdges[edge].width + "\"^^<http://www.w3.org/2001/XMLSchema#integer> .\r\n";
-                    if (nodesAndEdges.includes("Infinity")) {
-                        nodesAndEdges = nodesAndEdges.replace("Infinity", 1.0);
-                    }
-                }
-                // COPY TO CLIPBOARD
-                $("#hiddenclipboard").text(nodesAndEdges);
-                copyToClipboard('#hiddenclipboard');
-                // CLOSE MODAL
-                $("#exportModal").modal("close");
-            } else if (type === "cypher") {}
         }
         var loadJSONGraphInApp = function() {
             var json = JSON.parse($("#json").val());
@@ -699,11 +552,12 @@
             <div class="row">
                 <div id="props" class="col s2 left-align">
                     <a class="btn-floating btn-large black" onclick="info()" title="about AMT"><i class="material-icons">info_outline</i></a>
-                    <a class="btn-floating btn-large black" onclick="exportOptions()" title="download data"><i class="material-icons">file_download</i></a>
+                    <!--<a class="btn-floating btn-large black" onclick="exportOptions()" title="download data"><i class="material-icons">file_download</i></a>-->
+                    <a class="btn-floating btn-large black" onclick="openGraphPropModal()" title="change view"><i class="material-icons">palette</i></a>
                 </div>
                 <div id="buttons" class="col s6 right-align">
                     <a class="btn-floating btn-large blue" id="r-but" onclick="edit()" title="show reasoning data"><i class="material-icons">flash_on</i></a>
-                    <a class="btn-floating btn-large normal blue" id="e-but" onclick="edit()" title="show input data"><i class="material-icons">input</i></a>
+                    <!--<a class="btn-floating btn-large normal blue" id="e-but" onclick="edit()" title="show input data"><i class="material-icons">input</i></a>-->
                 </div>
                 <div id="store" class="col s4 left-align">
                     <div><a class="btn-floating btn-large edit red" onclick="cancel()" title="Cancel changes"><i class="material-icons">cancel</i></a></div>
@@ -746,115 +600,37 @@
             </div>
         </div>
     </div>
+    <!-- Modals -->
     <div id="info" class="modal">
         <div class="modal-content">
-            <h4>AMT. Academic Meta Tool. CAA 2018 Example.</h4>
-            <br>
-            <p><b>About AMT</b></p>
-            <br>
-            <p>AMT provides the ability to add weights to edges, to express the vagueness of that edge. So, a relationship between two nodes is depending on its degree. This degree, the edge weight, is usually expressed in percentages. In addition, AMT includes
-                graph-based reasoning. Here, a prototype of AMT is available as a web application.</p>
-            <br>
-            <p><b>Nodes</b></p>
-            <br>
-            <p style="margin-top: 10px">
-                <div class="chip white lighten-4">Object</div>
-                <img height="40" src="">
-                <div class="chip white lighten-4">Keyword</div>
-                <img height="40" src="">
-                <div class="chip white lighten-4">Concept</div>
-                <div class="chip blue lighten-4">eh:xyz</div>
-            </p>
-            <br>
-            <p><b>Edges</b></p>
-            <br>
-            <p style="margin-top: 10px">
-                <div class="chip red lighten-4">has depiction, dashed</div>
-                <div class="chip blue lighten-4">matches with, dashed</div>
-                <div class="chip green lighten-4">is broader than, dashed</div>
-            </p>
-            <br>
-            <p><b>How to?</b></p>
-            <p>
-                First, the initial input data is displayed. Click <i class="material-icons tiny">add</i> to add more objects, keywords or concepts or modify existing data by clicking on the node. For visualise the reasoning data click <i class="material-icons tiny">flash_on</i>.
-                Relations created by reasoning are displayed red. Change the example by clicking <i class="material-icons tiny">sync</i> and download the data by clicking <i class="material-icons tiny">file_download</i>.
-            </p>
-            <br>
-            <p><b>Info</b></p>
-            <br>
-            <!--<p><a href="https://rgzm.github.io/amt-caa2018/"><img src="https://img.shields.io/badge/amt--caa2018-git repo-orange.svg?style=flat"></a>&nbsp;<a href="https://doi.org/10.5281/zenodo.1200112"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.1200112.svg" alt="DOI"></a></p>-->
             <br>
             <p><b>About the Creators and the Data</b></p>
             <br>
             <p>* AMT Software by Florian Thiery, Martin Unold (i3mainz).<br>* Data by Florian Thiery and Dr. Allard Mees (RGZM).</p>
         </div>
     </div>
-    <div id="exportModal" class="modal">
-        <div class="modal-content">
-            <h4>Copy Edges and Nodes to Clipboard</h4>
-            <br><br>
-            <table class="centered stripped">
-                <thead>
-                    <tr>
-                        <th width="20%">JSON array</th>
-                        <th width="20%">GeoJSON</th>
-                        <th width="20%">CSV as edges,nodes</th>
-                        <th width="20%">CYPHER statements</th>
-                        <th width="20%">RDF</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><a class="btn-floating btn-large green" onclick="exportData('json')" title="Copy Edges and Nodes as JSON"><i class="material-icons">code</i></a></td>
-                        <td><a class="btn-floating btn-large green" onclick="exportData('geojson')" title="Copy Edges and Nodes as GeoJSON"><i class="material-icons">place</i></a></td>
-                        <td><a class="btn-floating btn-large green" onclick="exportData('csv','nodes')" title="Copy Nodes as CSV"><i class="material-icons">fiber_manual_record</i></a> &nbsp;&nbsp;
-                            <a class="btn-floating btn-large green" onclick="exportData('csv','edges')" title="Copy Edges as CSV"><i class="material-icons">arrow_forward</i></a></td>
-                        <td><a class="btn-floating btn-large green" onclick="exportData('cypher')" title="Copy Edges and Nodes as CYPHER"><i class="material-icons">input</i></a></td>
-                        <td><a class="btn-floating btn-large green" onclick="exportData('rdf')" title="Copy Edges as RDF"><i class="material-icons">share</i></a></td>
-                    </tr>
-                </tbody>
-            </table>
-            <textarea id="hiddenclipboard" hidden></textarea>
-        </div>
-    </div>
-    <div id="propertiesModal" class="modal">
+    <div id="graphPropModal" class="modal">
         <div class="modal-content">
             <h4>Please choose an example:</h4>
             <br>
             <form class="col s12">
                 <div class="row">
                     <div class="input-field col s11">
-                        <select id="ontology">
-								<option value="military" selected>Ship function: Military Vessel?</option>
-								<option value="transport">Ship function: Transport Vessel?</option>
-								<option value="lateenfore">Sailing gear: lateen sail or fore sail?</option>
-								<option value="sailedrowed">Ship propulsion: sailed or rowed?</option>
-								<option value="nero">Is it Nero?</option>
+                        <select id="amt-viz">
+                                <option value="siteLimesProvince">site, limes parts and provinces</option>
+                                <option value="potterSiteLimes">potter, site and limes parts</option>
+                                <option value="limesConnections" selected>limes connections by same potter</option>
+                                <option value="limesAllen">limes relative chronology by Allen</option>
 							</select>
-                        <label>Example</label>
+                        <label>visualisation style</label>
                     </div>
+                    <p style="padding-left:10px"><input type="checkbox" id="showGeomConcepts" /><label for="showGeomConcepts">show geometry concepts</label></p>
+                    <p style="padding-left:10px"><input type="checkbox" id="showEdges" checked /><label for="showEdges">show edges</label></p>
                     <div class="col s1">
-                        <a class="btn-floating btn-large green" onclick="switchOntology()" title="load"><i class="material-icons">check</i></a>
+                        <a class="btn-floating btn-large green" onclick="reloadGraphWithProperties()" title="reload"><i class="material-icons">check</i></a>
                     </div>
                 </div>
             </form>
-            <br>
-            <h4>Info</h4>
-            <h5>Ship function: Military Vessel or Transport Vessel?</h5><img src="" height="200">
-            <h5>Sailing gear: lateen sail or fore sail?</h5><img src="" height="200">
-            <h5>Ship propulsion: sailed or rowed?</h5><img src="" height="200">
-            <h5>Is it Nero?</h5><img src="" height="200">
-            <br>
-        </div>
-    </div>
-    <div id="graphPropModal" class="modal">
-        <div class="modal-content">
-            <h4>Graph Properties</h4>
-            <br>
-            <p><input name="group1" type="radio" class="with-gap" id="showAllInverse" value="showAllInverse" /><label for="showAllInverse">show all inverse relations</label></p>
-            <p><input name="group1" type="radio" class="with-gap" id="showNoInverse" value="showNoInverse" checked /><label for="showNoInverse">show no inverse relations</label></p>
-            <br>
-            <center><a class="btn-floating btn-large green" onclick="reloadGraphWithProperties()" title="reload"><i class="material-icons">check</i></a></center>
         </div>
     </div>
 </body>
