@@ -91,8 +91,8 @@ rgzm:site717465271 amt:instanceOf rgzm:Site. rgzm:site717465271 rdfs:label 'Geis
 rgzm:geom1251876408 amt:instanceOf rgzm:SiteGeom. rgzm:geom1251876408 rdfs:label '{"type": "Point", "coordinates": [0, 0]}'.
 _:node27 rdf:subject rgzm:geom1251876408 . _:node27 rdf:predicate rgzm:geoms . _:node27 rdf:object rgzm:site717465271 . _:node27 amt:weight "1.00" .
 rgzm:site717465271 amt:instanceOf rgzm:Site. rgzm:site717465271 rdfs:label 'Geislingen'.
-rgzm:geom1251876408 amt:instanceOf rgzm:SiteGeom. rgzm:geom1251876408 rdfs:label '{"type": "Point", "coordinates": [8.8166659999999997, 48.283332000000001]}'.
-_:node28 rdf:subject rgzm:geom1251876408 . _:node28 rdf:predicate rgzm:geoms . _:node28 rdf:object rgzm:site717465271 . _:node28 amt:weight "1.00" .
+rgzm:geom1251876409 amt:instanceOf rgzm:SiteGeom. rgzm:geom1251876409 rdfs:label '{"type": "Point", "coordinates": [8.8166659999999997, 48.283332000000001]}'.
+_:node28 rdf:subject rgzm:geom1251876409 . _:node28 rdf:predicate rgzm:geoms . _:node28 rdf:object rgzm:site717465271 . _:node28 amt:weight "1.00" .
 rgzm:site767701053 amt:instanceOf rgzm:Site. rgzm:site767701053 rdfs:label 'Gnotzheim'.
 rgzm:geom467204737 amt:instanceOf rgzm:SiteGeom. rgzm:geom467204737 rdfs:label '{"type": "Point", "coordinates": [10.704499, 49.057194000000003]}'.
 _:node29 rdf:subject rgzm:geom467204737 . _:node29 rdf:predicate rgzm:geoms . _:node29 rdf:object rgzm:site767701053 . _:node29 amt:weight "1.00" .
@@ -106,8 +106,8 @@ rgzm:site2066295417 amt:instanceOf rgzm:Site. rgzm:site2066295417 rdfs:label 'He
 rgzm:geom1263523091 amt:instanceOf rgzm:SiteGeom. rgzm:geom1263523091 rdfs:label '{"type": "Point", "coordinates": [10.149998999999999, 48.683334000000002]}'.
 _:node32 rdf:subject rgzm:geom1263523091 . _:node32 rdf:predicate rgzm:geoms . _:node32 rdf:object rgzm:site2066295417 . _:node32 amt:weight "1.00" .
 rgzm:site2066295417 amt:instanceOf rgzm:Site. rgzm:site2066295417 rdfs:label 'Heidenheim'.
-rgzm:geom1263523091 amt:instanceOf rgzm:SiteGeom. rgzm:geom1263523091 rdfs:label '{"type": "Point", "coordinates": [8.6499989999999993, 50.166671000000001]}'.
-_:node33 rdf:subject rgzm:geom1263523091 . _:node33 rdf:predicate rgzm:geoms . _:node33 rdf:object rgzm:site2066295417 . _:node33 amt:weight "1.00" .
+rgzm:geom1263523092 amt:instanceOf rgzm:SiteGeom. rgzm:geom1263523092 rdfs:label '{"type": "Point", "coordinates": [8.6499989999999993, 50.166671000000001]}'.
+_:node33 rdf:subject rgzm:geom1263523092 . _:node33 rdf:predicate rgzm:geoms . _:node33 rdf:object rgzm:site2066295417 . _:node33 amt:weight "1.00" .
 rgzm:site1359758344 amt:instanceOf rgzm:Site. rgzm:site1359758344 rdfs:label 'Heilbronn-Böckingen'.
 rgzm:geom1888088789 amt:instanceOf rgzm:SiteGeom. rgzm:geom1888088789 rdfs:label '{"type": "Point", "coordinates": [9.1886109999999999, 49.133887999999999]}'.
 _:node34 rdf:subject rgzm:geom1888088789 . _:node34 rdf:predicate rgzm:geoms . _:node34 rdf:object rgzm:site1359758344 . _:node34 amt:weight "1.00" .
@@ -118,8 +118,8 @@ rgzm:site1639595865 amt:instanceOf rgzm:Site. rgzm:site1639595865 rdfs:label 'K�
 rgzm:geom326398394 amt:instanceOf rgzm:SiteGeom. rgzm:geom326398394 rdfs:label '{"type": "Point", "coordinates": [9.1770169999999993, 48.782325]}'.
 _:node36 rdf:subject rgzm:geom326398394 . _:node36 rdf:predicate rgzm:geoms . _:node36 rdf:object rgzm:site1639595865 . _:node36 amt:weight "1.00" .
 rgzm:site1639595865 amt:instanceOf rgzm:Site. rgzm:site1639595865 rdfs:label 'Köngen'.
-rgzm:geom326398394 amt:instanceOf rgzm:SiteGeom. rgzm:geom326398394 rdfs:label '{"type": "Point", "coordinates": [9.3666660000000004, 48.683329999999998]}'.
-_:node37 rdf:subject rgzm:geom326398394 . _:node37 rdf:predicate rgzm:geoms . _:node37 rdf:object rgzm:site1639595865 . _:node37 amt:weight "1.00" .
+rgzm:geom326398395 amt:instanceOf rgzm:SiteGeom. rgzm:geom326398395 rdfs:label '{"type": "Point", "coordinates": [9.3666660000000004, 48.683329999999998]}'.
+_:node37 rdf:subject rgzm:geom326398395 . _:node37 rdf:predicate rgzm:geoms . _:node37 rdf:object rgzm:site1639595865 . _:node37 amt:weight "1.00" .
 rgzm:site949234175 amt:instanceOf rgzm:Site. rgzm:site949234175 rdfs:label 'Kösching'.
 rgzm:geom1071284230 amt:instanceOf rgzm:SiteGeom. rgzm:geom1071284230 rdfs:label '{"type": "Point", "coordinates": [11.5, 48.816665]}'.
 _:node38 rdf:subject rgzm:geom1071284230 . _:node38 rdf:predicate rgzm:geoms . _:node38 rdf:object rgzm:site949234175 . _:node38 amt:weight "1.00" .
