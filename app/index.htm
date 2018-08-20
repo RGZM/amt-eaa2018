@@ -145,7 +145,8 @@
                         updated.edges[i].role === roleWithPrefix + "s" ||
                         updated.edges[i].role === roleWithPrefix + "si" ||
                         updated.edges[i].role === roleWithPrefix + "f" ||
-                        updated.edges[i].role === roleWithPrefix + "fi"
+                        updated.edges[i].role === roleWithPrefix + "fi" ||
+                        updated.edges[i].role === roleWithPrefix + "sb"
                     ) {
                         if (EAA.mode === "limesAllen") {
                             updated.edges[i].color = {
@@ -153,15 +154,18 @@
                                 highlight: "black"
                             };
                             updated.edges[i].dashes = false;
-                            updated.edges[i].length = 250;
+                            updated.edges[i].length = 500;
                             updated.edges[i].smooth = true;
-                            updated.edges[i].label = updated.edges[i].role.replace(EAA.prefix, "") + updated.edges[i];
+                            updated.edges[i].label = updated.edges[i].role.replace(EAA.prefix, "") + ": " + Math.floor(updated.edges[i].width * 100) / 100;
                             if (updated.edges[i].from.localeCompare(updated.edges[i].to) >= 0) {
                                 //updated.edges[i].hidden = true;
                             }
                         } else {
                             updated.edges[i].hidden = true;
                         }
+                    }
+                    if (updated.edges[i].role === roleWithPrefix + "q") {
+                            updated.edges[i].hidden = true;
                     }
                     if (!updated.edges[i].hidden) {
                         //console.log(updated.edges[i].role, updated.edges[i].width);
