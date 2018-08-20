@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>AMT | EAA2018 Example</title>
+    <title>AMT | CAAUK2018 Example</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <script type="text/javascript" src="js/amt.js"></script>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
@@ -55,7 +55,7 @@
         EAA.thisNodes = [];
         EAA.thisEdges = [];
         EAA.inverse = false;
-        EAA.mode = "limesConnections";
+        EAA.mode = "limesAllen";
         EAA.reasoning = false;
         var update = function() {
             EAA.amt = new AMT();
@@ -91,46 +91,8 @@
                     if (!EAA.edit) {
                         updated.nodes[i].chosen = false;
                     }
-                    if (updated.nodes[i].concept === EAA.prefix + "Potter") {
-                        if (EAA.mode === "potterSiteLimes") {
-                            updated.nodes[i].color = {
-                                background: 'Crimson',
-                                border: 'Crimson',
-                                highlight: {
-                                    background: 'white',
-                                    border: 'red'
-                                }
-                            };
-                            updated.nodes[i].shape = "square";
-                            updated.nodes[i].font = {
-                                size: 16,
-                                face: 'monospace'
-                            };
-                            updated.nodes[i].size = 10;
-                        } else {
-                            updated.nodes[i].hidden = true;
-                        }
-                    } else if (updated.nodes[i].concept === EAA.prefix + "Site") {
-                        if (EAA.mode === "siteLimesProvince" || EAA.mode === "potterSiteLimes") {
-                            updated.nodes[i].color = {
-                                background: 'green',
-                                border: 'green',
-                                highlight: {
-                                    background: 'white',
-                                    border: 'green'
-                                }
-                            };
-                            updated.nodes[i].shape = "star";
-                            updated.nodes[i].font = {
-                                size: 16,
-                                face: 'monospace'
-                            };
-                            updated.nodes[i].size = 20;
-                        } else {
-                            updated.nodes[i].hidden = true;
-                        }
-                    } else if (updated.nodes[i].concept === EAA.prefix + "LimesPart") {
-                        if (EAA.mode === "siteLimesProvince" || EAA.mode === "potterSiteLimes" || EAA.mode === "limesConnections" || EAA.mode === "limesAllen") {
+                    if (updated.nodes[i].concept === EAA.prefix + "LimesPart") {
+                        if (EAA.mode === "limesAllen") {
                             updated.nodes[i].color = {
                                 background: 'coral',
                                 border: 'coral',
@@ -139,94 +101,12 @@
                                     border: 'coral'
                                 }
                             };
-                            updated.nodes[i].shape = "diamond";
+                            updated.nodes[i].shape = "box";
                             updated.nodes[i].font = {
                                 size: 16,
                                 face: 'monospace'
                             };
                             updated.nodes[i].size = 20;
-                        } else {
-                            updated.nodes[i].hidden = true;
-                        }
-                    } else if (updated.nodes[i].concept === EAA.prefix + "Province") {
-                        if (EAA.mode === "siteLimesProvince") {
-                            updated.nodes[i].color = {
-                                background: 'GoldenRod',
-                                border: 'GoldenRod',
-                                highlight: {
-                                    background: 'white',
-                                    border: 'GoldenRod'
-                                }
-                            };
-                            updated.nodes[i].shape = "dot";
-                            updated.nodes[i].font = {
-                                size: 16,
-                                face: 'monospace'
-                            };
-                            updated.nodes[i].size = 10;
-                        } else {
-                            updated.nodes[i].hidden = true;
-                        }
-                    } else if (updated.nodes[i].concept === EAA.prefix + "SiteGeom") {
-                        if ($("#showGeomConcepts").is(":checked")) {
-                            updated.nodes[i].color = {
-                                background: 'blue',
-                                border: 'blue',
-                                highlight: {
-                                    background: 'white',
-                                    border: 'blue'
-                                }
-                            };
-                            updated.nodes[i].font = {
-                                size: 8,
-                                face: 'monospace'
-                            };
-                            var geojson = JSON.parse(updated.nodes[i].label);
-                            var thislabel = "";
-                            thislabel = JSON.stringify(geojson.coordinates);
-                            updated.nodes[i].shape = "dot";
-                            updated.nodes[i].size = 5;
-                            updated.nodes[i].label = thislabel;
-                        } else {
-                            updated.nodes[i].hidden = true;
-                        }
-                    } else if (updated.nodes[i].concept === EAA.prefix + "LimesPartGeom") {
-                        if ($("#showGeomConcepts").is(":checked")) {
-                            updated.nodes[i].color = {
-                                background: 'blue',
-                                border: 'blue',
-                                highlight: {
-                                    background: 'white',
-                                    border: 'blue'
-                                }
-                            };
-                            updated.nodes[i].font = {
-                                size: 8,
-                                face: 'monospace'
-                            };
-                            updated.nodes[i].shape = "square";
-                            updated.nodes[i].size = 5;
-                            updated.nodes[i].label = "LineString";
-                        } else {
-                            updated.nodes[i].hidden = true;
-                        }
-                    } else if (updated.nodes[i].concept === EAA.prefix + "ProvinceGeom") {
-                        if ($("#showGeomConcepts").is(":checked")) {
-                            updated.nodes[i].color = {
-                                background: 'blue',
-                                border: 'blue',
-                                highlight: {
-                                    background: 'white',
-                                    border: 'blue'
-                                }
-                            };
-                            updated.nodes[i].font = {
-                                size: 8,
-                                face: 'monospace'
-                            };
-                            updated.nodes[i].shape = "square";
-                            updated.nodes[i].size = 5;
-                            updated.nodes[i].label = "Polygon";
                         } else {
                             updated.nodes[i].hidden = true;
                         }
@@ -253,137 +133,6 @@
                         updated.edges[i].hidden = true;
                     }
                     var roleWithPrefix = EAA.prefix;
-                    if (updated.edges[i].role === EAA.prefix + "connectedsl") {
-                        if (EAA.mode === "potterSiteLimes" || EAA.mode === "siteLimesProvince") {
-                            updated.edges[i].color = {
-                                color: "FORESTGREEN",
-                                highlight: "black"
-                            };
-                            updated.edges[i].dashes = true;
-                            updated.edges[i].length = 500;
-                            updated.edges[i].smooth = false;
-                            /*if (updated.edges[i].from.localeCompare(updated.edges[i].to) >= 0) {
-                                updated.edges[i].hidden = true;
-                            }*/
-                        } else {
-                            updated.edges[i].hidden = true;
-                        }
-                    }
-                    if (updated.edges[i].role === EAA.prefix + "connectedps") {
-                        //console.log(updated.edges[i].role);
-                        if (EAA.mode === "potterSiteLimes") {
-                            updated.edges[i].color = {
-                                color: "FORESTGREEN",
-                                highlight: "black"
-                            };
-                            updated.edges[i].dashes = true;
-                            updated.edges[i].length = 250;
-                            updated.edges[i].smooth = false;
-                            if (updated.edges[i].from.localeCompare(updated.edges[i].to) >= 0) {
-                                updated.edges[i].hidden = true;
-                            }
-                        } else {
-                            updated.edges[i].hidden = true;
-                        }
-                    }
-                    if (updated.edges[i].role === EAA.prefix + "connectedpl") {
-                        //console.log(updated.edges[i].role);
-                        if (EAA.mode === "potterSiteLimes") {
-                            updated.edges[i].color = {
-                                color: "FORESTGREEN",
-                                highlight: "black"
-                            };
-                            updated.edges[i].dashes = true;
-                            updated.edges[i].length = 500;
-                            updated.edges[i].smooth = false;
-                            if (updated.edges[i].from.localeCompare(updated.edges[i].to) >= 0) {
-                                updated.edges[i].hidden = true;
-                            }
-                        } else {
-                            updated.edges[i].hidden = true;
-                        }
-                    }
-                    if (updated.edges[i].role === EAA.prefix + "spatialconnectedlp") {
-                        if (EAA.mode === "siteLimesProvince") {
-                            updated.edges[i].color = {
-                                color: "FORESTGREEN",
-                                highlight: "black"
-                            };
-                            updated.edges[i].dashes = true;
-                            updated.edges[i].length = 100;
-                            updated.edges[i].smooth = false;
-                            if (updated.edges[i].from.localeCompare(updated.edges[i].to) >= 0) {
-                                updated.edges[i].hidden = true;
-                            }
-                        } else {
-                            updated.edges[i].hidden = true;
-                        }
-                    }
-                    if (updated.edges[i].role === EAA.prefix + "spatialconnectedsp") {
-                        //console.log(updated.edges[i].role);
-                        if (EAA.mode === "siteLimesProvince") {
-                            updated.edges[i].color = {
-                                color: "FORESTGREEN",
-                                highlight: "black"
-                            };
-                            updated.edges[i].dashes = true;
-                            updated.edges[i].length = 100;
-                            updated.edges[i].smooth = false;
-                            if (updated.edges[i].from.localeCompare(updated.edges[i].to) >= 0) {
-                                updated.edges[i].hidden = true;
-                            }
-                        } else {
-                            updated.edges[i].hidden = true;
-                        }
-                    }
-                    if (updated.edges[i].role === EAA.prefix + "connectedll") {
-                        if (EAA.mode === "limesConnections") {
-                            updated.edges[i].color = {
-                                color: "FORESTGREEN",
-                                highlight: "black"
-                            };
-                            updated.edges[i].dashes = true;
-                            updated.edges[i].length = 250;
-                            updated.edges[i].smooth = false;
-                            if (updated.edges[i].from.localeCompare(updated.edges[i].to) >= 0) {
-                                updated.edges[i].hidden = true;
-                            }
-                        } else {
-                            updated.edges[i].hidden = true;
-                        }
-                    }
-                    if (updated.edges[i].role === EAA.prefix + "connectedlll") {
-                        if (EAA.mode === "limesConnections") {
-                            updated.edges[i].color = {
-                                color: "TOMATO",
-                                highlight: "black"
-                            };
-                            updated.edges[i].dashes = true;
-                            updated.edges[i].length = 250;
-                            updated.edges[i].smooth = false;
-                            if (updated.edges[i].from.localeCompare(updated.edges[i].to) >= 0) {
-                                updated.edges[i].hidden = true;
-                            }
-                        } else {
-                            updated.edges[i].hidden = true;
-                        }
-                    }
-                    if (updated.edges[i].role.includes("geom")) {
-                        if ($("#showGeomConcepts").is(":checked")) {
-                            updated.edges[i].color = {
-                                color: "blue",
-                                highlight: "black"
-                            };
-                            updated.edges[i].dashes = true;
-                            updated.edges[i].length = 50;
-                            updated.edges[i].smooth = false;
-                            if (updated.edges[i].from.localeCompare(updated.edges[i].to) >= 0) {
-                                updated.edges[i].hidden = true;
-                            }
-                        } else {
-                            updated.edges[i].hidden = true;
-                        }
-                    }
                     if (updated.edges[i].role === roleWithPrefix + "e" ||
                         updated.edges[i].role === roleWithPrefix + "b" ||
                         updated.edges[i].role === roleWithPrefix + "a" ||
@@ -406,7 +155,7 @@
                             updated.edges[i].dashes = false;
                             updated.edges[i].length = 250;
                             updated.edges[i].smooth = true;
-                            updated.edges[i].label = updated.edges[i].role.replace(EAA.prefix, "");
+                            updated.edges[i].label = updated.edges[i].role.replace(EAA.prefix, "") + updated.edges[i];
                             if (updated.edges[i].from.localeCompare(updated.edges[i].to) >= 0) {
                                 //updated.edges[i].hidden = true;
                             }

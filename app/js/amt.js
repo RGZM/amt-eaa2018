@@ -39,7 +39,7 @@ var AMT = function() {
     };
     var AXIOMS = [];
 
-    var STORE = "http://ls-dev.i3mainz.hs-mainz.de/rdf4j-server/repositories/amteaa2018";
+    var STORE = "http://ls-dev.i3mainz.hs-mainz.de/rdf4j-server/repositories/amtcaauk2018";
     var PREFIX = "http://academic-meta-tool.xyz/vocab#";
     var PREFIX_INSTANCES = "http://rgzm.de/datingmechanism#";
 
@@ -115,46 +115,10 @@ var AMT = function() {
 
         // load nodes
         queryStore("SELECT ?id ?label ?concept WHERE { ?concept rdf:type amt:Concept . ?id amt:instanceOf ?concept . ?id rdfs:label ?label . }", function(data) {
-            if (EAA.mode === "limesConnections" || EAA.mode === "limesAllen") {
+            if (EAA.mode === "limesAllen") {
                 let dataCopy = [];
                 for (var item in data) {
                     if (data[item].concept.includes("LimesPart")) {
-                        dataCopy.push(data[item]);
-                    } else if (data[item].concept.includes("LimesPartGeom")) {
-                        dataCopy.push(data[item]);
-                    }
-                }
-                graph.nodes = dataCopy;
-            } else if (EAA.mode === "siteLimesProvince") {
-                let dataCopy = [];
-                for (var item in data) {
-                    if (data[item].concept.includes("Site")) {
-                        dataCopy.push(data[item]);
-                    } else if (data[item].concept.includes("LimesPart")) {
-                        dataCopy.push(data[item]);
-                    } else if (data[item].concept.includes("Province")) {
-                        dataCopy.push(data[item]);
-                    } else if (data[item].concept.includes("SiteGeom")) {
-                        dataCopy.push(data[item]);
-                    } else if (data[item].concept.includes("LimesPartGeom")) {
-                        dataCopy.push(data[item]);
-                    } else if (data[item].concept.includes("ProvinceGeom")) {
-                        dataCopy.push(data[item]);
-                    }
-                }
-                graph.nodes = dataCopy;
-            } else if (EAA.mode === "potterSiteLimes") {
-                let dataCopy = [];
-                for (var item in data) {
-                    if (data[item].concept.includes("Site")) {
-                        dataCopy.push(data[item]);
-                    } else if (data[item].concept.includes("LimesPart")) {
-                        dataCopy.push(data[item]);
-                    } else if (data[item].concept.includes("Potter")) {
-                        dataCopy.push(data[item]);
-                    } else if (data[item].concept.includes("SiteGeom")) {
-                        dataCopy.push(data[item]);
-                    } else if (data[item].concept.includes("LimesPartGeom")) {
                         dataCopy.push(data[item]);
                     }
                 }
@@ -169,17 +133,7 @@ var AMT = function() {
 
         // load edges
         queryStore("SELECT ?role ?from ?to ?width WHERE { ?role rdf:type amt:Role . ?stmt rdf:subject ?from . ?stmt rdf:predicate ?role . ?stmt rdf:object ?to . ?stmt amt:weight ?width . }", function(data) {
-            if (EAA.mode === "limesConnections") {
-                let dataCopy = [];
-                for (var item in data) {
-                    if (data[item].role === EAA.prefix + "connectedll") {
-                        dataCopy.push(data[item]);
-                    } else if (data[item].role === EAA.prefix + "geoml") {
-                        dataCopy.push(data[item]);
-                    }
-                }
-                graph.edges = dataCopy;
-            } else if (EAA.mode === "limesAllen") {
+            if (EAA.mode === "limesAllen") {
                 let dataCopy = [];
                 for (var item in data) {
                     if (data[item].role === EAA.prefix + "e") {
@@ -211,42 +165,7 @@ var AMT = function() {
                     }
                 }
                 graph.edges = dataCopy;
-            } else if (EAA.mode === "siteLimesProvince") {
-                let dataCopy = [];
-                for (var item in data) {
-                    if (data[item].role === EAA.prefix + "connectedsl") {
-                        dataCopy.push(data[item]);
-                    } else if (data[item].role === EAA.prefix + "spatialconnectedlp") {
-                        dataCopy.push(data[item]);
-                    } else if (data[item].role === EAA.prefix + "spatialconnectedsp") {
-                        dataCopy.push(data[item]);
-                    } else if (data[item].role === EAA.prefix + "geoms") {
-                        dataCopy.push(data[item]);
-                    } else if (data[item].role === EAA.prefix + "geoml") {
-                        dataCopy.push(data[item]);
-                    } else if (data[item].role === EAA.prefix + "geomp") {
-                        dataCopy.push(data[item]);
-                    }
-                }
-                graph.edges = dataCopy;
-            } else if (EAA.mode === "potterSiteLimes") {
-                let dataCopy = [];
-                for (var item in data) {
-                    if (data[item].role === EAA.prefix + "connectedps") {
-                        dataCopy.push(data[item]);
-                    } else if (data[item].role === EAA.prefix + "connectedsl") {
-                        dataCopy.push(data[item]);
-                    } else if (data[item].role === EAA.prefix + "connectedpl") {
-                        dataCopy.push(data[item]);
-                    } else if (data[item].role === EAA.prefix + "geoms") {
-                        dataCopy.push(data[item]);
-                    } else if (data[item].role === EAA.prefix + "geoml") {
-                        dataCopy.push(data[item]);
-                    }
-                }
-                graph.edges = dataCopy;
             }
-            //graph.edges = dataCopy;
             console.log("EDGES", graph.edges);
             --todo;
             if (todo == 0 && callback) {
