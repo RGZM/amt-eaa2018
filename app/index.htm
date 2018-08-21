@@ -55,7 +55,10 @@
             height: auto;
             border: 1px dashed grey;
             background: #ffcc80;
-            padding: 10px;
+            padding-top: 0px;
+            padding-left: 15px;
+            padding-right: 15px;
+            padding-bottom: 15px;
         }
     </style>
     <script>
@@ -163,7 +166,7 @@
                 _AMT.graph.edges.update(updated.edges);
                 _AMT.thisNodes = updated.nodes;
                 _AMT.thisEdges = updated.edges;
-                //}
+                $("#title").html($("#amt-viz option:selected").text());
             }, 1000);
         };
         $(function() {
@@ -183,12 +186,12 @@
         var edit = function() {
             if (_AMT.reasoning) {
                 _AMT.reasoning = false;
-                $("#r-but").removeClass("red");
-                $("#r-but").addClass("green");
+                $("#r-but").removeClass("blue");
+                $("#r-but").addClass("red");
             } else {
                 _AMT.reasoning = true;
-                $("#r-but").removeClass("green");
-                $("#r-but").addClass("red");
+                $("#r-but").removeClass("red");
+                $("#r-but").addClass("blue");
             }
             update();
         };
@@ -249,12 +252,13 @@
     <div id="footer" class="page-footer col s12 orange lighten-3">
         <div class="container">
             <div class="row">
-                <div id="props" class="col s3 left-align">
-                    <a class="btn-floating btn-large blue" onclick="openGraphPropModal()" title="change view"><i class="material-icons">palette</i></a>
-                    <a class="btn-floating btn-large brown" onclick="exportRDF()" title="Copy Edges as RDF"><i class="material-icons">share</i></a>
+                <div id="props" class="col s6 left-align">
+                    <a class="btn-floating btn-large blue" onclick="openGraphPropModal()" title="change example"><i class="material-icons">sync</i></a>
+                    <a class="btn-floating btn-large brown" onclick="exportRDF()" title="get RDF"><i class="material-icons">share</i></a>
                 </div>
-                <div id="buttons" class="col s6 right-align">
-                    <a class="btn-floating btn-large green" id="r-but" onclick="edit()" title="show reasoning data"><i class="material-icons">flash_on</i></a>
+                <div id="buttons" class="col s6 left-align">
+                    <a class="btn-floating btn-large red" id="r-but" onclick="edit()" title="reasoning on/off"><i class="material-icons">bubble_chart</i></a>
+                    <span style="padding-left:30px;font-weight:bold;" id="title">loading...</span>
                 </div>
             </div>
         </div>
@@ -289,10 +293,17 @@
     </div>
     <!-- Info DIV -->
     <div class="info">
-        <h4>Academic Meta Tool. AMT.</h4>
-        <h5>EAA 2018, Barcelona</h5>
-        <h5>Creators and Data</h5> Software by Florian Thiery (RGZM) and Martin Unold (i3mainz).
+        <h4>AMT. EAA 2018, Barcelona.</h4>
+        Software by Florian Thiery (RGZM) and Martin Unold (i3mainz).
         <br> Data by A.W. Mees (RGZM).
+        <br><br>
+        <a class="btn-floating btn-small red"><i class="material-icons">bubble_chart</i></a>&nbsp;<i>reasoning on</i>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <a class="btn-floating btn-small blue"><i class="material-icons">bubble_chart</i></a>&nbsp;<i>reasoning off</i>
+        <br><br>
+        <a class="btn-floating btn-small blue"><i class="material-icons">sync</i></a>&nbsp;<i>change example</i>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <a class="btn-floating btn-small brown"><i class="material-icons">share</i></a>&nbsp;<i>get RDF</i>
     </div>
 </body>
 
