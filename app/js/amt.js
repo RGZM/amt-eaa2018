@@ -133,6 +133,24 @@ var AMT = function() {
                 }
                 graph.nodes = dataCopy;
             }
+            if (_AMT.mode === "example5") {
+                let dataCopy = [];
+                for (var item in data) {
+                    if (data[item].id.includes("3")) {
+                        dataCopy.push(data[item]);
+                    }
+                }
+                graph.nodes = dataCopy;
+            }
+            if (_AMT.mode === "example6") {
+                let dataCopy = [];
+                for (var item in data) {
+                    if (data[item].id.includes("4")) {
+                        dataCopy.push(data[item]);
+                    }
+                }
+                graph.nodes = dataCopy;
+            }
             console.log("NODES", graph.nodes);
             --todo;
             if (todo == 0 && callback) {
@@ -177,6 +195,26 @@ var AMT = function() {
                 let dataCopy = [];
                 for (var item in data) {
                     if (data[item].role === _AMT.prefix + "fi") {
+                        dataCopy.push(data[item]);
+                    }
+                }
+                graph.edges = dataCopy;
+            }
+            if (_AMT.mode === "example5") {
+                let dataCopy = [];
+                for (var item in data) {
+                    if (data[item].role === _AMT.prefix + "d") {
+                        dataCopy.push(data[item]);
+                    } else if (data[item].role === _AMT.prefix + "a") {
+                        dataCopy.push(data[item]);
+                    }
+                }
+                graph.edges = dataCopy;
+            }
+            if (_AMT.mode === "example6") {
+                let dataCopy = [];
+                for (var item in data) {
+                    if (data[item].role === _AMT.prefix + "f") {
                         dataCopy.push(data[item]);
                     }
                 }
