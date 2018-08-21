@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>AMT | EAA2018 Example</title>
+    <title>AMT | _AMT2018 Example</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <script type="text/javascript" src="js/amt.js"></script>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
@@ -48,24 +48,24 @@
         }
     </style>
     <script>
-        var EAA = {};
-        EAA.prefix = "http://rgzm.de/datingmechanism#";
-        EAA.graph = {};
-        EAA.edit = false;
-        EAA.thisNodes = [];
-        EAA.thisEdges = [];
-        EAA.inverse = false;
-        EAA.mode = "limesAllen";
-        EAA.reasoning = false;
+        var _AMT = {};
+        _AMT.prefix = "http://rgzm.de/datingmechanism#";
+        _AMT.graph = {};
+        _AMT.edit = false;
+        _AMT.thisNodes = [];
+        _AMT.thisEdges = [];
+        _AMT.inverse = false;
+        _AMT.mode = "example1";
+        _AMT.reasoning = false;
         var update = function() {
-            EAA.amt = new AMT();
-            EAA.amt.load(function() {
-                var graph = EAA.amt.getGraph(false, true);
-                EAA.graph.nodes = new vis.DataSet(graph.nodes);
-                EAA.graph.edges = new vis.DataSet(graph.edges);
+            _AMT.amt = new AMT();
+            _AMT.amt.load(function() {
+                var graph = _AMT.amt.getGraph(false, true);
+                _AMT.graph.nodes = new vis.DataSet(graph.nodes);
+                _AMT.graph.edges = new vis.DataSet(graph.edges);
             });
 
-            //if (EAA.amt) {
+            //if (_AMT.amt) {
             setTimeout(function(){
                 var options = {
                     layout: {
@@ -74,42 +74,33 @@
                     physics: true
                 };
                 new vis.Network(document.getElementById("graph"), {
-                    nodes: EAA.graph.nodes,
-                    edges: EAA.graph.edges
+                    nodes: _AMT.graph.nodes,
+                    edges: _AMT.graph.edges
                 }, options);
-                console.log(EAA.reasoning);
-                var updated = EAA.amt.getGraph(EAA.reasoning, false);
-                //var updated = EAA.amt.getGraph(false, false);
-                EAA.graph.edges.clear();
-                EAA.graph.nodes.clear();
-                /*
-                	Hier wird spezifiziert, wie die Knoten aussehen sollen
-                */
-                //console.info("load nodes");
+                console.log("reasoning",_AMT.reasoning);
+                var updated = _AMT.amt.getGraph(_AMT.reasoning, false);
+                _AMT.graph.edges.clear();
+                _AMT.graph.nodes.clear();
                 for (var i in updated.nodes) {
                     updated.nodes[i].length = 10 / updated.nodes[i].width;
-                    if (!EAA.edit) {
+                    if (!_AMT.edit) {
                         updated.nodes[i].chosen = false;
                     }
-                    if (updated.nodes[i].concept === EAA.prefix + "LimesPart") {
-                        if (EAA.mode === "limesAllen") {
-                            updated.nodes[i].color = {
-                                background: 'coral',
-                                border: 'coral',
-                                highlight: {
-                                    background: 'white',
-                                    border: 'coral'
-                                }
-                            };
-                            updated.nodes[i].shape = "dot";
-                            updated.nodes[i].font = {
-                                size: 16,
-                                face: 'monospace'
-                            };
-                            updated.nodes[i].size = 20;
-                        } else {
-                            updated.nodes[i].hidden = true;
-                        }
+                    if (updated.nodes[i].concept === _AMT.prefix + "LimesPart") {
+                        updated.nodes[i].color = {
+                            background: 'coral',
+                            border: 'coral',
+                            highlight: {
+                                background: 'white',
+                                border: 'coral'
+                            }
+                        };
+                        updated.nodes[i].shape = "dot";
+                        updated.nodes[i].font = {
+                            size: 16,
+                            face: 'monospace'
+                        };
+                        updated.nodes[i].size = 20;
                     } else {
                         updated.nodes[i].color = {
                             background: 'grey',
@@ -122,17 +113,13 @@
                         updated.nodes[i].shape = "box";
                     }
                 }
-                /*
-                	Hier wird spezifiziert wie die Kanten aussehen sollen, welche angezeigt werden sollen, etc
-                */
-                //console.info("load edges");
                 for (var i in updated.edges) {
                     updated.edges[i].arrowStrikethrough = false;
                     updated.edges[i].chosen = false;
-                    if (updated.edges[i].width < 0.0001) {
+                    if (updated.edges[i].width < 0.0000001) {
                         updated.edges[i].hidden = true;
                     }
-                    var roleWithPrefix = EAA.prefix;
+                    var roleWithPrefix = _AMT.prefix;
                     if (updated.edges[i].role === roleWithPrefix + "e" ||
                         updated.edges[i].role === roleWithPrefix + "b" ||
                         updated.edges[i].role === roleWithPrefix + "a" ||
@@ -147,46 +134,33 @@
                         updated.edges[i].role === roleWithPrefix + "f" ||
                         updated.edges[i].role === roleWithPrefix + "fi"
                     ) {
-                        if (EAA.mode === "limesAllen") {
-                            updated.edges[i].color = {
-                                color: "blue",
-                                highlight: "black"
-                            };
-                            updated.edges[i].dashes = false;
-                            updated.edges[i].length = 200;
-                            updated.edges[i].smooth = false;
-                            updated.edges[i].label = updated.edges[i].role.replace(EAA.prefix, "") + ": " + Math.floor(updated.edges[i].width * 100) / 100;
-                            updated.edges[i].arrows = "to";
-                            if (updated.edges[i].from.localeCompare(updated.edges[i].to) >= 0) {
-                                //updated.edges[i].hidden = true;
-                            }
-                        } else {
-                            updated.edges[i].hidden = true;
+                        updated.edges[i].color = {
+                            color: "blue",
+                            highlight: "black"
+                        };
+                        updated.edges[i].length = 250;
+                        updated.edges[i].smooth = false;
+                        updated.edges[i].label = updated.edges[i].role.replace(_AMT.prefix, "") + ": " + Math.floor(updated.edges[i].width * 100) / 100;
+                        updated.edges[i].arrows = "to";
+                        if (updated.edges[i].from.localeCompare(updated.edges[i].to) >= 0) {
+                            //updated.edges[i].hidden = true;
                         }
                     }
-                    if (updated.edges[i].role === roleWithPrefix + "q") {
-                            updated.edges[i].hidden = true;
-                    }
-                    if (!updated.edges[i].hidden) {
-                        //console.log(updated.edges[i].role, updated.edges[i].width);
-                    }
                 }
-                EAA.graph.nodes.update(updated.nodes);
-                if ($("#showEdges").is(":checked")) {
-                    EAA.graph.edges.update(updated.edges);
-                }
-                EAA.thisNodes = updated.nodes;
-                EAA.thisEdges = updated.edges;
+                _AMT.graph.nodes.update(updated.nodes);
+                _AMT.graph.edges.update(updated.edges);
+                _AMT.thisNodes = updated.nodes;
+                _AMT.thisEdges = updated.edges;
             //}
         }, 1000);
         };
         var edit = function() {
-            if (EAA.reasoning) {
-                EAA.reasoning = false;
+            if (_AMT.reasoning) {
+                _AMT.reasoning = false;
                 $("#r-but").removeClass("red");
                 $("#r-but").addClass("blue");
             } else {
-                EAA.reasoning = true;
+                _AMT.reasoning = true;
                 $("#r-but").removeClass("blue");
                 $("#r-but").addClass("red");
             }
@@ -195,14 +169,14 @@
 
         $(function() {
             update();
-            /*EAA.amt = new AMT();
-            EAA.amt.load(function() {
+            /*_AMT.amt = new AMT();
+            _AMT.amt.load(function() {
                 $(".edit").hide();
                 $("#r-but").show();
                 $("#e-but").hide();
-                var graph = EAA.amt.getGraph(false, true);
-                EAA.graph.nodes = new vis.DataSet(graph.nodes);
-                EAA.graph.edges = new vis.DataSet(graph.edges);
+                var graph = _AMT.amt.getGraph(false, true);
+                _AMT.graph.nodes = new vis.DataSet(graph.nodes);
+                _AMT.graph.edges = new vis.DataSet(graph.edges);
                 var options = {
                     layout: {
                         randomSeed: 12
@@ -210,12 +184,12 @@
                     physics: false
                 };
                 var network = new vis.Network(document.getElementById("graph"), {
-                    nodes: EAA.graph.nodes,
-                    edges: EAA.graph.edges
+                    nodes: _AMT.graph.nodes,
+                    edges: _AMT.graph.edges
                 }, options);
                 update();
                 /*network.on("selectNode", function(params) {
-                    if (EAA.edit)
+                    if (_AMT.edit)
                         openModal(params.nodes[0]);
                 });
                 //switchOntology();
@@ -280,17 +254,17 @@
                 $("#graphPropModal").modal("open");
         }
         var reloadGraphWithProperties = function() {
-            EAA.mode = $("#amt-viz").val();
+            _AMT.mode = $("#amt-viz").val();
             update();
             $("#graphPropModal").modal("close");
         }
         var loadJSONGraphInApp = function() {
             var json = JSON.parse($("#json").val());
             for (var node in json.nodes) {
-                EAA.amt.addExistingIndividual(json.nodes[node].id, json.nodes[node].label, json.nodes[node].concept);
+                _AMT.amt.addExistingIndividual(json.nodes[node].id, json.nodes[node].label, json.nodes[node].concept);
             }
             for (var edge in json.edges) {
-                EAA.amt.addExistingAssertion(json.edges[edge].id, json.edges[edge].role, json.edges[edge].from, json.edges[edge].to, json.edges[edge].width);
+                _AMT.amt.addExistingAssertion(json.edges[edge].id, json.edges[edge].role, json.edges[edge].from, json.edges[edge].to, json.edges[edge].width);
             }
             update();
             $("#loadModal").modal("close");
@@ -370,15 +344,13 @@
                 <div class="row">
                     <div class="input-field col s11">
                         <select id="amt-viz">
-                                <option value="siteLimesProvince">site, limes parts and provinces</option>
-                                <option value="potterSiteLimes">potter, site and limes parts</option>
-                                <option value="limesConnections" selected>limes connections by same potter</option>
-                                <option value="limesAllen">limes relative chronology by Allen</option>
+                                <option value="example1" selected>Hadrian's Wall->Wetteraulimes->Elisabethenstraße</option>
+                                <option value="example2">Elisabethenstraße->Wetteraulimes->Hadrian's Wall</option>
+                                <option value="example3">Neckarlimes->Wetteraulimes->Alblimes</option>
+                                <option value="example4">Alblimes->Wetteraulimes->Neckarlimes</option>
 							</select>
                         <label>visualisation style</label>
                     </div>
-                    <p style="padding-left:10px"><input type="checkbox" id="showGeomConcepts" /><label for="showGeomConcepts">show geometry concepts</label></p>
-                    <p style="padding-left:10px"><input type="checkbox" id="showEdges" checked /><label for="showEdges">show edges</label></p>
                     <div class="col s1">
                         <a class="btn-floating btn-large green" onclick="reloadGraphWithProperties()" title="reload"><i class="material-icons">check</i></a>
                     </div>

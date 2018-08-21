@@ -115,10 +115,19 @@ var AMT = function() {
 
         // load nodes
         queryStore("SELECT ?id ?label ?concept WHERE { ?concept rdf:type amt:Concept . ?id amt:instanceOf ?concept . ?id rdfs:label ?label . }", function(data) {
-            if (EAA.mode === "limesAllen") {
+            if (_AMT.mode === "example1" || _AMT.mode === "example2") {
                 let dataCopy = [];
                 for (var item in data) {
-                    if (data[item].concept.includes("LimesPart")) {
+                    if (data[item].id.includes("1")) {
+                        dataCopy.push(data[item]);
+                    }
+                }
+                graph.nodes = dataCopy;
+            }
+            if (_AMT.mode === "example3" || _AMT.mode === "example4") {
+                let dataCopy = [];
+                for (var item in data) {
+                    if (data[item].id.includes("2")) {
                         dataCopy.push(data[item]);
                     }
                 }
@@ -133,34 +142,41 @@ var AMT = function() {
 
         // load edges
         queryStore("SELECT ?role ?from ?to ?width WHERE { ?role rdf:type amt:Role . ?stmt rdf:subject ?from . ?stmt rdf:predicate ?role . ?stmt rdf:object ?to . ?stmt amt:weight ?width . }", function(data) {
-            if (EAA.mode === "limesAllen") {
+            if (_AMT.mode === "example1") {
                 let dataCopy = [];
                 for (var item in data) {
-                    if (data[item].role === EAA.prefix + "e") {
+                    if (data[item].role === _AMT.prefix + "d") {
                         dataCopy.push(data[item]);
-                    } else if (data[item].role === EAA.prefix + "b") {
+                    } else if (data[item].role === _AMT.prefix + "a") {
                         dataCopy.push(data[item]);
-                    } else if (data[item].role === EAA.prefix + "a") {
+                    }
+                }
+                graph.edges = dataCopy;
+            }
+            if (_AMT.mode === "example2") {
+                let dataCopy = [];
+                for (var item in data) {
+                    if (data[item].role === _AMT.prefix + "di") {
                         dataCopy.push(data[item]);
-                    } else if (data[item].role === EAA.prefix + "d") {
+                    } else if (data[item].role === _AMT.prefix + "b") {
                         dataCopy.push(data[item]);
-                    } else if (data[item].role === EAA.prefix + "di") {
+                    }
+                }
+                graph.edges = dataCopy;
+            }
+            if (_AMT.mode === "example3") {
+                let dataCopy = [];
+                for (var item in data) {
+                    if (data[item].role === _AMT.prefix + "f") {
                         dataCopy.push(data[item]);
-                    } else if (data[item].role === EAA.prefix + "o") {
-                        dataCopy.push(data[item]);
-                    } else if (data[item].role === EAA.prefix + "oi") {
-                        dataCopy.push(data[item]);
-                    } else if (data[item].role === EAA.prefix + "m") {
-                        dataCopy.push(data[item]);
-                    } else if (data[item].role === EAA.prefix + "mi") {
-                        dataCopy.push(data[item]);
-                    } else if (data[item].role === EAA.prefix + "s") {
-                        dataCopy.push(data[item]);
-                    } else if (data[item].role === EAA.prefix + "si") {
-                        dataCopy.push(data[item]);
-                    } else if (data[item].role === EAA.prefix + "f") {
-                        dataCopy.push(data[item]);
-                    } else if (data[item].role === EAA.prefix + "fi") {
+                    }
+                }
+                graph.edges = dataCopy;
+            }
+            if (_AMT.mode === "example4") {
+                let dataCopy = [];
+                for (var item in data) {
+                    if (data[item].role === _AMT.prefix + "fi") {
                         dataCopy.push(data[item]);
                     }
                 }
@@ -184,7 +200,7 @@ var AMT = function() {
                     AXIOMS[data[i].axiom][data[i].p.substr(PREFIX.length)] = data[i].o;
                 }
             }
-            console.log("AXIOMS",AXIOMS,AXIOMS.length);
+            //console.log("AXIOMS",AXIOMS,AXIOMS.length);
             --todo;
             if (todo == 0 && callback) {
                 callback(graph);
@@ -258,9 +274,9 @@ var AMT = function() {
                 label: width,
                 font: {
                     align: 'middle',
-                    size: 10,
-                    color: 'black',
-                    face: 'arial'
+                    size: 16,
+                    color: 'blue',
+                    face: 'monospace'
                 }
             });
         }
@@ -293,10 +309,10 @@ var AMT = function() {
                 from: from,
                 to: to,
                 width: width,
-                label: role.replace(EAA.prefix,"")+":"+width,
+                label: role.replace(_AMT.prefix,"")+":"+width,
                 font: {
                     align: 'middle',
-                    size: 6,
+                    size: 16,
                     color: 'red',
                     face: 'monospace'
                 }
