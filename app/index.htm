@@ -162,7 +162,11 @@
                         };
                         updated.edges[i].length = 250;
                         updated.edges[i].smooth = false;
-                        updated.edges[i].label = updated.edges[i].role.replace(_AMT.prefix, "") + ": " + Math.floor(updated.edges[i].width * 100) / 100;
+                        if (_AMT.mode==="example5" || _AMT.mode==="example6") {
+                            updated.edges[i].label = updated.edges[i].role.replace(_AMT.prefix, "") + ": " + Math.floor(updated.edges[i].width * 1000) / 1000;
+                        } else {
+                            updated.edges[i].label = updated.edges[i].role.replace(_AMT.prefix, "") + ": " + Math.floor(updated.edges[i].width * 100) / 100;
+                        }
                         updated.edges[i].arrows = "to";
                         if (updated.edges[i].from.localeCompare(updated.edges[i].to) >= 0) {
                             //updated.edges[i].hidden = true;
