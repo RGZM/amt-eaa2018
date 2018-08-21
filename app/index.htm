@@ -46,7 +46,8 @@
             width: 90% !important;
             height: 100% !important;
         }
-        div.fixed {
+
+        div.info {
             position: fixed;
             top: 20px;
             left: 20px;
@@ -77,7 +78,7 @@
             });
 
             //if (_AMT.amt) {
-            setTimeout(function(){
+            setTimeout(function() {
                 var options = {
                     layout: {
                         randomSeed: 5
@@ -88,7 +89,7 @@
                     nodes: _AMT.graph.nodes,
                     edges: _AMT.graph.edges
                 }, options);
-                console.log("reasoning",_AMT.reasoning);
+                console.log("reasoning", _AMT.reasoning);
                 var updated = _AMT.amt.getGraph(_AMT.reasoning, false);
                 _AMT.graph.edges.clear();
                 _AMT.graph.nodes.clear();
@@ -162,9 +163,23 @@
                 _AMT.graph.edges.update(updated.edges);
                 _AMT.thisNodes = updated.nodes;
                 _AMT.thisEdges = updated.edges;
-            //}
-        }, 1000);
+                //}
+            }, 1000);
         };
+        $(function() {
+            update();
+            $("#rdfModal").modal({
+                complete: function() {
+                    openRdfModal(true);
+                }
+            });
+            $("#graphPropModal").modal({
+                dismissible: false,
+                complete: function() {
+                    openGraphPropModal(true);
+                }
+            });
+        });
         var edit = function() {
             if (_AMT.reasoning) {
                 _AMT.reasoning = false;
@@ -177,34 +192,6 @@
             }
             update();
         };
-
-        $(function() {
-            update();
-            $("#info").modal({
-                complete: function() {
-                    info(true);
-                }
-            });
-            $("#rdfModal").modal({
-                complete: function() {
-                    openRdfModal(true);
-                }
-            });
-            $("#graphPropModal").modal({
-                dismissible: false,
-                complete: function() {
-                    openGraphPropModal(true);
-                }
-            });
-            $(".edit").hide();
-            $("#store").hide();
-        });
-        var info = function(close) {
-            if (close)
-                $("#info").modal("close");
-            else
-                $("#info").modal("open");
-        }
         var openGraphPropModal = function(close) {
             $("#amt-viz").material_select();
             if (close)
@@ -223,17 +210,6 @@
             update();
             $("#graphPropModal").modal("close");
         }
-        var loadJSONGraphInApp = function() {
-            var json = JSON.parse($("#json").val());
-            for (var node in json.nodes) {
-                _AMT.amt.addExistingIndividual(json.nodes[node].id, json.nodes[node].label, json.nodes[node].concept);
-            }
-            for (var edge in json.edges) {
-                _AMT.amt.addExistingAssertion(json.edges[edge].id, json.edges[edge].role, json.edges[edge].from, json.edges[edge].to, json.edges[edge].width);
-            }
-            update();
-            $("#loadModal").modal("close");
-        }
         var exportRDF = function() {
             var nodesAndEdges = "";
             nodesAndEdges += "@prefix amt: <http://academic-meta-tool.xyz/vocab#> .\r\n";
@@ -242,18 +218,18 @@
             nodesAndEdges += "@prefix rgzm: <http://rgzm.de/datingmechanism#> .\r\n";
             nodesAndEdges += "\r\n";
             for (var node in _AMT.thisNodes) {
-                nodesAndEdges += "rgzm:" + _AMT.thisNodes[node].id.replace(_AMT.prefix,"") +" amt:instanceOf"+" rgzm:"+_AMT.thisNodes[node].concept.replace(_AMT.prefix,"")+ ".\r\n";
-                nodesAndEdges += "rgzm:" + _AMT.thisNodes[node].id.replace(_AMT.prefix,"") +" rdfs:label"+" \""+_AMT.thisNodes[node].label+"\" .\r\n";
+                nodesAndEdges += "rgzm:" + _AMT.thisNodes[node].id.replace(_AMT.prefix, "") + " amt:instanceOf" + " rgzm:" + _AMT.thisNodes[node].concept.replace(_AMT.prefix, "") + ".\r\n";
+                nodesAndEdges += "rgzm:" + _AMT.thisNodes[node].id.replace(_AMT.prefix, "") + " rdfs:label" + " \"" + _AMT.thisNodes[node].label + "\" .\r\n";
             }
             nodesAndEdges += "\r\n";
             for (var edge in _AMT.thisEdges) {
-                var emptyNode = "_:"+StrID();
-                nodesAndEdges += emptyNode+" rdf:subject"+" rgzm:"+_AMT.thisEdges[edge].from.replace(_AMT.prefix,"")+ ".\r\n";
-                nodesAndEdges += emptyNode+" rdf:predicate"+" rgzm:"+_AMT.thisEdges[edge].role.replace(_AMT.prefix,"")+ ".\r\n";
-                nodesAndEdges += emptyNode+" rdf:object"+" rgzm:"+_AMT.thisEdges[edge].to.replace(_AMT.prefix,"")+ ".\r\n";
-                nodesAndEdges += emptyNode+" amt:weight"+" \""+_AMT.thisEdges[edge].width.replace(_AMT.prefix,"")+"\"^^<http://www.w3.org/2001/XMLSchema#double> .\r\n";
+                var emptyNode = "_:" + StrID();
+                nodesAndEdges += emptyNode + " rdf:subject" + " rgzm:" + _AMT.thisEdges[edge].from.replace(_AMT.prefix, "") + ".\r\n";
+                nodesAndEdges += emptyNode + " rdf:predicate" + " rgzm:" + _AMT.thisEdges[edge].role.replace(_AMT.prefix, "") + ".\r\n";
+                nodesAndEdges += emptyNode + " rdf:object" + " rgzm:" + _AMT.thisEdges[edge].to.replace(_AMT.prefix, "") + ".\r\n";
+                nodesAndEdges += emptyNode + " amt:weight" + " \"" + _AMT.thisEdges[edge].width.replace(_AMT.prefix, "") + "\"^^<http://www.w3.org/2001/XMLSchema#double> .\r\n";
                 if (nodesAndEdges.includes("Infinity")) {
-                    nodesAndEdges = nodesAndEdges.replace("Infinity",1.0);
+                    nodesAndEdges = nodesAndEdges.replace("Infinity", 1.0);
                 }
             }
             // COPY TO CLIPBOARD
@@ -280,56 +256,10 @@
                 <div id="buttons" class="col s6 right-align">
                     <a class="btn-floating btn-large green" id="r-but" onclick="edit()" title="show reasoning data"><i class="material-icons">flash_on</i></a>
                 </div>
-                <div id="store" class="col s4 left-align">
-                    <div><a class="btn-floating btn-large edit red" onclick="cancel()" title="Cancel changes"><i class="material-icons">cancel</i></a></div>
-                    <div id="save"><a class="btn-floating btn-large normal black" onclick="save()" title="Save changes"><i class="material-icons">save</i></a></div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="modal" class="modal">
-        <input id="uri" hidden />
-        <input id="concept" hidden />
-        <div class="modal-content">
-            <div class="row">
-                <div class="input-field col s9">
-                    <input id="label" type="text" placeholder="-" />
-                    <label for="label">Label</label>
-                </div>
-                <div class="col s3 right-align">
-                    <a class="btn-floating btn-large red" onclick="remove()" title="Delete node"><i class="material-icons">delete</i></a>
-                    <a class="btn-floating btn-large green" onclick="saveEdit()" title="Save changes"><i class="material-icons">save</i></a>
-                    <a class="btn-floating btn-large blue" onclick="cancelEdit()" title="Cancel changes"><i class="material-icons">cancel</i></a>
-                </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s12">
-                    <select id="role"></select>
-                    <label for="role">Relation</label>
-                </div>
-            </div>
-            <div class="row">
-                <table class="bordered col s12">
-                    <thead>
-                        <tr>
-                            <th>Individuum</th>
-                            <th>Gewicht</th>
-                        </tr>
-                    </thead>
-                    <tbody id="table"></tbody>
-                </table>
             </div>
         </div>
     </div>
     <!-- Modals -->
-    <div id="info" class="modal">
-        <div class="modal-content">
-            <br>
-            <p><b>About the Creators and the Data</b></p>
-            <br>
-            <p>* AMT Software by Florian Thiery, Martin Unold (i3mainz).<br>* Data by Florian Thiery and Dr. Allard Mees (RGZM).</p>
-        </div>
-    </div>
     <div id="graphPropModal" class="modal">
         <div class="modal-content">
             <h4>Please choose an example:</h4>
@@ -357,13 +287,12 @@
             <textarea id="rdf" style="width:100%;height:100%;font-family:'Courier New';font-size:14px;"></textarea>
         </div>
     </div>
-    <div class="fixed">
+    <!-- Info DIV -->
+    <div class="info">
         <h4>Academic Meta Tool. AMT.</h4>
         <h5>EAA 2018, Barcelona</h5>
-        <h5>Creators and Data</h5>
-        Software by Florian Thiery (RGZM) and Martin Unold (i3mainz).
-        <br>
-        Data by A.W. Mees (RGZM).
+        <h5>Creators and Data</h5> Software by Florian Thiery (RGZM) and Martin Unold (i3mainz).
+        <br> Data by A.W. Mees (RGZM).
     </div>
 </body>
 
