@@ -34,5 +34,11 @@ rgzm:AL2 amt:instanceOf rgzm:LimesPart. rgzm:AL2 rdfs:label 'Alblimes'.
 _:node01 rdf:subject rgzm:HW1 . _:node01 rdf:predicate rgzm:d . _:node01 rdf:object rgzm:WL1 . _:node01 amt:weight "0.89" .
 _:node02 rdf:subject rgzm:WL1 . _:node02 rdf:predicate rgzm:a . _:node02 rdf:object rgzm:ES1 . _:node02 amt:weight "0.58" .
 
+_:node01i rdf:subject rgzm:ES1 . _:node01i rdf:predicate rgzm:b . _:node01i rdf:object rgzm:WL1 . _:node01i amt:weight "0.28" .
+_:node02i rdf:subject rgzm:WL1 . _:node02i rdf:predicate rgzm:di . _:node02i rdf:object rgzm:HW1 . _:node02i amt:weight "0.10" .
+
 _:node03 rdf:subject rgzm:NL2 . _:node03 rdf:predicate rgzm:f . _:node03 rdf:object rgzm:WL2 . _:node03 amt:weight "0.71" .
 _:node04 rdf:subject rgzm:WL2 . _:node04 rdf:predicate rgzm:f . _:node04 rdf:object rgzm:AL2 . _:node04 amt:weight "0.28" .
+
+_:node03i rdf:subject rgzm:AL2 . _:node03i rdf:predicate rgzm:fi. _:node03i rdf:object rgzm:WL2 . _:node03i amt:weight "0.51" .
+_:node04i rdf:subject rgzm:WL2 . _:node04i rdf:predicate rgzm:fi . _:node04i rdf:object rgzm:NL2 . _:node04i amt:weight "0.12" .
