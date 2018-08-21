@@ -39,7 +39,7 @@ var AMT = function() {
     };
     var AXIOMS = [];
 
-    var STORE = "http://ls-dev.i3mainz.hs-mainz.de/rdf4j-server/repositories/amtcaauk2018";
+    var STORE = "http://ls-dev.i3mainz.hs-mainz.de/rdf4j-server/repositories/amteaa2018";
     var PREFIX = "http://academic-meta-tool.xyz/vocab#";
     var PREFIX_INSTANCES = "http://rgzm.de/datingmechanism#";
 
@@ -184,7 +184,7 @@ var AMT = function() {
                     AXIOMS[data[i].axiom][data[i].p.substr(PREFIX.length)] = data[i].o;
                 }
             }
-            //console.log("AXIOMS",AXIOMS,AXIOMS.length);
+            console.log("AXIOMS",AXIOMS,AXIOMS.length);
             --todo;
             if (todo == 0 && callback) {
                 callback(graph);
