@@ -46,6 +46,16 @@
             width: 90% !important;
             height: 100% !important;
         }
+        div.fixed {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            width: auto;
+            height: auto;
+            border: 1px dashed grey;
+            background: #ffcc80;
+            padding: 10px;
+        }
     </style>
     <script>
         var _AMT = {};
@@ -264,9 +274,8 @@
         <div class="container">
             <div class="row">
                 <div id="props" class="col s3 left-align">
-                    <a class="btn-floating btn-large blue" onclick="info()" title="about AMT"><i class="material-icons">info_outline</i></a>
-                    <a class="btn-floating btn-large orange" onclick="openGraphPropModal()" title="change view"><i class="material-icons">palette</i></a>
-                    <a class="btn-floating btn-large green" onclick="exportRDF()" title="Copy Edges as RDF"><i class="material-icons">share</i></a>
+                    <a class="btn-floating btn-large blue" onclick="openGraphPropModal()" title="change view"><i class="material-icons">palette</i></a>
+                    <a class="btn-floating btn-large brown" onclick="exportRDF()" title="Copy Edges as RDF"><i class="material-icons">share</i></a>
                 </div>
                 <div id="buttons" class="col s6 right-align">
                     <a class="btn-floating btn-large green" id="r-but" onclick="edit()" title="show reasoning data"><i class="material-icons">flash_on</i></a>
@@ -347,6 +356,14 @@
         <div class="modal-content" style="border:1px black solid;width:100%;height:100%;padding:20px;margin:0px;">
             <textarea id="rdf" style="width:100%;height:100%;font-family:'Courier New';font-size:14px;"></textarea>
         </div>
+    </div>
+    <div class="fixed">
+        <h4>Academic Meta Tool. AMT.</h4>
+        <h5>EAA 2018, Barcelona</h5>
+        <h5>Creators and Data</h5>
+        Software by Florian Thiery (RGZM) and Martin Unold (i3mainz).
+        <br>
+        Data by A.W. Mees (RGZM).
     </div>
 </body>
 
