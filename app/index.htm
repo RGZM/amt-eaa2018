@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>AMT | _AMT2018 Example</title>
+    <title>AMT | EAA 2018 Example</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <script type="text/javascript" src="js/amt.js"></script>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
@@ -57,6 +57,7 @@
         _AMT.inverse = false;
         _AMT.mode = "example1";
         _AMT.reasoning = false;
+        _AMT.rdf = "";
         var update = function() {
             _AMT.amt = new AMT();
             _AMT.amt.load(function() {
@@ -169,45 +170,14 @@
 
         $(function() {
             update();
-            /*_AMT.amt = new AMT();
-            _AMT.amt.load(function() {
-                $(".edit").hide();
-                $("#r-but").show();
-                $("#e-but").hide();
-                var graph = _AMT.amt.getGraph(false, true);
-                _AMT.graph.nodes = new vis.DataSet(graph.nodes);
-                _AMT.graph.edges = new vis.DataSet(graph.edges);
-                var options = {
-                    layout: {
-                        randomSeed: 12
-                    },
-                    physics: false
-                };
-                var network = new vis.Network(document.getElementById("graph"), {
-                    nodes: _AMT.graph.nodes,
-                    edges: _AMT.graph.edges
-                }, options);
-                update();
-                /*network.on("selectNode", function(params) {
-                    if (_AMT.edit)
-                        openModal(params.nodes[0]);
-                });
-                //switchOntology();
-                //info();
-            });*/
             $("#info").modal({
                 complete: function() {
                     info(true);
                 }
             });
-            $("#exportModal").modal({
+            $("#rdfModal").modal({
                 complete: function() {
-                    exportOptions(true);
-                }
-            });
-            $("#loadModal").modal({
-                complete: function() {
-                    loadJSONGraph(true);
+                    openRdfModal(true);
                 }
             });
             $("#graphPropModal").modal({
@@ -225,33 +195,18 @@
             else
                 $("#info").modal("open");
         }
-        var exportOptions = function(close) {
-            if (close)
-                $("#exportModal").modal("close");
-            else
-                $("#exportModal").modal("open");
-        }
-        var loadJSONGraph = function(close) {
-            $("#json").val("");
-            $("#json").height(75);
-            if (close)
-                $("#loadModal").modal("close");
-            else
-                $("#loadModal").modal("open");
-        }
-        /*var propModal = function(close) {
-            $("#amt-viz").material_select();
-            if (close)
-                $("#propertiesModal").modal("close");
-            else
-                $("#propertiesModal").modal("open");
-        }*/
         var openGraphPropModal = function(close) {
             $("#amt-viz").material_select();
             if (close)
                 $("#graphPropModal").modal("close");
             else
                 $("#graphPropModal").modal("open");
+        }
+        var openRdfModal = function(close) {
+            if (close)
+                $("#rdfModal").modal("close");
+            else
+                $("#rdfModal").modal("open");
         }
         var reloadGraphWithProperties = function() {
             _AMT.mode = $("#amt-viz").val();
@@ -269,6 +224,37 @@
             update();
             $("#loadModal").modal("close");
         }
+        var exportRDF = function() {
+            var nodesAndEdges = "";
+            nodesAndEdges += "@prefix amt: <http://academic-meta-tool.xyz/vocab#> .\r\n";
+            nodesAndEdges += "@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\r\n";
+            nodesAndEdges += "@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\r\n";
+            nodesAndEdges += "@prefix rgzm: <http://rgzm.de/datingmechanism#> .\r\n";
+            nodesAndEdges += "\r\n";
+            for (var node in _AMT.thisNodes) {
+                nodesAndEdges += "rgzm:" + _AMT.thisNodes[node].id.replace(_AMT.prefix,"") +" amt:instanceOf"+" rgzm:"+_AMT.thisNodes[node].concept.replace(_AMT.prefix,"")+ ".\r\n";
+                nodesAndEdges += "rgzm:" + _AMT.thisNodes[node].id.replace(_AMT.prefix,"") +" rdfs:label"+" \""+_AMT.thisNodes[node].label+"\" .\r\n";
+            }
+            nodesAndEdges += "\r\n";
+            for (var edge in _AMT.thisEdges) {
+                var emptyNode = "_:"+StrID();
+                nodesAndEdges += emptyNode+" rdf:subject"+" rgzm:"+_AMT.thisEdges[edge].from.replace(_AMT.prefix,"")+ ".\r\n";
+                nodesAndEdges += emptyNode+" rdf:predicate"+" rgzm:"+_AMT.thisEdges[edge].role.replace(_AMT.prefix,"")+ ".\r\n";
+                nodesAndEdges += emptyNode+" rdf:object"+" rgzm:"+_AMT.thisEdges[edge].to.replace(_AMT.prefix,"")+ ".\r\n";
+                nodesAndEdges += emptyNode+" amt:weight"+" \""+_AMT.thisEdges[edge].width.replace(_AMT.prefix,"")+"\"^^<http://www.w3.org/2001/XMLSchema#double> .\r\n";
+                if (nodesAndEdges.includes("Infinity")) {
+                    nodesAndEdges = nodesAndEdges.replace("Infinity",1.0);
+                }
+            }
+            // COPY TO CLIPBOARD
+            $("#hiddenclipboard").text(nodesAndEdges);
+            copyToClipboard('#hiddenclipboard');
+            console.log(nodesAndEdges);
+            _AMT.rdf = nodesAndEdges;
+            // OPEN MODAL
+            $("#rdf").val(nodesAndEdges);
+            openRdfModal();
+        }
     </script>
 </head>
 
@@ -277,9 +263,9 @@
     <div id="footer" class="page-footer col s12 blue lighten-3">
         <div class="container">
             <div class="row">
-                <div id="props" class="col s2 left-align">
+                <div id="props" class="col s3 left-align">
                     <a class="btn-floating btn-large black" onclick="info()" title="about AMT"><i class="material-icons">info_outline</i></a>
-                    <!--<a class="btn-floating btn-large black" onclick="exportOptions()" title="download data"><i class="material-icons">file_download</i></a>-->
+                    <a class="btn-floating btn-large green" onclick="exportRDF()" title="Copy Edges as RDF"><i class="material-icons">share</i></a>
                     <a class="btn-floating btn-large black" onclick="openGraphPropModal()" title="change view"><i class="material-icons">palette</i></a>
                 </div>
                 <div id="buttons" class="col s6 right-align">
@@ -356,6 +342,11 @@
                     </div>
                 </div>
             </form>
+        </div>
+    </div>
+    <div id="rdfModal" class="modal">
+        <div class="modal-content" style="border:1px black solid;width:100%;height:100%;padding:20px;margin:0px;">
+            <textarea id="rdf" style="width:100%;height:100%;font-family:'Courier New';font-size:14px;"></textarea>
         </div>
     </div>
 </body>
