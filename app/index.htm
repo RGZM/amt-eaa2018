@@ -159,10 +159,10 @@
             if (_AMT.reasoning) {
                 _AMT.reasoning = false;
                 $("#r-but").removeClass("red");
-                $("#r-but").addClass("blue");
+                $("#r-but").addClass("green");
             } else {
                 _AMT.reasoning = true;
-                $("#r-but").removeClass("blue");
+                $("#r-but").removeClass("green");
                 $("#r-but").addClass("red");
             }
             update();
@@ -260,17 +260,16 @@
 
 <body>
     <div id="graph" class="col s12"></div>
-    <div id="footer" class="page-footer col s12 blue lighten-3">
+    <div id="footer" class="page-footer col s12 orange lighten-3">
         <div class="container">
             <div class="row">
                 <div id="props" class="col s3 left-align">
-                    <a class="btn-floating btn-large black" onclick="info()" title="about AMT"><i class="material-icons">info_outline</i></a>
+                    <a class="btn-floating btn-large blue" onclick="info()" title="about AMT"><i class="material-icons">info_outline</i></a>
+                    <a class="btn-floating btn-large orange" onclick="openGraphPropModal()" title="change view"><i class="material-icons">palette</i></a>
                     <a class="btn-floating btn-large green" onclick="exportRDF()" title="Copy Edges as RDF"><i class="material-icons">share</i></a>
-                    <a class="btn-floating btn-large black" onclick="openGraphPropModal()" title="change view"><i class="material-icons">palette</i></a>
                 </div>
                 <div id="buttons" class="col s6 right-align">
-                    <a class="btn-floating btn-large blue" id="r-but" onclick="edit()" title="show reasoning data"><i class="material-icons">flash_on</i></a>
-                    <!--<a class="btn-floating btn-large normal blue" id="e-but" onclick="edit()" title="show input data"><i class="material-icons">input</i></a>-->
+                    <a class="btn-floating btn-large green" id="r-but" onclick="edit()" title="show reasoning data"><i class="material-icons">flash_on</i></a>
                 </div>
                 <div id="store" class="col s4 left-align">
                     <div><a class="btn-floating btn-large edit red" onclick="cancel()" title="Cancel changes"><i class="material-icons">cancel</i></a></div>
