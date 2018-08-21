@@ -29,7 +29,7 @@ rgzm:NL2 amt:instanceOf rgzm:LimesPart. rgzm:NL2 rdfs:label 'Neckarlimes'.
 rgzm:WL2 amt:instanceOf rgzm:LimesPart. rgzm:WL2 rdfs:label 'Wetteraulimes'.
 rgzm:AL2 amt:instanceOf rgzm:LimesPart. rgzm:AL2 rdfs:label 'Alblimes'.
 
-# Limes Parts concepts (Pearson correlation coefficient)
+# Limes Parts concepts (Pearson correlation coefficient normalized)
 
 rgzm:HW3 amt:instanceOf rgzm:LimesPart. rgzm:HW3 rdfs:label 'HadriansWall'.
 rgzm:WL3 amt:instanceOf rgzm:LimesPart. rgzm:WL3 rdfs:label 'Wetteraulimes'.
@@ -53,10 +53,10 @@ _:node04 rdf:subject rgzm:WL2 . _:node04 rdf:predicate rgzm:f . _:node04 rdf:obj
 _:node03i rdf:subject rgzm:AL2 . _:node03i rdf:predicate rgzm:fi. _:node03i rdf:object rgzm:WL2 . _:node03i amt:weight "0.51" .
 _:node04i rdf:subject rgzm:WL2 . _:node04i rdf:predicate rgzm:fi . _:node04i rdf:object rgzm:NL2 . _:node04i amt:weight "0.12" .
 
-# Allen interval algebra roles (Pearson correlation coefficient)
+# Allen interval algebra roles (Pearson correlation coefficient normalized)
 
-_:node05 rdf:subject rgzm:HW3 . _:node05 rdf:predicate rgzm:d . _:node05 rdf:object rgzm:WL3 . _:node05 amt:weight "0.523" .
-_:node06 rdf:subject rgzm:WL3 . _:node06 rdf:predicate rgzm:a . _:node06 rdf:object rgzm:ES3 . _:node06 amt:weight "0.561" .
+_:node05 rdf:subject rgzm:HW3 . _:node05 rdf:predicate rgzm:d . _:node05 rdf:object rgzm:WL3 . _:node05 amt:weight "0.762" .
+_:node06 rdf:subject rgzm:WL3 . _:node06 rdf:predicate rgzm:a . _:node06 rdf:object rgzm:ES3 . _:node06 amt:weight "0.780" .
 
-_:node07 rdf:subject rgzm:NL4 . _:node07 rdf:predicate rgzm:f . _:node07 rdf:object rgzm:WL4 . _:node07 amt:weight "0.524" .
-_:node08 rdf:subject rgzm:WL4 . _:node08 rdf:predicate rgzm:f . _:node08 rdf:object rgzm:AL4 . _:node08 amt:weight "0.538" .
+_:node07 rdf:subject rgzm:NL4 . _:node07 rdf:predicate rgzm:f . _:node07 rdf:object rgzm:WL4 . _:node07 amt:weight "0.762" .
+_:node08 rdf:subject rgzm:WL4 . _:node08 rdf:predicate rgzm:f . _:node08 rdf:object rgzm:AL4 . _:node08 amt:weight "0.769" .
