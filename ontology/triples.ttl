@@ -3,18 +3,36 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rgzm: <http://rgzm.de/datingmechanism#> .
 
-#Limes Parts
-rgzm:ES amt:instanceOf rgzm:LimesPart. rgzm:ES rdfs:label 'Elisabethenstrasse'.
-rgzm:WL amt:instanceOf rgzm:LimesPart. rgzm:WL rdfs:label 'Wetteraulimes'.
-rgzm:AL amt:instanceOf rgzm:LimesPart. rgzm:AL rdfs:label 'AlbLimes'.
+# AMT Ontology - Leonard Edition
 
-rgzm:ES2 amt:instanceOf rgzm:LimesPart. rgzm:ES2 rdfs:label 'Elisabethenstrasse'.
+amt:Concept rdfs:subClassOf rdfs:Class .
+amt:Role rdfs:subClassOf rdf:Property .
+amt:Axiom rdfs:subclassOf rdfs:Class .
+amt:InferenceAxiom rdfs:subClassOf amt:Axiom .
+amt:IntegrityAxiom rdfs:subClassOf amt:Axiom .
+amt:RoleChainAxiom rdfs:subClassOf amt:InferenceAxiom .
+amt:InverseAxiom rdfs:subClassOf amt:InferenceAxiom .
+amt:DisjointAxiom rdfs:subClassOf amt:IntegrityAxiom .
+amt:SelfDisjointAxiom rdfs:subClassOf amt:IntegrityAxiom .
+amt:Logic rdfs:subClassOf rdfs:Class .
+amt:LukasiewiczLogic rdf:type amt:Logic .
+amt:ProductLogic rdf:type amt:Logic .
+amt:GoedelLogic rdf:type amt:Logic .
+
+#Limes Parts
+
+rgzm:HW1 amt:instanceOf rgzm:LimesPart. rgzm:HW1 rdfs:label 'HadriansWall'.
+rgzm:WL1 amt:instanceOf rgzm:LimesPart. rgzm:WL1 rdfs:label 'Wetteraulimes'.
+rgzm:ES1 amt:instanceOf rgzm:LimesPart. rgzm:ES1 rdfs:label 'Elisabethenstraße'.
+
+rgzm:NL2 amt:instanceOf rgzm:LimesPart. rgzm:NL2 rdfs:label 'Neckarlimes'.
 rgzm:WL2 amt:instanceOf rgzm:LimesPart. rgzm:WL2 rdfs:label 'Wetteraulimes'.
-rgzm:HW amt:instanceOf rgzm:LimesPart. rgzm:HW rdfs:label 'HadriansWall'.
+rgzm:AL2 amt:instanceOf rgzm:LimesPart. rgzm:AL2 rdfs:label 'Alblimes'.
 
 #Allen
-_:node01 rdf:subject rgzm:ES . _:node01 rdf:predicate rgzm:b . _:node01 rdf:object rgzm:WL . _:node01 amt:weight "0.281437125749" .
-_:node02 rdf:subject rgzm:WL . _:node02 rdf:predicate rgzm:f . _:node02 rdf:object rgzm:AL . _:node02 amt:weight "0.283950617284" .
 
-_:node03 rdf:subject rgzm:ES2 . _:node03 rdf:predicate rgzm:b . _:node03 rdf:object rgzm:WL2 . _:node03 amt:weight "0.281437125749" .
-_:node04 rdf:subject rgzm:WL2 . _:node04 rdf:predicate rgzm:di . _:node04 rdf:object rgzm:HW . _:node04 amt:weight "0.0987654320988" .
+_:node01 rdf:subject rgzm:HW1 . _:node01 rdf:predicate rgzm:d . _:node01 rdf:object rgzm:WL1 . _:node01 amt:weight "0.89" .
+_:node02 rdf:subject rgzm:WL1 . _:node02 rdf:predicate rgzm:a . _:node02 rdf:object rgzm:ES1 . _:node02 amt:weight "0.58" .
+
+_:node03 rdf:subject rgzm:NL2 . _:node03 rdf:predicate rgzm:f . _:node03 rdf:object rgzm:WL2 . _:node03 amt:weight "0.71" .
+_:node04 rdf:subject rgzm:WL2 . _:node04 rdf:predicate rgzm:f . _:node04 rdf:object rgzm:AL2 . _:node04 amt:weight "0.28" .
