@@ -31,7 +31,7 @@ This paper focuses on modelling these circular dating arguments using a relative
 [![info](https://img.shields.io/badge/amt--eaa2018-git repo-orange.svg?style=flat)](https://github.com/RGZM/amt-eaa2018)
 
 [![info](https://img.shields.io/badge/Academic Meta Tool-website-yellowgreen.svg?style=flat)](http://www.academic-meta-tool.xyz)
-[![info](https://img.shields.io/badge/Academic Meta Tool-git repo-yellowgreen.svg?style=flat)](https://github.com/AcademicMetaTool/amt)
+[![info](https://img.shields.io/badge/Academic Meta Tool-git repos-yellowgreen.svg?style=flat)](https://github.com/search?q=topic%3Aacademicmetatool+org%3Amainzed)
 
 [![info](https://img.shields.io/badge/Samian Research-database-yellow.svg?style=flat)](http://rgzm.de/samian)
 
