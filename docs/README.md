@@ -20,7 +20,7 @@ This paper focuses on modelling these circular dating arguments using a relative
 
 ## Presentation
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.abc.svg)](https://doi.org/10.5281/zenodo.abc)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1402509.svg)](https://doi.org/10.5281/zenodo.1402509)
 
 ## Live Demo
 
